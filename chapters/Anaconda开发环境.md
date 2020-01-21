@@ -1,11 +1,12 @@
 # Anaconda开发环境
-## 1. Anaconda介绍
+
+# Anaconda介绍
 
 > **Anaconda是一个整合 Python的套件包，适合初学者的开发环境**
 
-### 1.1 安装Anaconda
+# 安装Anaconda
 
-### 1.2 Anaconda Prompt **管理套件**
+# Anaconda Prompt 管理套件
 
 1. 显示已安装的套件 conda list
 2. 套件安装 conda/pip install 套件名称 or easy_install 参数 套件名称
@@ -31,7 +32,7 @@
    
    提示：pip甚至不能升级python，因为它不像conda一样把python当做包来处理。但是它可以安装一些conda安装不了的包。
 
-### 1.3 使用Anaconda Prompt **建立虚拟环境**
+# 使用Anaconda Prompt 建立虚拟环境
 
 1. 适合于测试套件或执行Python 2.x环境的程序
 
@@ -56,7 +57,7 @@
    Linux，OS X: source deactivate
    Windows: deactivate
 
-### 1.4 使用Anaconda Prompt **复制虚拟环境**
+# 使用Anaconda Prompt 复制虚拟环境
 
 1. conda create -n 虚拟环境名称 --clone root
    通过克隆来复制一个环境。这儿将通过克隆snowfllakes来创建一个称为flowers的副本。
@@ -77,7 +78,7 @@
   4. 简易智能输入
   5. 执行python档案 %run 档案路径
 
-### 1.5 **更新conda本身**
+# 更新conda本身
 
 conda update conda
 
@@ -86,11 +87,11 @@ conda将会比较新旧版本并且告诉你哪一个版本的conda可以被安�
 
 proceed ([y]/n)? y
 
-### 1.6 **更新anaconda 应用**
+# 更新anaconda 应用
 
 conda update anaconda
 
-### 1.7 **更新python**
+# 更新python
 
 假设当前python环境是3.6.1，而最新版本是3.6.2，那么就会升级到3.6.2
 
