@@ -1,0 +1,33 @@
+language: node_js
+node_js:
+  - "13"
+cache: npm
+
+notifications:
+  email:
+    recipients:
+      - 1832044043@qq.com # 设置通知邮件
+    on_success: change
+    on_failure: always
+
+install:
+  - npm install -g gitbook-cli
+  - gitbook install
+
+script:
+  - gitbook build --gitbook=3.2.3
+
+after_script:
+  - cp docs/theme.js _book/gitbook
+  - cd _book
+  - git init
+  - git config --global user.name "${GIT_NAME}"
+  - git config --global user.email "${GIT_EMAIL}"
+  - git remote add origin https://${REF}
+  - git add .
+  - git commit -m "Updated By Travis-CI With Build $TRAVIS_BUILD_NUMBER For Github Pages"
+  - git push --force --quiet "https://${TOKEN}@${REF}" master:gh-pages
+
+branches:
+  only:
+    - master    
