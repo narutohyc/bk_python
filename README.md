@@ -19,3 +19,5 @@
 > [Python 标准库](https://docs.python.org/zh-cn/3/library/index.html)
 >
 > [python索引](https://docs.python.org/zh-cn/3/genindex-all.html)
+>
+> [PEP索引](https://www.python.org/dev/peps/)
