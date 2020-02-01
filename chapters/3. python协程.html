@@ -1,0 +1,1114 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>python协程 · Python相关学习记录</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="narutohyc">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="4. 装饰器Dercrator.html" />
+    
+    
+    <link rel="prev" href="2. python多线程.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/narutohyc" target="_blank" class="custom-link">我的狗窝</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1. python多进程.html">
+            
+                <a href="1. python多进程.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    python多进程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2. python多线程.html">
+            
+                <a href="2. python多线程.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    python多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="3. python协程.html">
+            
+                <a href="3. python协程.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    python协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="4. 装饰器Dercrator.html">
+            
+                <a href="4. 装饰器Dercrator.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    装饰器Dercrator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="5. python基础知识.html">
+            
+                <a href="5. python基础知识.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    python基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="6. Pythonic的几个办法.html">
+            
+                <a href="6. Pythonic的几个办法.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    Pythonic的几个办法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="7. Python的collections模块.html">
+            
+                <a href="7. Python的collections模块.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    Python的collections模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="8. os库的使用.html">
+            
+                <a href="8. os库的使用.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    os库的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="9. 文件的使用.html">
+            
+                <a href="9. 文件的使用.html">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    文件的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="10. 枚举类Enum.html">
+            
+                <a href="10. 枚举类Enum.html">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    枚举类Enum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="11. numpy小记.html">
+            
+                <a href="11. numpy小记.html">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    numpy小记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="12. python 魔法函数.html">
+            
+                <a href="12. python 魔法函数.html">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    python 魔法函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="13. python pipe包管道包学习.html">
+            
+                <a href="13. python pipe包管道包学习.html">
+            
+                    
+                        <b>1.14.</b>
+                    
+                    python pipe包管道包学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="14. Python 增强提案PEP.html">
+            
+                <a href="14. Python 增强提案PEP.html">
+            
+                    
+                        <b>1.15.</b>
+                    
+                    Python 增强提案PEP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="15. python进阶问题.html">
+            
+                <a href="15. python进阶问题.html">
+            
+                    
+                        <b>1.16.</b>
+                    
+                    python进阶问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="16. Regular Expression OP.html">
+            
+                <a href="16. Regular Expression OP.html">
+            
+                    
+                        <b>1.17.</b>
+                    
+                    Regular Expression OP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="Anaconda开发环境.html">
+            
+                <a href="Anaconda开发环境.html">
+            
+                    
+                        <b>1.18.</b>
+                    
+                    Anaconda开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="Jupyter Notebook介绍、安装及使用教程.html">
+            
+                <a href="Jupyter Notebook介绍、安装及使用教程.html">
+            
+                    
+                        <b>1.19.</b>
+                    
+                    Jupyter Notebook介绍、安装及使用教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="最详尽使用指南Jupyter Notebook.html">
+            
+                <a href="最详尽使用指南Jupyter Notebook.html">
+            
+                    
+                        <b>1.20.</b>
+                    
+                    最详尽使用指南Jupyter Notebook
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >python协程</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#python&#x534F;&#x7A0B;"><b></b>python&#x534F;&#x7A0B;</a></li><li><span class="title-icon "></span><a href="#&#x751F;&#x6210;&#x5668;&#x548C;&#x8FED;&#x4EE3;&#x5668;"><b></b>&#x751F;&#x6210;&#x5668;&#x548C;&#x8FED;&#x4EE3;&#x5668;</a></li><li><span class="title-icon "></span><a href="#&#x751F;&#x6210;&#x5668;"><b></b>&#x751F;&#x6210;&#x5668;</a></li><li><span class="title-icon "></span><a href="#yield-&#x8BED;&#x6CD5;&#x7CD6;"><b></b>yield &#x8BED;&#x6CD5;&#x7CD6;</a></li><li><span class="title-icon "></span><a href="#&#x8FED;&#x4EE3;&#x5668;"><b></b>&#x8FED;&#x4EE3;&#x5668;</a></li><li><span class="title-icon "></span><a href="#&#x751F;&#x6210;&#x5668;&#x548C;&#x534F;&#x7A0B;"><b></b>&#x751F;&#x6210;&#x5668;&#x548C;&#x534F;&#x7A0B;</a></li><li><span class="title-icon "></span><a href="#yield-from"><b></b>yield from</a></li><li><span class="title-icon "></span><a href="#greenlet-&#x548C;-gevent"><b></b>greenlet &#x548C; gevent</a></li><ul><li><span class="title-icon "></span><a href="#greenlet"><b></b>greenlet</a></li><li><span class="title-icon "></span><a href="#gevent"><b></b>gevent</a></li></ul><li><span class="title-icon "></span><a href="#asynciocoroutine"><b></b>asyncio.coroutine</a></li><li><span class="title-icon "></span><a href="#async-&#x548C;-await"><b></b>async &#x548C; await</a></li><li><span class="title-icon "></span><a href="#&#x534F;&#x7A0B;&#x4E0E;&#x5F02;&#x6B65;"><b></b>&#x534F;&#x7A0B;&#x4E0E;&#x5F02;&#x6B65;</a></li></ul></div><a href="#python&#x534F;&#x7A0B;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><img src="http://upload-images.jianshu.io/upload_images/15675864-952291e89189c8a8.jpg"></p>
+<p>&#x8BB0;&#x5F55;python&#x5B66;&#x4E60;&#x4E2D;&#x9047;&#x5230;&#x7684;&#x4E00;&#x4E9B;&#x5FC3;&#x5F97;&#xFF1A;</p>
+<p>[TOC]</p>
+<hr>
+<h1 id="python&#x534F;&#x7A0B;"><a name="python&#x534F;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#python&#x534F;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="python&#x534F;&#x7A0B;" class="plugin-anchor" href="#python&#x534F;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>python&#x534F;&#x7A0B;</h1>
+<blockquote>
+<ol>
+<li><a href="https://www.freebuf.com/company-information/153421.html" target="_blank">&#x8C08;&#x8C08;Python&#x534F;&#x7A0B;&#x6280;&#x672F;&#x7684;&#x6F14;&#x8FDB;&#x8C08;&#x8C08;Python&#x534F;&#x7A0B;&#x6280;&#x672F;&#x7684;&#x6F14;&#x8FDB;</a></li>
+<li><a href="https://www.jishuwen.com/d/2qPt" target="_blank">Python&#x534F;&#x7A0B;&#x4ECE;&#x5165;&#x95E8;&#x5230;&#x653E;&#x5F03;&#x5230;&#x6B7B;&#x4EA1;&#x5230;&#x91CD;&#x751F;</a></li>
+<li><a href="https://blog.writeathink.cn/2018/03/12/asyncio/" target="_blank">Python&#x534F;&#x7A0B;&#x7684;&#x6F14;&#x5316;-&#x4ECE;yield/send&#x5230;async/await</a></li>
+</ol>
+<p>&#x534F;&#x7A0B;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x6709;&#x5F88;&#x591A;,&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x6765;&#x5217;&#x4E3E;&#x4E09;&#x79CD;&#x57FA;&#x672C;&#x65B9;&#x5F0F;
+   &#x7B2C;&#x4E00;&#x79CD; &#x5229;&#x7528; yield &#x6765;&#x5B9E;&#x73B0;&#x534F;&#x7A0B;
+   &#x7B2C;&#x4E8C;&#x79CD; &#x5229;&#x7528; greenlet &#x6A21;&#x5757;&#x5B9E;&#x73B0;
+   &#x7B2C;&#x4E09;&#x79CD; &#x5229;&#x7528; gevent &#x6A21;&#x5757;&#x5B9E;&#x73B0;</p>
+</blockquote>
+<p>&#x7B80;&#x5355;&#x6765;&#x8BF4;&#xFF0C;&#x5E76;&#x884C;&#x662F;&#x6307;&#x4E24;&#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A;&#x4E8B;&#x4EF6;&#x5728;&#x540C;&#x4E00;&#x65F6;&#x523B;&#x53D1;&#x751F;&#xFF0C;&#x901A;&#x5E38;&#x662F;&#x5F53;&#x7CFB;&#x7EDF;&#x6709;&#x4E00;&#x4E2A;&#x4EE5;&#x4E0A;CPU&#x6216;CPU&#x6838;&#x5FC3;&#x65F6;&#xFF0C;&#x624D;&#x6709;&#x53EF;&#x80FD;&#x5E76;&#x884C;&#x3002;&#x4E24;&#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A;&#x4E8B;&#x4EF6;&#x3001;&#x7EBF;&#x7A0B;&#x5E76;&#x6B65;&#x62A2;&#x5360;CPU&#x8D44;&#x6E90;&#x3002;&#x800C;&#x5E76;&#x53D1;&#x662F;&#x6307;&#x4E24;&#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A;&#x4E8B;&#x4EF6;&#x5728;&#x540C;&#x4E00;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x5185;&#x53D1;&#x751F;&#xFF0C;&#x5728;&#x4E00;&#x5B9A;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x5185;&#xFF0C;&#x6709;&#x591A;&#x4E2A;&#x7A0B;&#x5E8F;&#x5728;&#x6267;&#x884C;&#xFF0C;&#x4F46;&#x5728;&#x540C;&#x4E00;&#x65F6;&#x523B;&#xFF0C;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x5728;&#x6267;&#x884C;&#x3002;</p>
+<h1 id="&#x751F;&#x6210;&#x5668;&#x548C;&#x8FED;&#x4EE3;&#x5668;"><a name="&#x751F;&#x6210;&#x5668;&#x548C;&#x8FED;&#x4EE3;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x751F;&#x6210;&#x5668;&#x548C;&#x8FED;&#x4EE3;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x751F;&#x6210;&#x5668;&#x548C;&#x8FED;&#x4EE3;&#x5668;" class="plugin-anchor" href="#&#x751F;&#x6210;&#x5668;&#x548C;&#x8FED;&#x4EE3;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x751F;&#x6210;&#x5668;&#x548C;&#x8FED;&#x4EE3;&#x5668;</h1>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x751F;&#x6210;&#x5668;&#x548C;&#x8FED;&#x4EE3;&#x5668;</span>
+<span class="hljs-comment"># &#x751F;&#x6210;&#x4E00;&#x4E2A;&#x6590;&#x6CE2;&#x90A3;&#x5951;&#x6578;&#x5217;,&#x8F93;&#x51FA;&#x524D;N&#x4E2A;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fab</span><span class="hljs-params">(max)</span>:</span>
+   n, a, b = <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>
+   L = []
+   <span class="hljs-keyword">while</span> n &lt; max:
+       L.append(b)
+       a, b = b, a + b
+       n = n + <span class="hljs-number">1</span>
+   <span class="hljs-keyword">return</span> L
+fab(<span class="hljs-number">6</span>)
+
+Out[<span class="hljs-number">56</span>]: [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>]
+</code></pre>
+<h1 id="&#x751F;&#x6210;&#x5668;"><a name="&#x751F;&#x6210;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x751F;&#x6210;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x751F;&#x6210;&#x5668;" class="plugin-anchor" href="#&#x751F;&#x6210;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x751F;&#x6210;&#x5668;</h1>
+<pre><code class="lang-python">&#x8FD9;&#x4E2A;&#x4EE3;&#x7801;&#x770B;&#x4E0A;&#x53BB;&#x662F;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5F53;&#x9700;&#x8981;&#x751F;&#x6210;&#x7684;&#x6570;&#x5217;&#x6570;&#x91CF;&#x975E;&#x5E38;&#x5927;&#x65F6;&#xFF0C;&#x7531;&#x4E8E;&#x4EE3;&#x7801;&#x4E2D;&#x5C06;&#x6570;&#x5B57;&#x5B58;&#x50A8;&#x5728; list &#x4E2D;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x5DE8;&#x5927;&#x5185;&#x5B58;&#x5360;&#x7528;&#x3002;&#x80FD;&#x4E0D;&#x80FD;&#x4F18;&#x5316;&#xFF1F;
+&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x67D0;&#x79CD;&#x65B9;&#x5F0F;&#x63A8;&#x7B97;&#x51FA;&#x6765;&#x5207;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x5FAA;&#x73AF;&#x64CD;&#x4F5C;&#xFF0C;&#x5C31;&#x907F;&#x514D;&#x4E86;&#x5927;&#x7684;&#x5185;&#x5B58;&#x5360;&#x7528;&#x3002;&#x53EA;&#x9700;&#x8981;&#x51FD;&#x6570;&#x5728;&#x5FAA;&#x73AF;&#x65F6;&#x8BA1;&#x7B97;&#x5F97;&#x4E0B;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x5E76;&#x8FD4;&#x56DE;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x5FC5;&#x521B;&#x5EFA;&#x5B8C;&#x6574;&#x7684; list &#xFF0C;&#x4ECE;&#x800C;&#x8282;&#x7701;&#x5927;&#x91CF;&#x7A7A;&#x95F4;&#x3002;&#x5728;Python&apos;&#x4E2D;&#xFF0C;&#x8FD9;&#x79CD;&#x4E00;&#x8FB9;&#x5FAA;&#x73AF;&#x4E00;&#x8FB9;&#x8BA1;&#x7B97;&#x7684;&#x673A;&#x5236;&#xFF0C;&#x79F0;&#x4E3A;&#x751F;&#x6210;&#x5668;&#xFF1A; generator &#x3002;
+
+# &#x751F;&#x6210;&#x5668;
+class Fab(object):
+   def __init__(self, max):
+       self.max = max
+       self.n, self.a, self.b = 0, 0, 1
+
+   def __iter__(self):
+       return self
+
+   def next(self):
+       if self.n &lt; self.max:
+           r = self.b
+           self.a, self.b = self.b, self.a + self.b
+           self.n = self.n + 1
+           return r
+       raise StopIteration()
+Fab(6)
+
+Out[56]: [1, 1, 2, 3, 5, 8]
+
+&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x901A;&#x8FC7;&#x7C7B;&#x7684;&#x5F62;&#x5F0F;&#x5C06;&#x51FD;&#x6570;&#x5C01;&#x88C5;&#x4E3A;&#x4E00;&#x4E2A;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#x3002;&#x901A;&#x8FC7;next&#x65B9;&#x6CD5;&#x5728;&#x5FAA;&#x73AF;&#x7684;&#x65F6;&#x5019;&#x6BCF;&#x6B21;&#x53BB;&#x53D6;&#x4E00;&#x4E2A;&#x6570;&#xFF0C;&#x53EA;&#x6709;&#x5728;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x624D;&#x4F1A;&#x751F;&#x6210;&#xFF0C;&#x5185;&#x5B58;&#x5360;&#x7528;&#x5F88;&#x5C0F;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x8F83;&#x4E3A;&#x7E41;&#x7410;&#xFF0C;&#x5728;Python&#x4E2D;&#xFF0C;&#x6709;&#x4E00;&#x79CD;&#x8BED;&#x6CD5;&#x7CD6;&#x80FD;&#x7B80;&#x5316;&#xFF0C;&#x90A3;&#x5C31;&#x662F; yield &#x3002;
+</code></pre>
+<h1 id="yield-&#x8BED;&#x6CD5;&#x7CD6;"><a name="yield-&#x8BED;&#x6CD5;&#x7CD6;" class="anchor-navigation-ex-anchor" href="#yield-&#x8BED;&#x6CD5;&#x7CD6;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="yield-&#x8BED;&#x6CD5;&#x7CD6;" class="plugin-anchor" href="#yield-&#x8BED;&#x6CD5;&#x7CD6;"><i class="fa fa-link" aria-hidden="true"></i></a>yield &#x8BED;&#x6CD5;&#x7CD6;</h1>
+<pre><code class="lang-python"># yield &#x8BED;&#x6CD5;&#x7CD6;
+def fab(max):
+    n, a, b = 0, 0, 1
+    while n &lt; max:
+        yield b
+        # print b
+        a, b = b, a + b
+        n = n + 1
+fab(6)
+
+Out[56]: [1, 1, 2, 3, 5, 8]
+&#x8C03;&#x7528;&#x548C; class &#x7248;&#x7684;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; next &#x65B9;&#x6CD5;&#x7B49;&#x3002;&#x7B80;&#x5355;&#x7684;&#x8BF4;&#xFF0C; yield &#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x628A;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x53D8;&#x4E3A;&#x4E00;&#x4E2A; generator &#xFF0C;&#x5E26;&#x6709; yield &#x7684;&#x51FD;&#x6570;&#x4E0D;&#x518D;&#x662F;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x51FD;&#x6570;&#xFF0C; Python &#x89E3;&#x91CA;&#x5668;&#x4F1A;&#x5C06;&#x5668;&#x89C6;&#x4E3A; generator &#x3002;&#x5728; for &#x5FAA;&#x73AF;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x6BCF;&#x6B21;&#x5FAA;&#x73AF;&#x90FD;&#x4F1A;&#x6267;&#x884C; fab &#x51FD;&#x6570;&#x5185;&#x90E8;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x6267;&#x884C;&#x5230; yield &#x65F6;&#x3002;&#x51FD;&#x6570;&#x5C31;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x503C;&#xFF0C;&#x4E0B;&#x6B21;&#x8FED;&#x4EE3;&#x65F6;&#xFF0C;&#x5C31;&#x4ECE; yield &#x7684;&#x4E0B;&#x4E00;&#x53E5;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x3002;&#x8C03;&#x7528;next&#x4E5F;&#x662F;&#x540C;&#x7406;&#x3002;
+
+&#x5F53;&#x51FD;&#x6570;&#x6267;&#x884C;&#x7ED3;&#x675F;&#x65F6;&#xFF0C;&#x4F1A;&#x629B;&#x51FA; StopIteration &#x5F02;&#x5E38;&#xFF0C;&#x8868;&#x793A;&#x8FED;&#x4EE3;&#x5B8C;&#x6210;&#x3002;
+</code></pre>
+<h1 id="&#x8FED;&#x4EE3;&#x5668;"><a name="&#x8FED;&#x4EE3;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x8FED;&#x4EE3;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8FED;&#x4EE3;&#x5668;" class="plugin-anchor" href="#&#x8FED;&#x4EE3;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FED;&#x4EE3;&#x5668;</h1>
+<pre><code># &#x8FED;&#x4EE3;&#x5668;
+Python &#x4E2D;&#xFF0C;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x88AB;&#x7528;&#x6765; for &#x5FAA;&#x73AF;&#x7684;&#x5BF9;&#x8C61;&#x53EF;&#x7EDF;&#x79F0;&#x4E3A;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#x3002;&#x53EF;&#x4EE5;&#x7528; isinstance() &#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x4E3A;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61; &#xFF08;Iterable&#xFF09; &#x3002;&#x751F;&#x6210;&#x5668;&#x4E0D;&#x4F46;&#x53EF;&#x4EE5;&#x4F5C;&#x7528;&#x4E8E; for &#x5FAA;&#x73AF;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x88AB; next &#x51FD;&#x6570;&#x4E0D;&#x65AD;&#x8C03;&#x7528;&#x8FD4;&#x56DE;&#x4E0B;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x6700;&#x540E;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x3002;&#x800C;&#x8FED;&#x4EE3;&#x5668;&#x53EF;&#x4EE5;&#x88AB; next() &#x51FD;&#x6570;&#x8C03;&#x7528;&#x5E76;&#x4E0D;&#x65AD;&#x8FD4;&#x56DE;&#x4E0B;&#x4E00;&#x4E2A;&#x503C;&#x7684;&#x5BF9;&#x8C61;&#x79F0;&#x4E3A;&#x8FED;&#x4EE3;&#x5668;&#xFF08; Iteratot &#xFF09;&#x5BF9;&#x8C61;&#x3002;
+</code></pre><h1 id="&#x751F;&#x6210;&#x5668;&#x548C;&#x534F;&#x7A0B;"><a name="&#x751F;&#x6210;&#x5668;&#x548C;&#x534F;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#&#x751F;&#x6210;&#x5668;&#x548C;&#x534F;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x751F;&#x6210;&#x5668;&#x548C;&#x534F;&#x7A0B;" class="plugin-anchor" href="#&#x751F;&#x6210;&#x5668;&#x548C;&#x534F;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x751F;&#x6210;&#x5668;&#x548C;&#x534F;&#x7A0B;</h1>
+<pre><code># &#x751F;&#x6210;&#x5668;&#x548C;&#x534F;&#x7A0B;
+&#x4ECE;&#x8BED;&#x6CD5;&#x4E0A;&#x8BB2;&#xFF0C;&#x751F;&#x6210;&#x5668;&#x662F;&#x4E00;&#x4E2A;&#x5E26;yield&#x8BED;&#x53E5;&#x7684;&#x51FD;&#x6570;&#x3002;&#x534F;&#x7A0B;&#xFF0C;&#x53C8;&#x79F0; &#x5FAE;&#x7EBF;&#x7A0B; &#xFF0C; &#x7EA4;&#x7A0B; &#xFF0C;&#x82F1;&#x6587; Coroutine &#x3002;&#x5148;&#x770B;&#x770B;&#x534F;&#x7A0B;&#x7684;&#x6982;&#x5FF5;&#xFF1A;
+&#x534F;&#x7A0B;&#x901A;&#x8FC7;&#x5141;&#x8BB8;&#x591A;&#x4E2A;&#x5165;&#x53E3;&#x70B9;&#x5728;&#x67D0;&#x4E9B;&#x4F4D;&#x7F6E;&#x6682;&#x505C;&#x548C;&#x6062;&#x590D;&#x6267;&#x884C;&#x6765;&#x6982;&#x62EC;&#x7528;&#x4E8E;&#x975E;&#x62A2;&#x5360;&#x5F0F;&#x591A;&#x4EFB;&#x52A1;&#x7684;&#x5B50;&#x7A0B;&#x5E8F;&#x3002;
+
+&#x4ECE;&#x67D0;&#x4E9B;&#x89D2;&#x5EA6;&#x6765;&#x7406;&#x89E3;&#xFF0C;&#x534F;&#x7A0B;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x6682;&#x505C;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x6062;&#x590D;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x3002;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#xFF0C; yield &#x5173;&#x952E;&#x5B57;&#x5DF2;&#x7ECF;&#x53EF;&#x4EE5;&#x6682;&#x505C;&#x6267;&#x884C;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x6682;&#x505C;&#x540E;&#x6709;&#x65B9;&#x6CD5;&#x628A;&#x4E00;&#x4E9B;&#x503C;&#x53D1;&#x9001;&#x56DE;&#x5230;&#x6682;&#x505C;&#x7A92;&#x606F;&#x7684;&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x90A3;&#x4E48;&#x4FBF;&#x5C31;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x534F;&#x7A0B;&#x3002;&#x5728;Python PEP 342 &#x4E2D;&#xFF0C;&#x6DFB;&#x52A0;&#x4E86;&#x201C;&#x628A;&#x4E1C;&#x897F;&#x53D1;&#x56DE;&#x5DF2;&#x7ECF;&#x6682;&#x505C;&#x7684;&#x751F;&#x6210;&#x5668;&#x4E2D;&#x201D;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5C31;&#x662F; send() &#x3002;
+
+&#x751F;&#x6210;&#x5668;&#x548C;&#x534F;&#x7A0B;&#x90FD;&#x662F;&#x901A;&#x8FC7; python &#x4E2D; yield &#x7684;&#x5173;&#x952E;&#x5B57;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x751F;&#x6210;&#x5668;&#x53EA;&#x8C03;&#x7528; next &#x6765;&#x4E0D;&#x65AD;&#x7684;&#x751F;&#x6210;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x534F;&#x7A0B;&#x4F1A;&#x8C03;&#x7528; next &#x548C; send &#x6765;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x548C;&#x63A5;&#x6536;&#x53C2;&#x6570;&#x3002;
+</code></pre><pre><code class="lang-python"><span class="hljs-keyword">import</span> random,time
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">stupid_fib</span><span class="hljs-params">(n)</span>:</span>
+    index = <span class="hljs-number">0</span>
+    a = <span class="hljs-number">0</span>
+    b = <span class="hljs-number">1</span>
+    <span class="hljs-keyword">while</span> index &lt; n:
+        sleep_cnt = <span class="hljs-keyword">yield</span> b
+        print(<span class="hljs-string">&apos;let me think {0} secs&apos;</span>.format(sleep_cnt))
+        time.sleep(sleep_cnt)
+        a, b = b, a + b
+        index += <span class="hljs-number">1</span>
+print(<span class="hljs-string">&apos;-&apos;</span>*<span class="hljs-number">10</span> + <span class="hljs-string">&apos;test yield send&apos;</span> + <span class="hljs-string">&apos;-&apos;</span>*<span class="hljs-number">10</span>)
+N = <span class="hljs-number">5</span>
+sfib = stupid_fib(N)
+fib_res = next(sfib)
+<span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+    print(fib_res)
+    <span class="hljs-keyword">try</span>:
+        fib_res = sfib.send(random.uniform(<span class="hljs-number">0</span>, <span class="hljs-number">0.5</span>))
+    <span class="hljs-keyword">except</span> StopIteration:
+        <span class="hljs-keyword">break</span>
+
+----------test <span class="hljs-keyword">yield</span> send----------
+<span class="hljs-number">1</span>
+let me think <span class="hljs-number">0.2438615286011866</span> secs
+<span class="hljs-number">1</span>
+let me think <span class="hljs-number">0.027476256830278822</span> secs
+<span class="hljs-number">2</span>
+let me think <span class="hljs-number">0.09717699872403579</span> secs
+<span class="hljs-number">3</span>
+let me think <span class="hljs-number">0.017161862262742633</span> secs
+<span class="hljs-number">5</span>
+let me think <span class="hljs-number">0.3313821890336833</span> secs
+
+&#x5176;&#x4E2D; next(sfib) &#x76F8;&#x5F53;&#x4E8E; sfib.send(<span class="hljs-keyword">None</span>) ,&#x53EF;&#x4EE5;&#x4F7F;&#x5F97; sfib &#x8FD0;&#x884C;&#x81F3;&#x7B2C;&#x4E00;&#x4E2A; <span class="hljs-keyword">yield</span> &#x5904;&#x8FD4;&#x56DE;&#x3002;&#x540E;&#x7EED;&#x5C06;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x7684;&#x79D2;&#x6570;&#x53D1;&#x9001;&#x7ED9; sfib &#xFF0C;&#x4F5C;&#x4E3A;&#x5F53;&#x524D;&#x4E2D;&#x65AD;&#x7684; <span class="hljs-keyword">yield</span> &#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x3002;
+<span class="hljs-keyword">yield</span> &#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x4F5C;&#x7528;&#x5305;&#x542B;&#x4E86;&#x4E09;&#x4E2A;&#x6B65;&#x9AA4;&#xFF1A;
+<span class="hljs-number">1</span>&#x3001; &#x5411;&#x51FD;&#x6570;&#x5916;&#x629B;&#x51FA;&#x503C;
+<span class="hljs-number">2</span>&#x3001; &#x6682;&#x505C;&#xFF0C;&#x7B49;&#x5F85; next() &#x6216; send() &#x6062;&#x590D;&#x3002;
+<span class="hljs-number">3</span>&#x3001; &#x8D4B;&#x503C;&#xFF0C;&#x63A5;&#x53D7; send &#x53D1;&#x9001;&#x8FC7;&#x6765;&#x7684;&#x6570;&#x636E;&#x3002;
+&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5728;&#x4F7F;&#x7528; send(<span class="hljs-keyword">None</span>) &#x6216;&#x8005; next() &#x9884;&#x6FC0;&#x751F;&#x6210;&#x5668;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x6267;&#x884C;&#x5230;&#x7B2C;&#x4E00;&#x4E2A; <span class="hljs-keyword">yield</span> &#x8BED;&#x53E5;&#x7ED3;&#x675F;&#x7684;&#x4F4D;&#x7F6E;&#x65F6;&#xFF0C;&#x5B9E;&#x9645;&#x7A0B;&#x5E8F;&#x53EA;&#x6267;&#x884C;&#x4E86;<span class="hljs-number">1</span>&#x3001;<span class="hljs-number">2</span>&#x4E24;&#x6B65;&#xFF0C;&#x7A0B;&#x5E8F;&#x8FD4;&#x56DE;&#x4E86;&#x503C;&#xFF0C;&#x5E76;&#x6682;&#x505C;&#xFF0C;&#x5E76;&#x6CA1;&#x6709;&#x6267;&#x884C;&#x7B2C;&#x4E09;&#x6B65;&#x53BB;&#x8D4B;&#x503C;&#x3002;&#x5728;&#x540E;&#x7EED;&#x7684;&#x5FAA;&#x73AF;&#x4E2D;&#xFF0C;&#x624D;&#x4F1A;&#x8FDB;&#x884C;&#x8D4B;&#x503C;&#x3002;
+</code></pre>
+<h1 id="yield-from"><a name="yield-from" class="anchor-navigation-ex-anchor" href="#yield-from"><i class="fa fa-link" aria-hidden="true"></i></a><a name="yield-from" class="plugin-anchor" href="#yield-from"><i class="fa fa-link" aria-hidden="true"></i></a>yield from</h1>
+<pre><code class="lang-python"><span class="hljs-comment"># yield from</span>
+&#x5728; Python3<span class="hljs-number">.3</span> &#x51FA;&#x73B0;&#x4E86; <span class="hljs-keyword">yield</span> <span class="hljs-keyword">from</span> &#x8BED;&#x6CD5;, <span class="hljs-keyword">yield</span> <span class="hljs-keyword">from</span> item &#x8868;&#x8FBE;&#x5F0F;&#x4ECE; item &#x4E2D;&#x83B7;&#x5F97;&#x8FED;&#x4EE3;&#x5668;&#x3002; <span class="hljs-keyword">yield</span> <span class="hljs-keyword">from</span> &#x53EF;&#x4EE5;&#x4EE3;&#x66FF; <span class="hljs-keyword">for</span> &#x5FAA;&#x73AF;&#xFF0C;&#x4F7F;&#x5F97;&#x4EE3;&#x7801;&#x66F4;&#x4E3A;&#x7CBE;&#x70BC;&#x3002; <span class="hljs-keyword">yield</span> <span class="hljs-keyword">from</span> &#x540E;&#x9762;&#x9700;&#x8981;&#x52A0;&#x7684;&#x662F;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#x3002;
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">first_gen</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;AB&quot;</span>:
+        <span class="hljs-keyword">yield</span> c
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>):
+        <span class="hljs-keyword">yield</span> i
+
+print(list(first_gen()))
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">second_gen</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">yield</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;AB&quot;</span>
+    <span class="hljs-keyword">yield</span> <span class="hljs-keyword">from</span> range(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>)
+
+print(list(second_gen()))
+
+
+[<span class="hljs-string">&apos;A&apos;</span>, <span class="hljs-string">&apos;B&apos;</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]
+[<span class="hljs-string">&apos;A&apos;</span>, <span class="hljs-string">&apos;B&apos;</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]
+</code></pre>
+<pre><code class="lang-python">&#x5F53; yiled <span class="hljs-keyword">from</span> &#x540E;&#x9762;&#x52A0;&#x4E0A;&#x4E00;&#x4E2A;&#x751F;&#x6210;&#x5668;&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x5B9E;&#x73B0;&#x4E86;&#x751F;&#x6210;&#x7684;&#x5D4C;&#x5957;&#x3002;&#x5B9E;&#x73B0;&#x751F;&#x6210;&#x5668;&#x7684;&#x5D4C;&#x5957;&#xFF0C;&#x4E0D;&#x4E00;&#x5B9A;&#x8981;&#x4F7F;&#x7528; <span class="hljs-keyword">yield</span> <span class="hljs-keyword">from</span> &#xFF0C;&#x4F46;&#x5B83;&#x53EF;&#x4EE5;&#x8BA9;&#x6211;&#x4EEC;&#x907F;&#x514D;&#x8BA9;&#x81EA;&#x5DF1;&#x5904;&#x7406;&#x5404;&#x79CD;&#x6599;&#x60F3;&#x4E0D;&#x5230;&#x7684;&#x5F02;&#x5E38;&#x3002;&#x5982;&#x679C;&#x81EA;&#x5DF1;&#x53BB;&#x5B9E;&#x73B0;&#xFF0C;&#x4F1A;&#x52A0;&#x5927;&#x7F16;&#x7801;&#x7684;&#x96BE;&#x5EA6;&#x3002;
+
+<span class="hljs-keyword">yield</span> <span class="hljs-keyword">from</span> &#x7684;&#x4E3B;&#x8981;&#x529F;&#x80FD;&#x662F;&#x6253;&#x5F00;&#x53CC;&#x5411;&#x901A;&#x9053;&#xFF0C;&#x628A;&#x6700;&#x5916;&#x5C42;&#x7684;&#x8C03;&#x7528;&#x4E0E;&#x6700;&#x5185;&#x5C42;&#x7684;&#x5B50;&#x751F;&#x6210;&#x5668;&#x8FDE;&#x63A5;&#x8D77;&#x6765;&#xFF0C;&#x8FD9;&#x6837;&#x4E8C;&#x8005;&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x53D1;&#x9001;&#x548C;&#x4EA7;&#x51FA;&#x503C;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7A7F;&#x5165;&#x5F02;&#x5E38;&#x3002;
+</code></pre>
+<p><img src="res/Python Base/VjuAreZ.jpg" alt="img"></p>
+<pre><code class="lang-python">&#x59D4;&#x6D3E;&#x751F;&#x6210;&#x5668;&#x5728; yied <span class="hljs-keyword">from</span> &#x8868;&#x8FBE;&#x5F0F;&#x5904;&#x6682;&#x505C;&#x65F6;&#xFF0C;&#x8C03;&#x7528;&#x65B9;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x628A;&#x6570;&#x636E;&#x53D1;&#x7ED9;&#x5B50;&#x751F;&#x6210;&#x5668;&#xFF0C;&#x5B50;&#x751F;&#x6210;&#x5668;&#x518D;&#x628A;&#x4EA7;&#x51FA;&#x503C;&#x53D1;&#x7ED9;&#x8C03;&#x7528;&#x65B9;&#xFF0C;&#x5B50;&#x751F;&#x6210;&#x5668;&#x8FD4;&#x56DE;&#x4E4B;&#x540E;&#xFF0C;&#x89E3;&#x91CA;&#x5668;&#x4F1A;&#x629B;&#x51FA; StopIteration &#x5F02;&#x5E38;&#x3002;
+&#x59D4;&#x6258;&#x751F;&#x6210;&#x5668;&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#xFF1A;&#x5728;&#x8C03;&#x7528;&#x65B9;&#x4E0E;&#x5B50;&#x751F;&#x6210;&#x5668;&#x4E4B;&#x95F4;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x53CC;&#x5411;&#x901A;&#x9053;&#x3002;
+&#x4E3A;&#x4EC0;&#x4E48;&#x4E00;&#x5B9A;&#x8981;&#x4F7F;&#x7528; <span class="hljs-keyword">yield</span> <span class="hljs-keyword">from</span> &#x8BED;&#x53E5;&#x5462;&#xFF1A;
+&#x5728;&#x4F7F;&#x7528; yiled <span class="hljs-keyword">from</span> &#x8BED;&#x53E5;&#x65F6;&#xFF0C;&#x8BED;&#x53E5;&#x4E3A;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5904;&#x7406;&#x4E86;&#x5F88;&#x591A;&#x7684;&#x5F02;&#x5E38;
+</code></pre>
+<h1 id="greenlet-&#x548C;-gevent"><a name="greenlet-&#x548C;-gevent" class="anchor-navigation-ex-anchor" href="#greenlet-&#x548C;-gevent"><i class="fa fa-link" aria-hidden="true"></i></a><a name="greenlet-&#x548C;-gevent" class="plugin-anchor" href="#greenlet-&#x548C;-gevent"><i class="fa fa-link" aria-hidden="true"></i></a>greenlet &#x548C; gevent</h1>
+<p><img src="res/Python%20Base/QFv6ZrY.jpg" alt="img"></p>
+<pre><code class="lang-python"><span class="hljs-comment"># greenlet &#x548C; gevent</span>
+greenlet &#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x534F;&#x7A0B;&#xFF0C;&#x4E0D;&#x8FC7;&#x6BCF;&#x4E00;&#x6B21;&#x90FD;&#x8981;&#x4EBA;&#x4E3A;&#x53BB;&#x6307;&#x5411;&#x4E0B;&#x4E00;&#x4E2A;&#x8BE5;&#x6267;&#x884C;&#x7684;&#x534F;&#x7A0B;&#x3002; greenlet &#x53EF;&#x4EE5;&#x4ECE;&#x4E00;&#x4E2A;&#x534F;&#x7A0B;&#x5207;&#x6362;&#x5230;&#x4EFB;&#x610F;&#x5176;&#x4ED6;&#x534F;&#x7A0B;&#xFF0C;&#x4F46;&#x5FC5;&#x987B;&#x4FDD;&#x8BC1; greenlet &#x7684;&#x6B63;&#x5E38;&#x7ED3;&#x675F;&#xFF0C;&#x5728;&#x534F;&#x7A0B;&#x4E4B;&#x95F4;&#x7684;&#x4EFB;&#x610F;&#x5207;&#x6362;&#x5F88;&#x5BB9;&#x6613;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#x3002; greelet &#x662F; Stackless &#x53D1;&#x5C55;&#x6765;&#x7684; Cpython &#x6269;&#x5C55;&#x5305;&#xFF0C; greelet &#x662F;&#x5E95;&#x5C42;&#x5B9E;&#x73B0;&#x4E86;&#x539F;&#x751F;&#x534F;&#x7A0B;&#x7684;C&#x6269;&#x5C55;&#x5E93;&#x3002;
+</code></pre>
+<h2 id="greenlet"><a name="greenlet" class="anchor-navigation-ex-anchor" href="#greenlet"><i class="fa fa-link" aria-hidden="true"></i></a><a name="greenlet" class="plugin-anchor" href="#greenlet"><i class="fa fa-link" aria-hidden="true"></i></a>greenlet</h2>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x4F7F;&#x7528; greenlet &#x5B9E;&#x73B0;&#x7684; &#x751F;&#x4EA7;&#x8005;-&#x6D88;&#x8D39;&#x8005; &#x6A21;&#x578B;&#xFF1A;</span>
+<span class="hljs-comment"># greenlet &#x7684;&#x4EF7;&#x503C;&#x5728;&#x4E8E;&#x9AD8;&#x6027;&#x80FD;&#x7684;&#x539F;&#x751F;&#x534F;&#x7A0B;&#xFF0C;&#x4E14;&#x8BED;&#x4E49;&#x66F4;&#x52A0;&#x660E;&#x786E;&#x3001;&#x663E;&#x5F0F;&#x5207;&#x6362;&#xFF0C;&#x6267;&#x884C;&#x5230; switch &#x65F6;&#x5C31;&#x5207;&#x6362;&#x7A0B;&#x5E8F;</span>
+<span class="hljs-comment"># &#x76F4;&#x63A5;&#x5C06;&#x51FD;&#x6570;&#x5305;&#x88C5;&#x6210;&#x534F;&#x7A0B;&#xFF0C;&#x53EF;&#x4EE5;&#x4FDD;&#x7559;&#x539F;&#x4EE3;&#x7801;&#x7684;&#x98CE;&#x683C;</span>
+
+
+<span class="hljs-comment"># &#x57FA;&#x4E8E;greenlet&#x7684;&#x751F;&#x4EA7;&#x8005;&#x6D88;&#x8D39;&#x8005;&#x534F;&#x7A0B;</span>
+<span class="hljs-keyword">from</span> greenlet <span class="hljs-keyword">import</span> greenlet
+<span class="hljs-keyword">import</span> random
+<span class="hljs-keyword">import</span> time
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Producer</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+        item = random.randint(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>)
+        print(<span class="hljs-string">&quot;&#x751F;&#x4EA7;&lt;{}&gt;&#x4E2D;...&quot;</span>.format(item))
+        time.sleep(<span class="hljs-number">1</span>)
+        c.switch(item)  <span class="hljs-comment"># &#x5207;&#x6362;&#x5230;&#x6D88;&#x8D39;&#x8005;&#xFF0C;&#x5E76;&#x5C06;item&#x4F20;&#x5165;&#x3002;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Consumer</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+        item = p.switch()  <span class="hljs-comment"># &#x5207;&#x6362;&#x5230;&#x751F;&#x4EA7;&#x8005;&#x3002;&#x7B49;&#x5F85;&#x751F;&#x4EA7;&#x8005;&#x4F20;&#x9012;&#x53C2;&#x6570;item</span>
+        print(<span class="hljs-string">&quot;&#x6D88;&#x8D39;&lt;{}&gt;&#x4E2D;..&quot;</span>.format(item))
+
+c = greenlet(Consumer)  <span class="hljs-comment"># &#x5C06;&#x666E;&#x901A;&#x51FD;&#x6570;&#x7F16;&#x7A0B;&#x534F;&#x7A0B;</span>
+p = greenlet(Producer)  <span class="hljs-comment"># &#x540C;&#x7406;</span>
+c.switch()  <span class="hljs-comment"># &#x542F;&#x52A8;&#x534F;&#x7A0B;&#xFF0C;Consumer&#x5148;&#x6267;&#x884C;</span>
+<span class="hljs-string">&quot;&quot;&quot;
+&#x4ECE;consumer&#x5F00;&#x59CB;&#x6267;&#x884C;&#xFF0C;&#x6267;&#x884C;&#x5230;item=p.switch()&#x65F6;&#xFF0C;&#x7A0B;&#x5E8F;&#x5207;&#x6362;&#x5230;producer&#xFF0C;&#x5E76;&#x7B49;&#x5F85;&#x4F20;&#x53C2;
+producer&#x5F97;&#x5230;&#x6267;&#x884C;&#x6743;&#x540E;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;item,&#x5E76;&#x5F80;&#x4E0B;&#x6267;&#x884C;&#x4EE3;&#x7801;
+&#x5F53;producer&#x6267;&#x884C;&#x5230;c.switch(item)&#x65F6;&#xFF0C;&#x7A0B;&#x5E8F;&#x643A;&#x5E26;&#x4F20;&#x9012;&#x7684;item&#x5207;&#x6362;&#x5230;consumer,
+consumer&#x7EE7;&#x7EED;&#x5F80;&#x4E0B;&#x6267;&#x884C;&#xFF0C;&#x76F4;&#x5230;&#x4E0B;&#x4E00;&#x6B21;&#x8FD0;&#x884C;&#x5230;p.switch&#x65F6;&#xFF0C;&#x4EA4;&#x51FA;&#x6267;&#x884C;&#x6743;&#xFF0C;&#x5207;&#x6362;&#x5230;producer&#xFF0C;&#x91CD;&#x590D;&#x4EE5;&#x4E0A;&#x8FC7;&#x7A0B;
+&quot;&quot;&quot;</span>
+</code></pre>
+<h2 id="gevent"><a name="gevent" class="anchor-navigation-ex-anchor" href="#gevent"><i class="fa fa-link" aria-hidden="true"></i></a><a name="gevent" class="plugin-anchor" href="#gevent"><i class="fa fa-link" aria-hidden="true"></i></a>gevent</h2>
+<pre><code class="lang-python"><span class="hljs-comment"># gevent</span>
+<span class="hljs-comment"># gevent &#x662F;&#x5B9E;&#x73B0;&#x534F;&#x7A0B;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#xFF0C;&#x901A;&#x8FC7;&#x5C01;&#x88C5; greenlet &#xFF0C; epoll &#x56DE;&#x8C03;&#x7F16;&#x7A0B;&#x6A21;&#x5F0F;&#xFF0C;&#x751F;&#x6210;&#x5668;&#x534F;&#x7A0B;&#x5B9E;&#x73B0;&#x3002;&#x5F53;&#x9047;&#x5230; IO &#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x5C31;&#x81EA;&#x52A8;&#x5207;&#x6362;&#x5230;&#x5176;&#x4ED6;&#x534F;&#x7A0B;&#xFF0C;&#x7B49;&#x5230; IO &#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#xFF0C;&#x518D;&#x5728;&#x9002;&#x5F53;&#x7684;&#x65F6;&#x5019;&#x5207;&#x6362;&#x56DE;&#x6765;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x3002; gevent &#x4F1A;&#x81EA;&#x52A8;&#x5207;&#x6362;&#x534F;&#x7A0B;&#x3002;&#x5C31;&#x4FDD;&#x8BC1;&#x603B;&#x6709;&#x534F;&#x7A0B;&#x5728;&#x6267;&#x884C;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x7B49;&#x5F85; IO &#x3002;&#x7531;&#x4E8E;&#x5207;&#x6362;&#x5B9E;&#x5728; IO &#x64CD;&#x4F5C;&#x65F6;&#x81EA;&#x52A8;&#x5B8C;&#x6210;&#x3002;&#x6240;&#x4EE5; gevent &#x9700;&#x8981;&#x4FEE;&#x6539; Python &#x7684;&#x81EA;&#x5E26;&#x7684;&#x4E00;&#x4E9B;&#x4FDD;&#x51C6;&#x5E93;&#xFF0C;&#x8FD9;&#x4E00;&#x8FC7;&#x7A0B;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x901A;&#x8FC7; monkey patch &#x5B8C;&#x6210;&#x3002;</span>
+<span class="hljs-comment"># gevent&#x7684;&#x4EF7;&#x503C;&#x5728;&#x4E8E;&#x5B83;&#x7684;&#x4F7F;&#x7528;&#x57FA;&#x4E8E;epoll&#x7684;libev&#x6765;&#x907F;&#x5F00;&#x963B;&#x585E;&#xFF1B;&#x4F7F;&#x7528;&#x57FA;&#x4E8E;gevent&#x7684;&#x9AD8;&#x6548;&#x534F;&#x7A0B;&#xFF0C;&#x6765;&#x5207;&#x6362;&#x6267;&#x884C;</span>
+<span class="hljs-comment"># &#x53EA;&#x5728;&#x9047;&#x5230;&#x963B;&#x585E;&#x7684;&#x65F6;&#x5019;&#x5207;&#x6362;&#xFF0C;&#x6CA1;&#x6709;&#x8F6E;&#x8BE2;&#x548C;&#x7EBF;&#x7A0B;&#x5F00;&#x9500;&#x3002;</span>
+<span class="hljs-string">&quot;&quot;&quot;
+gevent: &#x901A;&#x8FC7;greenlet&#x5B9E;&#x73B0;&#x534F;&#x7A0B;&#xFF0C;&#x6838;&#x5FC3;&#x5C31;&#x662F;&#x9047;&#x5230;IO&#x64CD;&#x4F5C;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x5207;&#x6362;&#x5230;&#x5176;&#x4ED6;&#x534F;&#x7A0B;
+
+&quot;&quot;&quot;</span>
+<span class="hljs-comment"># &#x5C06;python&#x6807;&#x51C6;&#x5E93;&#x4E2D;&#x7684;&#x4E00;&#x4E9B;&#x963B;&#x585E;&#x64CD;&#x4F5C;&#x53D8;&#x4E3A;&#x975E;&#x963B;&#x585E;</span>
+<span class="hljs-keyword">from</span> gevent <span class="hljs-keyword">import</span> monkey;monkey.patch_all()
+<span class="hljs-comment"># &#x4F7F;&#x7528;&#x7334;&#x5B50;&#x8865;&#x4E01;&#x8981;&#x5199;&#x5728;&#x7B2C;&#x4E00;&#x884C;</span>
+<span class="hljs-keyword">import</span> gevent
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test1</span><span class="hljs-params">()</span>:</span>
+    print(<span class="hljs-string">&quot;test1&quot;</span>)
+    gevent.sleep(<span class="hljs-number">0</span>)  <span class="hljs-comment"># &#x6A21;&#x62DF;&#x8017;&#x65F6;&#x64CD;&#x4F5C;</span>
+    print(<span class="hljs-string">&quot;test11&quot;</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test2</span><span class="hljs-params">()</span>:</span>
+    print(<span class="hljs-string">&quot;test2&quot;</span>)
+    gevent.sleep(<span class="hljs-number">0</span>)  <span class="hljs-comment"># &#x6A21;&#x62DF;&#x8017;&#x65F6;&#x64CD;&#x4F5C;</span>
+    print(<span class="hljs-string">&quot;test22&quot;</span>)
+
+<span class="hljs-comment"># g1 = gevent.spawn(test1)  # &#x5C06;&#x51FD;&#x6570;&#x5C01;&#x88C5;&#x6210;&#x534F;&#x7A0B;&#xFF0C;&#x5E76;&#x542F;&#x52A8;</span>
+<span class="hljs-comment"># g2 = gevent.spawn(test2)</span>
+<span class="hljs-comment"># gevent.joinall([g1, g2])</span>
+
+<span class="hljs-string">&quot;&quot;&quot;
+# joinall() &#x963B;&#x585E;&#x5F53;&#x524D;&#x6D41;&#x7A0B;&#xFF0C;&#x6267;&#x884C;&#x7ED9;&#x5B9A;&#x7684;greenlet(&#x5217;&#x8868;&#x4E2D;&#x7684;&#x5BF9;&#x8C61;),&#x7B49;&#x5F85;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x5B8C;
+# spawn&#x662F;&#x542F;&#x52A8;&#x534F;&#x7A0B;&#xFF0C;&#x53C2;&#x6570;&#x4E3A;&#x51FD;&#x6570;&#x540D;&#x53CA;&#x5176;&#x53C2;&#x6570;
+test1
+test2
+test11
+test22
+
+&#x4EE3;&#x7801;&#x6267;&#x884C;test1,&#x6253;&#x5370;test1&#xFF0C;&#x9047;&#x5230;gevent.sleep(0)&#x65F6;&#x5207;&#x6362;&#x7A0B;&#x5E8F;&#xFF0C;&#x6267;&#x884C;test2
+test()&#x6267;&#x884C;&#xFF0C;&#x6253;&#x5370;test2&#xFF0C;&#x6267;&#x884C;&#x5230;gevent.sleep(0)&#x65F6;&#x5207;&#x6362;&#x7A0B;&#x5E8F;
+&#x6267;&#x884C;test1&#x5728;gevent.sleep(0)&#x540E;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x76F4;&#x5230;&#x518D;&#x6B21;&#x9047;&#x5230;gevent&#x65F6;&#xFF0C;&#x5207;&#x6362;&#x7A0B;&#x5E8F;
+&#x7136;&#x540E;&#x5728;test2&#x4E2D;&#xFF0C;&#x7EE7;&#x7EED;&#x6267;&#x884C;gevent&#x540E;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x76F4;&#x5230;&#x9047;&#x5230;gevent&#x65F6;&#xFF0C;&#x518D;&#x6B21;&#x5207;&#x6362;
+&#x76F4;&#x5230;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x5B8C;&#x6BD5;
+&quot;&quot;&quot;</span>
+</code></pre>
+<h1 id="asynciocoroutine"><a name="asynciocoroutine" class="anchor-navigation-ex-anchor" href="#asynciocoroutine"><i class="fa fa-link" aria-hidden="true"></i></a><a name="asynciocoroutine" class="plugin-anchor" href="#asynciocoroutine"><i class="fa fa-link" aria-hidden="true"></i></a>asyncio.coroutine</h1>
+<pre><code class="lang-python"><span class="hljs-comment"># asyncio.coroutine</span>
+<span class="hljs-comment"># &#x5728; Python3.4 &#x4E2D;&#x52A0;&#x5165;&#x4E86; asyncio &#x5E93;&#xFF0C;&#x4F7F;&#x5F97; Python &#x83B7;&#x5F97;&#x4E86;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x4F46;&#x8FD9;&#x4E2A;&#x8FD8;&#x662F;&#x4EE5;&#x751F;&#x6210;&#x5668;&#x5BF9;&#x8C61;&#x4E3A;&#x57FA;&#x7840;, yield from &#x5728; asyncio &#x6A21;&#x5757;&#x4E2D;&#x5F88;&#x5E38;&#x7528;&#x3002;&#x901A;&#x8FC7; asnyncio+&#x751F;&#x6210;&#x5668; &#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x5F02;&#x6B65;&#x7684;&#x6A21;&#x578B;&#xFF1A;</span>
+
+<span class="hljs-keyword">import</span> asyncio
+
+<span class="hljs-meta">@asyncio.coroutine</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">counttdown</span><span class="hljs-params">(number, n)</span>:</span>
+    <span class="hljs-keyword">while</span> n &gt; <span class="hljs-number">0</span>:
+        print(<span class="hljs-string">&quot;T-minus&quot;</span>, n, <span class="hljs-string">&quot;({})&quot;</span>.format(number))
+        <span class="hljs-keyword">yield</span> <span class="hljs-keyword">from</span> asyncio.sleep(<span class="hljs-number">1</span>)
+        n -= <span class="hljs-number">1</span>
+
+loop = asyncio.get_event_loop()
+tasks = [
+    asyncio.ensure_future(counttdown(<span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-number">2</span>)),
+    asyncio.ensure_future(counttdown(<span class="hljs-string">&quot;B&quot;</span>, <span class="hljs-number">5</span>)),
+]
+loop.run_until_complete(asyncio.wait(tasks))
+loop.close()
+
+&#x3010;out&#x3011;
+Traceback (most recent call last):
+  File <span class="hljs-string">&quot;&lt;ipython-input-2-cff1e6420e75&gt;&quot;</span>, line <span class="hljs-number">15</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
+    loop.run_until_complete(asyncio.wait(tasks))
+  File <span class="hljs-string">&quot;S:\Anaconda3\lib\asyncio\base_events.py&quot;</span>, line <span class="hljs-number">555</span>, <span class="hljs-keyword">in</span> run_until_complete
+    self.run_forever()
+  File <span class="hljs-string">&quot;S:\Anaconda3\lib\asyncio\base_events.py&quot;</span>, line <span class="hljs-number">510</span>, <span class="hljs-keyword">in</span> run_forever
+    <span class="hljs-keyword">raise</span> RuntimeError(<span class="hljs-string">&apos;This event loop is already running&apos;</span>)
+RuntimeError: This event loop <span class="hljs-keyword">is</span> already running
+
+T-minus <span class="hljs-number">2</span> (A)
+T-minus <span class="hljs-number">5</span> (B)
+T-minus <span class="hljs-number">1</span> (A)
+T-minus <span class="hljs-number">4</span> (B)
+T-minus <span class="hljs-number">3</span> (B)
+T-minus <span class="hljs-number">2</span> (B)
+T-minus <span class="hljs-number">1</span> (B)
+
+&#x8FD9;&#x91CC; asyncio.coroutine &#x88C5;&#x9970;&#x5668;&#x662F;&#x7528;&#x6765;&#x6807;&#x8BB0;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x534F;&#x7A0B;&#xFF0C;&#x56E0;&#x4E3A; asyncio &#x8981;&#x6C42;&#x6240;&#x6709;&#x7528;&#x4F5C;&#x534F;&#x7A0B;&#x7684;&#x751F;&#x6210;&#x5668;&#x5FC5;&#x987B;&#x7531; asyncio.coroutine &#x88C5;&#x9970;&#x3002;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x4F1A;&#x542F;&#x52A8;&#x4E24;&#x4E2A; countdown() &#x534F;&#x7A0B;&#xFF0C;&#x5B83;&#x4EEC;&#x4F1A;&#x4E00;&#x76F4;&#x6267;&#x884C;&#xFF0C;&#x77E5;&#x9053;&#x9047;&#x5230; <span class="hljs-keyword">yield</span> <span class="hljs-keyword">from</span> asyncio.sleep() &#xFF0C;&#x6682;&#x505C;&#x6267;&#x884C;&#xFF0C;&#x5E76;&#x5C06;&#x4E00;&#x4E2A; <span class="hljs-keyword">async</span>.Future &#x5BF9;&#x8C61;&#x8FD4;&#x56DE;&#x7ED9;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x3002;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x4F1A;&#x76D1;&#x63A7;&#x8FD9;&#x4E2A; asyncio.Future &#x5BF9;&#x8C61;&#xFF0C;&#x4E00;&#x65E6;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x4F1A;&#x5C06;&#x8FD9;&#x4E2A; Future &#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;&#x7ED9;&#x521A;&#x521A;&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A; Futur e&#x6682;&#x505C;&#x7684;&#x534F;&#x7A0B;&#xFF0C;&#x5E76;&#x4E14;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x539F;&#x534F;&#x7A0B;&#x3002;
+
+event_loop &#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#xFF1A;&#x7A0B;&#x5E8F;&#x5F00;&#x542F;&#x4E00;&#x4E2A;&#x65E0;&#x9650;&#x7684;&#x5FAA;&#x73AF;&#xFF0C;&#x7A0B;&#x5E8F;&#x5458;&#x4F1A;&#x628A;&#x4E00;&#x4E9B;&#x51FD;&#x6570;&#x6CE8;&#x518C;&#x5230;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x4E0A;&#x3002;&#x5F53;&#x6EE1;&#x8DB3;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8C03;&#x7528;&#x76F8;&#x5E94;&#x7684;&#x534F;&#x7A0B;&#x51FD;&#x6570;&#x3002;
+coroutine &#x534F;&#x7A0B;&#xFF1A;&#x534F;&#x7A0B;&#x5BF9;&#x8C61;&#xFF0C;&#x6307;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;<span class="hljs-keyword">async</span>&#x5173;&#x952E;&#x5B57;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x7684;&#x8C03;&#x7528;&#x4E0D;&#x4F1A;&#x7ACB;&#x5373;&#x6267;&#x884C;&#x51FD;&#x6570;&#xFF0C;&#x800C;&#x662F;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x534F;&#x7A0B;&#x5BF9;&#x8C61;&#x3002;&#x534F;&#x7A0B;&#x5BF9;&#x8C61;&#x9700;&#x8981;&#x6CE8;&#x518C;&#x5230;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#xFF0C;&#x7531;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x8C03;&#x7528;&#x3002;
+task &#x4EFB;&#x52A1;&#xFF1A;&#x4E00;&#x4E2A;&#x534F;&#x7A0B;&#x5BF9;&#x8C61;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x539F;&#x751F;&#x53EF;&#x4EE5;&#x6302;&#x8D77;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x4EFB;&#x52A1;&#x5219;&#x662F;&#x5BF9;&#x534F;&#x7A0B;&#x8FDB;&#x4E00;&#x6B65;&#x5C01;&#x88C5;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x4EFB;&#x52A1;&#x7684;&#x5404;&#x79CD;&#x72B6;&#x6001;&#x3002; 
+&#x534F;&#x7A0B;&#x5BF9;&#x8C61;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x8FD0;&#x884C;&#xFF0C;&#x5728;&#x6CE8;&#x518C;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5176;&#x5B9E;&#x662F; run_until_complete &#x65B9;&#x6CD5;&#x5C06;&#x534F;&#x7A0B;&#x5305;&#x88C5;&#x6210;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#xFF08; task &#xFF09;&#x5BF9;&#x8C61;&#x3002; task &#x5BF9;&#x8C61;&#x662F; Future &#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x4FDD;&#x5B58;&#x4E86;&#x534F;&#x7A0B;&#x8FD0;&#x884C;&#x540E;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x7528;&#x4E8E;&#x672A;&#x6765;&#x83B7;&#x53D6;&#x534F;&#x7A0B;&#x7684;&#x7ED3;&#x679C;&#x3002;
+</code></pre>
+<pre><code class="lang-python">&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C; asyncio.sleep &#x4E2D;&#xFF0C;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A; Futrure &#x5BF9;&#x8C61;&#xFF0C;&#x4F5C;&#x4E3A;&#x66F4;&#x5185;&#x5C42;&#x7684;&#x534F;&#x7A0B;&#x5BF9;&#x8C61;&#xFF0C;&#x901A;&#x8FC7; <span class="hljs-keyword">yield</span> <span class="hljs-keyword">from</span> &#x4EA4;&#x7ED9;&#x4E86;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#xFF0C;&#x800C; Future &#x662F;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x4E86; __iter__ &#x5BF9;&#x8C61;&#x7684;&#x751F;&#x6210;&#x5668;&#x3002;
+<span class="hljs-meta">@coroutine</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sleep</span><span class="hljs-params">(delay, result=None, *, loop=None)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;Coroutine that completes after a given time (in seconds).&quot;&quot;&quot;</span>
+    future = futures.Future(loop=loop)
+    h = future._loop.call_later(delay,
+                                future._set_result_unless_cancelled, result)
+    <span class="hljs-keyword">try</span>:
+        <span class="hljs-keyword">return</span> (<span class="hljs-keyword">yield</span> <span class="hljs-keyword">from</span> future)
+    <span class="hljs-keyword">finally</span>:
+        h.cancel()
+
+ <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Future</span>:</span>
+<span class="hljs-comment">#blabla...</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__iter__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> self.done():
+            self._blocking = <span class="hljs-keyword">True</span>
+            <span class="hljs-keyword">yield</span> self  <span class="hljs-comment"># This tells Task to wait for completion.</span>
+        <span class="hljs-keyword">assert</span> self.done(), <span class="hljs-string">&quot;yield from wasn&apos;t used with future&quot;</span>
+        <span class="hljs-keyword">return</span> self.result()  <span class="hljs-comment"># May raise too.</span>
+
+<span class="hljs-comment"># &#x5F53;&#x534F;&#x7A0B; yield from asyncio.sleep &#x65F6;&#xFF0C;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x5176;&#x5B9E;&#x662F;&#x4E0E; Future &#x5BF9;&#x8C61;&#x5EFA;&#x7ACB;&#x4E86;&#x8054;&#x7CFB;&#x3002;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</span>
+T-minus <span class="hljs-number">2</span> (A)
+T-minus <span class="hljs-number">5</span> (B)
+T-minus <span class="hljs-number">1</span> (A)
+T-minus <span class="hljs-number">4</span> (B)
+T-minus <span class="hljs-number">3</span> (B)
+T-minus <span class="hljs-number">2</span> (B)
+T-minus <span class="hljs-number">1</span> (B)
+</code></pre>
+<h1 id="async-&#x548C;-await"><a name="async-&#x548C;-await" class="anchor-navigation-ex-anchor" href="#async-&#x548C;-await"><i class="fa fa-link" aria-hidden="true"></i></a><a name="async-&#x548C;-await" class="plugin-anchor" href="#async-&#x548C;-await"><i class="fa fa-link" aria-hidden="true"></i></a>async &#x548C; await</h1>
+<pre><code class="lang-python"><span class="hljs-comment"># async &#x548C; await</span>
+
+&#x5728; Python3<span class="hljs-number">.5</span> &#x4E2D;&#x5F15;&#x5165;&#x4E86; <span class="hljs-keyword">async</span> &#x548C; <span class="hljs-keyword">await</span> &#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x5B83;&#x4EEC;&#x7406;&#x89E3;&#x4E3A; asyncio.coroutine / <span class="hljs-keyword">yield</span> <span class="hljs-keyword">from</span> &#x7684;&#x5B8C;&#x7F8E;&#x66FF;&#x8EAB;&#xFF0C; <span class="hljs-keyword">async</span>/<span class="hljs-keyword">await</span> &#x8BA9;&#x534F;&#x7A0B;&#x8868;&#x9762;&#x4E0A;&#x72EC;&#x7ACB;&#x4E8E;&#x751F;&#x6210;&#x5668;&#x800C;&#x5B58;&#x5728;&#xFF0C;&#x5C06;&#x7EC6;&#x8282;&#x9690;&#x85CF;&#x4E8E; asyncio &#x6A21;&#x5757;&#x4E4B;&#x4E0B;&#x3002;&#x4F7F;&#x7528; <span class="hljs-keyword">await</span> &#x53EF;&#x4EE5;&#x9488;&#x5BF9;&#x8017;&#x65F6;&#x7684;&#x64CD;&#x4F5C;&#x8FDB;&#x884C;&#x6302;&#x8D77;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x751F;&#x6210;&#x5668;&#x91CC;&#x7684; <span class="hljs-keyword">yield</span> &#x4E00;&#x6837;&#xFF0C;&#x4F7F;&#x51FD;&#x6570;&#x8BA9;&#x51FA;&#x63A7;&#x5236;&#x6743;&#x3002;&#x534F;&#x7A0B;&#x9047;&#x5230; <span class="hljs-keyword">await</span> &#xFF0C;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x6302;&#x8D77;&#x8BE5;&#x534F;&#x7A0B;&#xFF0C;&#x76F4;&#x5230;&#x5176;&#x4ED6;&#x534F;&#x7A0B;&#x4E5F;&#x6302;&#x8D77;&#x6216;&#x8005;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;&#x518D;&#x8FDB;&#x884C;&#x4E0B;&#x4E00;&#x4E2A;&#x534F;&#x7A0B;&#x7684;&#x6267;&#x884C;&#x3002;&#x8017;&#x65F6;&#x7684;&#x64CD;&#x4F5C;&#x4E00;&#x822C;&#x662F;&#x4E00;&#x4E9B; IO &#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#xFF0C;&#x6587;&#x4EF6;&#x8BFB;&#x53D6;&#x7B49;&#x3002;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; asyncio.sleep &#x6765;&#x8FDB;&#x884C;&#x6A21;&#x62DF;&#x4E3E;&#x4F8B;&#xFF1A;
+
+<span class="hljs-keyword">import</span> asyncio
+<span class="hljs-keyword">import</span> time
+
+now = <span class="hljs-keyword">lambda</span>: time.time()
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">do_some_work</span><span class="hljs-params">(x)</span>:</span>
+    print(<span class="hljs-string">&apos;Waiting: &apos;</span>, x)
+
+    <span class="hljs-keyword">await</span> asyncio.sleep(x)
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;Done after {}s&apos;</span>.format(x)
+
+start = now()
+
+coroutine1 = do_some_work(<span class="hljs-number">1</span>)
+coroutine2 = do_some_work(<span class="hljs-number">2</span>)
+coroutine3 = do_some_work(<span class="hljs-number">4</span>)
+
+tasks = [
+    asyncio.ensure_future(coroutine1),
+    asyncio.ensure_future(coroutine2),
+    asyncio.ensure_future(coroutine3)
+]
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(asyncio.wait(tasks))
+
+<span class="hljs-keyword">for</span> task <span class="hljs-keyword">in</span> tasks:
+    print(<span class="hljs-string">&apos;Task ret: &apos;</span>, task.result())
+
+print(<span class="hljs-string">&apos;TIME: &apos;</span>, now() - start)
+
+Waiting:  <span class="hljs-number">1</span>
+Waiting:  <span class="hljs-number">2</span>
+Waiting:  <span class="hljs-number">4</span>
+Task ret:  Done after <span class="hljs-number">1</span>s
+Task ret:  Done after <span class="hljs-number">2</span>s
+Task ret:  Done after <span class="hljs-number">4</span>s
+TIME:  <span class="hljs-number">4.003541946411133</span>
+</code></pre>
+<pre><code class="lang-python">&#x5728; sleep &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F7F;&#x7528; <span class="hljs-keyword">await</span> &#x8BA9;&#x51FA;&#x63A7;&#x5236;&#x6743;&#x3002;&#x5F53;&#x9047;&#x5230;&#x963B;&#x585E;&#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F7F;&#x7528; <span class="hljs-keyword">await</span> &#x65B9;&#x6CD5;&#x5C06;&#x534F;&#x7A0B;&#x7684;&#x63A7;&#x5236;&#x6743;&#x8BA9;&#x51FA;&#xFF0C;&#x4EE5;&#x4FBF; loop &#x8C03;&#x7528;&#x5176;&#x4ED6;&#x7684;&#x534F;&#x7A0B;&#x3002;
+
+&#x6CE8;&#x610F;&#x7684;&#x533A;&#x522B;&#x662F;&#xFF1A; <span class="hljs-keyword">await</span> &#x63A5;&#x53D7;&#x7684;&#x5BF9;&#x8C61;&#x5FC5;&#x987B;&#x662F;&#x4E00;&#x4E2A; awaitable &#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x6240;&#x8C13; awaitable &#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x4E86; __await()__ &#x65B9;&#x6CD5;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x4E14;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x4E0D;&#x662F;&#x534F;&#x7A0B;&#x7684;&#x8FED;&#x4EE3;&#x5668;&#x3002;&#x5728; Python3<span class="hljs-number">.6</span> &#x4E2D;&#xFF0C; <span class="hljs-keyword">yield</span> &#x548C; <span class="hljs-keyword">await</span> &#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x521D;&#x6B21;&#x4E4B;&#x5916;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x5217;&#x8868;&#x63A8;&#x5BFC;&#x7B49;&#x5730;&#x65B9;&#x4F7F;&#x7528; <span class="hljs-keyword">async</span> <span class="hljs-keyword">for</span> &#x6216; <span class="hljs-keyword">await</span> &#x8BED;&#x6CD5;&#x3002;
+
+result = [i <span class="hljs-keyword">async</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> aiter() <span class="hljs-keyword">if</span> i % <span class="hljs-number">2</span>]
+result = [<span class="hljs-keyword">await</span> func() <span class="hljs-keyword">for</span> fun <span class="hljs-keyword">in</span> funcs <span class="hljs-keyword">if</span> <span class="hljs-keyword">await</span> condition()]
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test</span><span class="hljs-params">(x, y)</span>:</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(y):
+        <span class="hljs-keyword">yield</span> i
+        <span class="hljs-keyword">await</span> asyncio.sleep(x)
+</code></pre>
+<h1 id="&#x534F;&#x7A0B;&#x4E0E;&#x5F02;&#x6B65;"><a name="&#x534F;&#x7A0B;&#x4E0E;&#x5F02;&#x6B65;" class="anchor-navigation-ex-anchor" href="#&#x534F;&#x7A0B;&#x4E0E;&#x5F02;&#x6B65;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x534F;&#x7A0B;&#x4E0E;&#x5F02;&#x6B65;" class="plugin-anchor" href="#&#x534F;&#x7A0B;&#x4E0E;&#x5F02;&#x6B65;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x534F;&#x7A0B;&#x4E0E;&#x5F02;&#x6B65;</h1>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x534F;&#x7A0B;&#x4E0E;&#x5F02;&#x6B65;</span>
+&#x4E0E;&#x591A;&#x7EBF;&#x7A0B;&#x7F16;&#x7A0B;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x591A;&#x4E2A;&#x534F;&#x7A0B;&#x603B;&#x662F;&#x8FD0;&#x884C;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E2D;&#xFF0C;&#x4E00;&#x65E6;&#x5176;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x534F;&#x7A0B;&#x53D1;&#x751F;&#x963B;&#x585E;&#x884C;&#x4E3A;&#xFF0C;&#x8FDB;&#x800C;&#x6240;&#x6709;&#x7684;&#x534F;&#x7A0B;&#x90FD;&#x65E0;&#x6CD5;&#x7EE7;&#x7EED;&#x8FD0;&#x884C;&#x3002;&#x4F8B;&#x5982;&#x5728;&#x6211;&#x4EEC;&#x8FDB;&#x884C;&#x722C;&#x866B;&#x7F16;&#x5199;&#x65F6;&#xFF0C;&#x4E60;&#x60EF;&#x4F7F;&#x7528; requests &#x5E93;&#xFF0C;&#x800C;&#x8FD9;&#x4E2A;&#x5E93;&#x5C31;&#x662F;&#x963B;&#x585E;&#x7684;&#x3002;&#x5C1D;&#x8BD5;&#x4F7F;&#x7528;&#x534F;&#x7A0B;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x7F16;&#x5199;&#xFF1A;
+
+<span class="hljs-keyword">import</span> asyncio
+<span class="hljs-keyword">import</span> requests
+<span class="hljs-keyword">import</span> time
+
+start = time.time()
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get</span><span class="hljs-params">(url)</span>:</span>
+    <span class="hljs-keyword">return</span> requests.get(url)
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">request</span><span class="hljs-params">()</span>:</span>
+    url = <span class="hljs-string">&apos;http://127.0.0.1:5000&apos;</span>
+    print(<span class="hljs-string">&apos;Waiting for&apos;</span>, url)
+    response = <span class="hljs-keyword">await</span> get(url)
+    print(<span class="hljs-string">&apos;Get response from&apos;</span>, url, <span class="hljs-string">&apos;Result:&apos;</span>, response.text)
+
+tasks = [asyncio.ensure_future(request()) <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(<span class="hljs-number">5</span>)]
+loop = asyncio.get_event_loop()
+loop.run_until_complete(asyncio.wait(tasks))
+
+end = time.time()
+print(<span class="hljs-string">&apos;Cost time:&apos;</span>, end - start)
+
+Waiting <span class="hljs-keyword">for</span> http://<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">5000</span>
+Get response <span class="hljs-keyword">from</span> http://<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">5000</span> Result: Hello!
+Waiting <span class="hljs-keyword">for</span> http://<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">5000</span>
+Get response <span class="hljs-keyword">from</span> http://<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">5000</span> Result: Hello!
+Waiting <span class="hljs-keyword">for</span> http://<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">5000</span>
+Get response <span class="hljs-keyword">from</span> http://<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">5000</span> Result: Hello!
+Waiting <span class="hljs-keyword">for</span> http://<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">5000</span>
+Get response <span class="hljs-keyword">from</span> http://<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">5000</span> Result: Hello!
+Waiting <span class="hljs-keyword">for</span> http://<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">5000</span>
+Get response <span class="hljs-keyword">from</span> http://<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">5000</span> Result: Hello!
+Cost time: <span class="hljs-number">15.134317874908447</span>
+
+&#x800C;&#x4E0D;&#x4F7F;&#x7528;&#x534F;&#x7A0B;&#xFF0C;&#x4F7F;&#x7528;&#x666E;&#x901A;&#x65B9;&#x5F0F;&#xFF0C;&#x4E5F;&#x662F;&#x8FD9;&#x4E2A;&#x65F6;&#x95F4;&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x8FD9;&#x6837;&#x5462;&#xFF0C;&#x7A76;&#x5176;&#x539F;&#x56E0;&#x662F; requests &#x5E76;&#x4E0D;&#x652F;&#x6301;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x3002;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x963B;&#x585E;&#x5E76;&#x672A;&#x6302;&#x8D77;&#x3002;&#x53E6;&#x5916; <span class="hljs-keyword">await</span> &#x540E;&#x9762;&#x6240;&#x8DDF;&#x7684;&#x5BF9;&#x8C61;&#x5FC5;&#x987B;&#x662F;&#xFF1A;&#x4E00;&#x4E2A;&#x539F;&#x751F; coroutine &#x5BF9;&#x8C61;&#xFF0C;&#x4E00;&#x4E2A;&#x7531; types.coroutine &#x88C5;&#x9970;&#x7684;&#x751F;&#x6210;&#x5668;&#xFF0C;&#x8FD9;&#x4E2A;&#x751F;&#x6210;&#x5668;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE; coroutine &#x5BF9;&#x8C61;&#x3002;&#x800C; requests &#x8FD4;&#x56DE;&#x7684;&#x5BF9;&#x8C61;&#x4E0D;&#x7B26;&#x5408;&#x4E0A;&#x8FF0;&#x6761;&#x4EF6;&#x3002;&#x4E3A;&#x4E86;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x4E0D;&#x62A5;&#x9519;&#xFF0C;&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x5728; <span class="hljs-keyword">await</span> &#x65F6;&#x5BF9; requsts &#x8FDB;&#x884C;&#x4E86;&#x4E00;&#x6B21; <span class="hljs-keyword">async</span> &#x51FD;&#x6570;&#x7684;&#x5305;&#x88C5;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x5E76;&#x4E0D;&#x662F;&#x201C;&#x539F;&#x751F;&#x7684;coroutine&#x5BF9;&#x8C61;&#x201D;&#xFF0C;&#x56E0;&#x6B64;&#x4E5F;&#x5C31;&#x4E0D;&#x80FD;&#x771F;&#x6B63;&#x5F02;&#x6B65;&#x4E86;&#x3002;
+
+&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x5B9E;&#x73B0;&#x4E86;&#x5F02;&#x6B65;&#x7684; aiohttp &#x6216;&#x8005; Trip &#x5E93;&#x6539;&#x5199;&#x4E0A;&#x8FF0;&#x722C;&#x866B;&#x3002;
+<span class="hljs-keyword">import</span> asyncio
+<span class="hljs-keyword">import</span> time
+
+<span class="hljs-keyword">import</span> aiohttp
+
+<span class="hljs-keyword">from</span> spider_normal <span class="hljs-keyword">import</span> targets, show_results
+
+final_results = {}
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_content</span><span class="hljs-params">(url)</span>:</span>
+    <span class="hljs-keyword">async</span> <span class="hljs-keyword">with</span> aiohttp.ClientSession() <span class="hljs-keyword">as</span> session:
+        <span class="hljs-keyword">async</span> <span class="hljs-keyword">with</span> session.get(url) <span class="hljs-keyword">as</span> resp:
+            content = <span class="hljs-keyword">await</span> resp.read()
+            <span class="hljs-keyword">return</span> len(content)
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">spider</span><span class="hljs-params">(url)</span>:</span>
+    length = <span class="hljs-keyword">await</span> get_content(url)
+    final_results[url] = length
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    loop = asyncio.get_event_loop()
+    cor = [spider(url) <span class="hljs-keyword">for</span> url <span class="hljs-keyword">in</span> targets]
+    start_time = time.time()
+    result = loop.run_until_complete(asyncio.gather(*cor))
+    print(<span class="hljs-string">&quot;Use time: {:.2f}s&quot;</span>.format(time.time() - start_time))
+    show_results(final_results)
+    print(<span class="hljs-string">&quot;loop result: &quot;</span>, result)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+</code></pre>
+<pre><code class="lang-cmd"># lightless @ LL-DESKTOP <span class="hljs-keyword">in</span> C:\Users\lightless\Desktop [<span class="hljs-number">22</span>:<span class="hljs-number">49</span>:<span class="hljs-number">11</span>] 
+$ python .\spider_asyncio.py 
+Use <span class="hljs-built_in">time</span>: <span class="hljs-number">2</span>.<span class="hljs-number">23</span>s 
+<span class="hljs-function">Length:   227  <span class="hljs-title">URL:https</span>://<span class="hljs-title">www.baidu.com</span>/ 
+<span class="hljs-title">Length</span>:  11759 <span class="hljs-title">URL:https</span>://<span class="hljs-title">www.zhihu.com</span>/ 
+<span class="hljs-title">Length</span>:  40740 <span class="hljs-title">URL:https</span>://<span class="hljs-title">lightless.me</span>/<span class="hljs-title">archives</span>/<span class="hljs-title">python</span>-<span class="hljs-title">coroutine</span>-<span class="hljs-title">from</span>-<span class="hljs-title">start</span>-<span class="hljs-title">to</span>-<span class="hljs-title">boom.html</span> 
+<span class="hljs-title">Length</span>: 150227 <span class="hljs-title">URL:https</span>://<span class="hljs-title">github.com</span>/<span class="hljs-title">aio</span>-<span class="hljs-title">libs</span> -<span class="hljs-title">engtn</span>: <span class="hljs-title">LO1</span> 
+<span class="hljs-title">Length</span>:  59391 <span class="hljs-title">URL:https</span>://<span class="hljs-title">vww.python.org</span>/<span class="hljs-title">dev</span>/<span class="hljs-title">peps</span>/<span class="hljs-title">pep</span>-0380/ 
+<span class="hljs-title">loop</span> <span class="hljs-title">result</span>: [<span class="hljs-title">True</span>,<span class="hljs-title">True</span>,<span class="hljs-title">True</span>,<span class="hljs-title">True</span>,<span class="hljs-title">True</span>] 
+# <span class="hljs-title">lightless</span> @ <span class="hljs-title">LL</span>-<span class="hljs-title">DESKTOP</span> <span class="hljs-title">in</span> <span class="hljs-title">C</span>:\<span class="hljs-title">Users</span>\<span class="hljs-title">lightless</span>\<span class="hljs-title">Desktop</span> [22:49:15] 
+$ <span class="hljs-title">python</span> .\<span class="hljs-title">spider_asyncio.py</span> 
+<span class="hljs-title">Use</span> <span class="hljs-title">time</span>: 1.62<span class="hljs-title">s</span> 
+<span class="hljs-title">Length</span>:  11759 <span class="hljs-title">URL:https</span>://<span class="hljs-title">www.zhihu.com</span>/ 
+<span class="hljs-title">Length</span>:   227  <span class="hljs-title">URL:https</span>://<span class="hljs-title">www.baidu.com</span>/ 
+<span class="hljs-title">Length</span>:  40830 <span class="hljs-title">URL:https</span>://<span class="hljs-title">lightless.me</span>/<span class="hljs-title">archives</span>/<span class="hljs-title">python</span>-<span class="hljs-title">coroutine</span>-<span class="hljs-title">from</span>-<span class="hljs-title">start</span>-<span class="hljs-title">to</span>-<span class="hljs-title">boom.html</span> 
+<span class="hljs-title">Length</span>:  59391 <span class="hljs-title">URL:https</span>://<span class="hljs-title">ww.python.org</span>/<span class="hljs-title">dev</span>/<span class="hljs-title">peps</span>/<span class="hljs-title">pep</span>-0380/ 
+<span class="hljs-title">Length</span>: 150227 <span class="hljs-title">URL:https</span>://<span class="hljs-title">github.com</span>/<span class="hljs-title">aio</span>-<span class="hljs-title">libs</span> 
+<span class="hljs-title">loop</span> <span class="hljs-title">result</span>: [<span class="hljs-title">True</span>,<span class="hljs-title">True</span>,<span class="hljs-title">True</span>,<span class="hljs-title">True</span>,<span class="hljs-title">True</span>]
+# <span class="hljs-title">lightless</span> @ <span class="hljs-title">LL</span>-<span class="hljs-title">DESKTOP</span> <span class="hljs-title">in</span> <span class="hljs-title">C</span>:\<span class="hljs-title">Users</span>\<span class="hljs-title">lightless</span>\<span class="hljs-title">Desktop</span> [22:49:20] 
+$ <span class="hljs-title">python</span> .\<span class="hljs-title">spider_asyncio.py</span> 
+<span class="hljs-title">Use</span> <span class="hljs-title">time</span>: 1.59<span class="hljs-title">s</span> 
+<span class="hljs-title">Length</span>:  11759 <span class="hljs-title">URL:https</span>://<span class="hljs-title">ww.zhihu.com</span>/ 
+<span class="hljs-title">Length</span>:   227  <span class="hljs-title">URL:https</span>://<span class="hljs-title">www.baidu.com</span>/ 
+<span class="hljs-title">Length</span>:  40629 <span class="hljs-title">URL:https</span>://<span class="hljs-title">lightless.me</span>/<span class="hljs-title">archives</span>/<span class="hljs-title">python</span>-<span class="hljs-title">coroutine</span>-<span class="hljs-title">from</span>-<span class="hljs-title">start</span>-<span class="hljs-title">to</span>-<span class="hljs-title">boom.html</span> 
+<span class="hljs-title">Length</span>:  59391 <span class="hljs-title">URL:https</span>://<span class="hljs-title">ww.python.org</span>/<span class="hljs-title">dev</span>/<span class="hljs-title">peps</span>/<span class="hljs-title">pep</span>-0380/ 
+<span class="hljs-title">Length</span>: 150219 <span class="hljs-title">URL:https</span>://<span class="hljs-title">github.com</span>/<span class="hljs-title">aio</span>-<span class="hljs-title">libs</span> <span class="hljs-title">loop</span> 
+<span class="hljs-title">result</span>: [<span class="hljs-title">True</span>,<span class="hljs-title">True</span>,<span class="hljs-title">True</span>,<span class="hljs-title">True.True</span>] 
+# <span class="hljs-title">lightless</span> @ <span class="hljs-title">LL</span>-<span class="hljs-title">DESKToP</span> <span class="hljs-title">in</span> <span class="hljs-title">C</span>:\<span class="hljs-title">Users</span>\<span class="hljs-title">lightless</span>\<span class="hljs-title">Desktop</span> [22:49:23] 
+$ <span class="hljs-title">python</span> .\<span class="hljs-title">spider_asyncio.py</span> 
+<span class="hljs-title">Use</span> <span class="hljs-title">time</span>: 4 70<span class="hljs-title">s</span> 
+<span class="hljs-title">Length</span>:   227 <span class="hljs-title">URL:https</span>://<span class="hljs-title">www.baidu.com</span> 
+<span class="hljs-title">Length</span>: 11759 <span class="hljs-title">URL:https</span>://<span class="hljs-title">www.zhihu.com</span>/ 
+<span class="hljs-title">Lengtn</span>: 59391 <span class="hljs-title">URL:https</span>://<span class="hljs-title">www.python.org</span>/<span class="hljs-title">dev</span>/<span class="hljs-title">peps</span>/<span class="hljs-title">pep</span>-0380/ 
+<span class="hljs-title">Length</span>:150218 <span class="hljs-title">URL:https</span>://<span class="hljs-title">github.com</span>/<span class="hljs-title">aio</span>-<span class="hljs-title">libs</span> 
+<span class="hljs-title">Length</span>: 40740 <span class="hljs-title">URL:https</span>://<span class="hljs-title">lightless.me</span>/<span class="hljs-title">archives</span>/<span class="hljs-title">python</span>-<span class="hljs-title">coroutine</span>-<span class="hljs-title">from</span>-<span class="hljs-title">start</span>-<span class="hljs-title">to</span>-<span class="hljs-title">boom.html</span> 
+<span class="hljs-title">loop</span> <span class="hljs-title">result</span>: [<span class="hljs-title">True.True</span>,<span class="hljs-title">True</span>,<span class="hljs-title">True.True</span>] 
+# <span class="hljs-title">lightless</span> @ <span class="hljs-title">LL</span>-<span class="hljs-title">DESKTOP</span> <span class="hljs-title">in</span> <span class="hljs-title">C</span>:\<span class="hljs-title">Users</span>\<span class="hljs-title">lightless</span>\<span class="hljs-title">Desktop</span> [22:49:29] 
+$ <span class="hljs-title">python</span> .\<span class="hljs-title">spider_asyncio.py</span> 
+<span class="hljs-title">Use</span> <span class="hljs-title">time</span>: 1.85<span class="hljs-title">s</span> 
+<span class="hljs-title">Length</span>:   227 <span class="hljs-title">URL:https</span>://<span class="hljs-title">www.baidu.com</span>/ 
+<span class="hljs-title">Length</span>: 11759 <span class="hljs-title">URL:https</span>://<span class="hljs-title">www.zhihu.com</span>/ 
+<span class="hljs-title">Length</span>: 40777 <span class="hljs-title">URL:https</span>://<span class="hljs-title">lightless.me</span>/<span class="hljs-title">archives</span>/<span class="hljs-title">python</span>-<span class="hljs-title">coroutine</span>-<span class="hljs-title">from</span>-<span class="hljs-title">start</span>-<span class="hljs-title">to</span>-<span class="hljs-title">boom.html</span> 
+<span class="hljs-title">Length</span>: 59391 <span class="hljs-title">URL:https</span>://<span class="hljs-title">www.python.org</span>/<span class="hljs-title">dev</span>/<span class="hljs-title">peps</span>/<span class="hljs-title">pep</span>-0380/ 
+<span class="hljs-title">Length</span>:150227 <span class="hljs-title">URL:httos</span>://<span class="hljs-title">github.com</span>/<span class="hljs-title">aio</span>-<span class="hljs-title">libs</span>
+<span class="hljs-title">loop</span> <span class="hljs-title">result</span>:[<span class="hljs-title">True</span>,<span class="hljs-title">True</span>,<span class="hljs-title">True</span>,<span class="hljs-title">True</span>,<span class="hljs-title">True</span>] 
+# <span class="hljs-title">lightless</span> @ <span class="hljs-title">LL</span>-<span class="hljs-title">DESKTOP</span> <span class="hljs-title">in</span> <span class="hljs-title">C</span>:\<span class="hljs-title">Users</span>\<span class="hljs-title">lightless</span>\<span class="hljs-title">Desktop</span> [22:49:32]
+</span></code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; narutohyc.com 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-02-01 04:46:53
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2. python多线程.html" class="navigation navigation-prev " aria-label="Previous page: python多线程">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="4. 装饰器Dercrator.html" class="navigation navigation-next " aria-label="Next page: 装饰器Dercrator">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"python协程","level":"1.4","depth":1,"next":{"title":"装饰器Dercrator","level":"1.5","depth":1,"path":"chapters/4. 装饰器Dercrator.md","ref":"chapters/4. 装饰器Dercrator.md","articles":[]},"previous":{"title":"python多线程","level":"1.3","depth":1,"path":"chapters/2. python多线程.md","ref":"chapters/2. python多线程.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon","mathjax","mermaid-gb3","tbfed-pagefooter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2020","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","bookmark":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","appleTouch":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","appleTouchMore":{"120x120":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","180x180":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"}},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Python 的学习和一些技巧的使用"},"file":{"path":"chapters/3. python协程.md","mtime":"2020-02-01T04:46:53.747Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-01T04:47:39.767Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

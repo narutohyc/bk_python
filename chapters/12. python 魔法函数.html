@@ -1,0 +1,635 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>python 魔法函数 · Python相关学习记录</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="narutohyc">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="13. python pipe包管道包学习.html" />
+    
+    
+    <link rel="prev" href="11. numpy小记.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/narutohyc" target="_blank" class="custom-link">我的狗窝</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1. python多进程.html">
+            
+                <a href="1. python多进程.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    python多进程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2. python多线程.html">
+            
+                <a href="2. python多线程.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    python多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="3. python协程.html">
+            
+                <a href="3. python协程.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    python协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="4. 装饰器Dercrator.html">
+            
+                <a href="4. 装饰器Dercrator.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    装饰器Dercrator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="5. python基础知识.html">
+            
+                <a href="5. python基础知识.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    python基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="6. Pythonic的几个办法.html">
+            
+                <a href="6. Pythonic的几个办法.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    Pythonic的几个办法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="7. Python的collections模块.html">
+            
+                <a href="7. Python的collections模块.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    Python的collections模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="8. os库的使用.html">
+            
+                <a href="8. os库的使用.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    os库的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="9. 文件的使用.html">
+            
+                <a href="9. 文件的使用.html">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    文件的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="10. 枚举类Enum.html">
+            
+                <a href="10. 枚举类Enum.html">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    枚举类Enum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="11. numpy小记.html">
+            
+                <a href="11. numpy小记.html">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    numpy小记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.13" data-path="12. python 魔法函数.html">
+            
+                <a href="12. python 魔法函数.html">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    python 魔法函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="13. python pipe包管道包学习.html">
+            
+                <a href="13. python pipe包管道包学习.html">
+            
+                    
+                        <b>1.14.</b>
+                    
+                    python pipe包管道包学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="14. Python 增强提案PEP.html">
+            
+                <a href="14. Python 增强提案PEP.html">
+            
+                    
+                        <b>1.15.</b>
+                    
+                    Python 增强提案PEP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="15. python进阶问题.html">
+            
+                <a href="15. python进阶问题.html">
+            
+                    
+                        <b>1.16.</b>
+                    
+                    python进阶问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="16. Regular Expression OP.html">
+            
+                <a href="16. Regular Expression OP.html">
+            
+                    
+                        <b>1.17.</b>
+                    
+                    Regular Expression OP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="Anaconda开发环境.html">
+            
+                <a href="Anaconda开发环境.html">
+            
+                    
+                        <b>1.18.</b>
+                    
+                    Anaconda开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="Jupyter Notebook介绍、安装及使用教程.html">
+            
+                <a href="Jupyter Notebook介绍、安装及使用教程.html">
+            
+                    
+                        <b>1.19.</b>
+                    
+                    Jupyter Notebook介绍、安装及使用教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="最详尽使用指南Jupyter Notebook.html">
+            
+                <a href="最详尽使用指南Jupyter Notebook.html">
+            
+                    
+                        <b>1.20.</b>
+                    
+                    最详尽使用指南Jupyter Notebook
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >python 魔法函数</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#python-&#x9B54;&#x6CD5;&#x51FD;&#x6570;"><b></b>python &#x9B54;&#x6CD5;&#x51FD;&#x6570;</a></li></ul></div><a href="#python-&#x9B54;&#x6CD5;&#x51FD;&#x6570;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><img src="http://upload-images.jianshu.io/upload_images/15675864-952291e89189c8a8.jpg"></p>
+<p>&#x8BB0;&#x5F55;python&#x5B66;&#x4E60;&#x4E2D;&#x9047;&#x5230;&#x7684;&#x4E00;&#x4E9B;&#x5FC3;&#x5F97;&#xFF1A;</p>
+<p>[TOC]</p>
+<hr>
+<h1 id="python-&#x9B54;&#x6CD5;&#x51FD;&#x6570;"><a name="python-&#x9B54;&#x6CD5;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#python-&#x9B54;&#x6CD5;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="python-&#x9B54;&#x6CD5;&#x51FD;&#x6570;" class="plugin-anchor" href="#python-&#x9B54;&#x6CD5;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>python &#x9B54;&#x6CD5;&#x51FD;&#x6570;</h1>
+<blockquote>
+<p><a href="https://www.jianshu.com/p/9f2ea97f64d9" target="_blank"><strong>&#x4EC0;&#x4E48;&#x662F;&#x9B54;&#x6CD5;&#x51FD;&#x6570;&#xFF1F;</strong></a> </p>
+<p>python&#x7684;&#x9B54;&#x6CD5;&#x51FD;&#x6570;&#x603B;&#x88AB;&#x53CC;&#x4E0B;&#x5212;&#x7EBF;&#x5305;&#x56F4;&#xFF0C;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x7ED9;&#x4F60;&#x7684;&#x7C7B;&#x589E;&#x52A0;&#x7279;&#x6B8A;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x5982;&#x679C;&#x4F60;&#x7684;&#x5BF9;&#x8C61;&#x5B9E;&#x73B0;&#x4E86;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5C31;&#x4F1A;&#x5728;&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#x4E0B;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x60F3;&#x8981;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x800C;&#x8FD9;&#x4E00;&#x5207;&#x90FD;&#x662F;&#x81EA;&#x52A8;&#x53D1;&#x751F;&#x7684;&#x3002;</p>
+<p><img src="res/Python%20Base/11693390-6a7c5d8ff11bd930.webp" alt="img"></p>
+<p><img src="res/Python%20Base/11693390-13445404dd231245.webp" alt="img"> </p>
+</blockquote>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; narutohyc.com 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-02-01 04:46:53
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="11. numpy小记.html" class="navigation navigation-prev " aria-label="Previous page: numpy小记">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="13. python pipe包管道包学习.html" class="navigation navigation-next " aria-label="Next page: python pipe包管道包学习">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"python 魔法函数","level":"1.13","depth":1,"next":{"title":"python pipe包管道包学习","level":"1.14","depth":1,"path":"chapters/13. python pipe包管道包学习.md","ref":"chapters/13. python pipe包管道包学习.md","articles":[]},"previous":{"title":"numpy小记","level":"1.12","depth":1,"path":"chapters/11. numpy小记.md","ref":"chapters/11. numpy小记.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon","mathjax","mermaid-gb3","tbfed-pagefooter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2020","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","bookmark":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","appleTouch":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","appleTouchMore":{"120x120":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","180x180":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"}},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Python 的学习和一些技巧的使用"},"file":{"path":"chapters/12. python 魔法函数.md","mtime":"2020-02-01T04:46:53.747Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-01T04:47:39.767Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

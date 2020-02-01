@@ -1,0 +1,876 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Python的collections模块 · Python相关学习记录</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="narutohyc">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="8. os库的使用.html" />
+    
+    
+    <link rel="prev" href="6. Pythonic的几个办法.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/narutohyc" target="_blank" class="custom-link">我的狗窝</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1. python多进程.html">
+            
+                <a href="1. python多进程.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    python多进程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2. python多线程.html">
+            
+                <a href="2. python多线程.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    python多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="3. python协程.html">
+            
+                <a href="3. python协程.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    python协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="4. 装饰器Dercrator.html">
+            
+                <a href="4. 装饰器Dercrator.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    装饰器Dercrator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="5. python基础知识.html">
+            
+                <a href="5. python基础知识.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    python基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="6. Pythonic的几个办法.html">
+            
+                <a href="6. Pythonic的几个办法.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    Pythonic的几个办法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8" data-path="7. Python的collections模块.html">
+            
+                <a href="7. Python的collections模块.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    Python的collections模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="8. os库的使用.html">
+            
+                <a href="8. os库的使用.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    os库的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="9. 文件的使用.html">
+            
+                <a href="9. 文件的使用.html">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    文件的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="10. 枚举类Enum.html">
+            
+                <a href="10. 枚举类Enum.html">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    枚举类Enum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="11. numpy小记.html">
+            
+                <a href="11. numpy小记.html">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    numpy小记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="12. python 魔法函数.html">
+            
+                <a href="12. python 魔法函数.html">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    python 魔法函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="13. python pipe包管道包学习.html">
+            
+                <a href="13. python pipe包管道包学习.html">
+            
+                    
+                        <b>1.14.</b>
+                    
+                    python pipe包管道包学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="14. Python 增强提案PEP.html">
+            
+                <a href="14. Python 增强提案PEP.html">
+            
+                    
+                        <b>1.15.</b>
+                    
+                    Python 增强提案PEP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="15. python进阶问题.html">
+            
+                <a href="15. python进阶问题.html">
+            
+                    
+                        <b>1.16.</b>
+                    
+                    python进阶问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="16. Regular Expression OP.html">
+            
+                <a href="16. Regular Expression OP.html">
+            
+                    
+                        <b>1.17.</b>
+                    
+                    Regular Expression OP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="Anaconda开发环境.html">
+            
+                <a href="Anaconda开发环境.html">
+            
+                    
+                        <b>1.18.</b>
+                    
+                    Anaconda开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="Jupyter Notebook介绍、安装及使用教程.html">
+            
+                <a href="Jupyter Notebook介绍、安装及使用教程.html">
+            
+                    
+                        <b>1.19.</b>
+                    
+                    Jupyter Notebook介绍、安装及使用教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="最详尽使用指南Jupyter Notebook.html">
+            
+                <a href="最详尽使用指南Jupyter Notebook.html">
+            
+                    
+                        <b>1.20.</b>
+                    
+                    最详尽使用指南Jupyter Notebook
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Python的collections模块</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#python&#x7684;collections&#x6A21;&#x5757;"><b></b>Python&#x7684;collections&#x6A21;&#x5757;</a></li><li><span class="title-icon "></span><a href="#namedtuple&#xFF1A;-&#x4F7F;&#x7528;&#x540D;&#x5B57;&#x8BBF;&#x95EE;&#x5143;&#x7D20;"><b></b>namedtuple&#xFF1A; &#x4F7F;&#x7528;&#x540D;&#x5B57;&#x8BBF;&#x95EE;&#x5143;&#x7D20;</a></li><li><span class="title-icon "></span><a href="#defaultdict&#x5E26;&#x9ED8;&#x8BA4;&#x503C;"><b></b>defaultdict&#x5E26;&#x9ED8;&#x8BA4;&#x503C;</a></li><li><span class="title-icon "></span><a href="#deque&#x9AD8;&#x6548;&#x961F;&#x5217;"><b></b>deque&#x9AD8;&#x6548;&#x961F;&#x5217;</a></li><li><span class="title-icon "></span><a href="#counter&#x7EDF;&#x8BA1;"><b></b>Counter&#x7EDF;&#x8BA1;</a></li><li><span class="title-icon "></span><a href="#ordereddict"><b></b>OrderedDict</a></li><li><span class="title-icon "></span><a href="#chainmap"><b></b>ChainMap</a></li></ul></div><a href="#python&#x7684;collections&#x6A21;&#x5757;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><img src="http://upload-images.jianshu.io/upload_images/15675864-952291e89189c8a8.jpg"></p>
+<p>&#x8BB0;&#x5F55;python&#x5B66;&#x4E60;&#x4E2D;&#x9047;&#x5230;&#x7684;&#x4E00;&#x4E9B;&#x5FC3;&#x5F97;&#xFF1A;</p>
+<p>[TOC]</p>
+<hr>
+<h1 id="python&#x7684;collections&#x6A21;&#x5757;"><a name="python&#x7684;collections&#x6A21;&#x5757;" class="anchor-navigation-ex-anchor" href="#python&#x7684;collections&#x6A21;&#x5757;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="python&#x7684;collections&#x6A21;&#x5757;" class="plugin-anchor" href="#python&#x7684;collections&#x6A21;&#x5757;"><i class="fa fa-link" aria-hidden="true"></i></a>Python&#x7684;collections&#x6A21;&#x5757;</h1>
+<blockquote>
+<ol>
+<li><a href="https://docs.python.org/3.7/library/collections.html" target="_blank">collections &#x2014; Container datatypes</a>
+  namedtuple(): &#x751F;&#x6210;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x540D;&#x5B57;&#x6765;&#x8BBF;&#x95EE;&#x5143;&#x7D20;&#x5185;&#x5BB9;&#x7684;tuple&#x5B50;&#x7C7B;
+ deque: &#x53CC;&#x7AEF;&#x961F;&#x5217;&#xFF0C;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x7684;&#x4ECE;&#x53E6;&#x5916;&#x4E00;&#x4FA7;&#x8FFD;&#x52A0;&#x548C;&#x63A8;&#x51FA;&#x5BF9;&#x8C61;
+ Counter: &#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x6765;&#x8BA1;&#x6570;
+ OrderedDict: &#x6709;&#x5E8F;&#x5B57;&#x5178;
+ defaultdict: &#x5E26;&#x6709;&#x9ED8;&#x8BA4;&#x503C;&#x7684;&#x5B57;&#x5178;<pre><code> ChainMap    &#x7C7B;&#x4F3C;&#x5B57;&#x5178;(dict)&#x7684;&#x5BB9;&#x5668;&#x7C7B;&#xFF0C;&#x5C06;&#x591A;&#x4E2A;&#x6620;&#x5C04;&#x96C6;&#x5408;&#x5230;&#x4E00;&#x4E2A;&#x89C6;&#x56FE;&#x91CC;&#x9762;
+ UserDict    &#x5C01;&#x88C5;&#x4E86;&#x5B57;&#x5178;&#x5BF9;&#x8C61;&#xFF0C;&#x7B80;&#x5316;&#x4E86;&#x5B57;&#x5178;&#x5B50;&#x7C7B;&#x5316;
+ UserList    &#x5C01;&#x88C5;&#x4E86;&#x5217;&#x8868;&#x5BF9;&#x8C61;&#xFF0C;&#x7B80;&#x5316;&#x4E86;&#x5217;&#x8868;&#x5B50;&#x7C7B;&#x5316;
+ UserString    &#x5C01;&#x88C5;&#x4E86;&#x5217;&#x8868;&#x5BF9;&#x8C61;&#xFF0C;&#x7B80;&#x5316;&#x4E86;&#x5B57;&#x7B26;&#x4E32;&#x5B50;&#x7C7B;&#x5316;
+</code></pre> collections.abc  &#x62BD;&#x8C61;&#x57FA;&#x7C7B;</li>
+</ol>
+<p>tuple&#x7684;&#x51E0;&#x4E2A;&#x7279;&#x6027;&#xFF1A;</p>
+<ol>
+<li>&#x4E0D;&#x53EF;&#x53D8;&#xFF0C;iterable</li>
+<li>&#x62C6;&#x5305;</li>
+<li>tuple&#x4E0D;&#x53EF;&#x53D8;&#x4E0D;&#x662F;&#x7EDD;&#x5BF9;&#x7684;</li>
+<li>tuple&#x6BD4;list&#x597D;&#x7684;&#x5730;&#x65B9;
+ 4.1 immutable&#x7684;&#x91CD;&#x8981;&#x6027;&#xFF1A;&#x6027;&#x80FD;&#x4F18;&#x5316;(&#x5143;&#x7D20;&#x5168;&#x4E3A;immutable&#x7684;&#x4F1A;&#x4F5C;&#x4E3A;&#x5E38;&#x91CF;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x786E;&#x5B9A;)&#x3001;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x3001;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;dict&#x7684;key&#xFF0C;&#x62C6;&#x5305;&#x7279;&#x6027;
+ 4.2 tuple&#x7C7B;&#x4F3C;struct&#xFF0C;list&#x7C7B;&#x4F3C;array</li>
+</ol>
+</blockquote>
+<h1 id="namedtuple&#xFF1A;-&#x4F7F;&#x7528;&#x540D;&#x5B57;&#x8BBF;&#x95EE;&#x5143;&#x7D20;"><a name="namedtuple&#xFF1A;-&#x4F7F;&#x7528;&#x540D;&#x5B57;&#x8BBF;&#x95EE;&#x5143;&#x7D20;" class="anchor-navigation-ex-anchor" href="#namedtuple&#xFF1A;-&#x4F7F;&#x7528;&#x540D;&#x5B57;&#x8BBF;&#x95EE;&#x5143;&#x7D20;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="namedtuple&#xFF1A;-&#x4F7F;&#x7528;&#x540D;&#x5B57;&#x8BBF;&#x95EE;&#x5143;&#x7D20;" class="plugin-anchor" href="#namedtuple&#xFF1A;-&#x4F7F;&#x7528;&#x540D;&#x5B57;&#x8BBF;&#x95EE;&#x5143;&#x7D20;"><i class="fa fa-link" aria-hidden="true"></i></a>namedtuple&#xFF1A; &#x4F7F;&#x7528;&#x540D;&#x5B57;&#x8BBF;&#x95EE;&#x5143;&#x7D20;</h1>
+<pre><code class="lang-python"><span class="hljs-comment"># namedtuple&#xFF1A; &#x751F;&#x6210;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x540D;&#x5B57;&#x6765;&#x8BBF;&#x95EE;&#x5143;&#x7D20;&#x5185;&#x5BB9;&#x7684;tuple&#x5B50;&#x7C7B;</span>
+<span class="hljs-comment"># -*- coding: utf-8 -*</span>
+<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> namedtuple
+
+User = namedtuple(<span class="hljs-string">&quot;USER&quot;</span>, [<span class="hljs-string">&quot;name&quot;</span>, <span class="hljs-string">&quot;age&quot;</span>, <span class="hljs-string">&quot;city&quot;</span>, <span class="hljs-string">&quot;height&quot;</span>])
+user_1 = User(name=<span class="hljs-string">&quot;&#x96F7;&#x9E23;&quot;</span>, age=<span class="hljs-number">21</span>, city=<span class="hljs-string">&quot;&#x5317;&#x4EAC;&quot;</span>, height=<span class="hljs-string">&quot;175&quot;</span>)
+print(<span class="hljs-string">&quot;user_1&quot;</span>, user_1.name, user_1.age, user_1.city, user_1.height)
+
+user_tuple = (<span class="hljs-string">&quot;&#x96F7;&#x59C6;&quot;</span>, <span class="hljs-number">17</span>, <span class="hljs-string">&apos;&#x5F02;&#x4E16;&#x754C;&apos;</span>)
+user_2 = User(*user_tuple, <span class="hljs-string">&quot;172&quot;</span>)
+print(<span class="hljs-string">&quot;user_2&quot;</span>, user_2.name, user_2.age, user_2.city, user_2.height)
+
+user_dict = {
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;&#x96F7;&#x7396;&quot;</span>,
+    <span class="hljs-string">&quot;age&quot;</span>: <span class="hljs-string">&quot;17&quot;</span>,
+    <span class="hljs-string">&quot;city&quot;</span>: <span class="hljs-string">&quot;&#x5F02;&#x4E16;&#x754C;&quot;</span>,
+}
+user_3 = User(**user_dict, height=<span class="hljs-string">&quot;172&quot;</span>)
+print(<span class="hljs-string">&quot;user_3&quot;</span>, user_3.name, user_3.age, user_3.city, user_3.height)
+
+user_tuple_2 = (<span class="hljs-string">&quot;&#x96F7;&#x59C6;&quot;</span>, <span class="hljs-number">17</span>, <span class="hljs-string">&apos;&#x5F02;&#x4E16;&#x754C;&apos;</span>, <span class="hljs-string">&quot;172&quot;</span>)
+user_list_2 = [<span class="hljs-string">&quot;&#x96F7;&#x59C6;&quot;</span>, <span class="hljs-number">17</span>, <span class="hljs-string">&apos;&#x5F02;&#x4E16;&#x754C;&apos;</span>, <span class="hljs-string">&quot;172&quot;</span>]
+user_dict_2 = {
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;&#x96F7;&#x7396;&quot;</span>,
+    <span class="hljs-string">&quot;age&quot;</span>: <span class="hljs-string">&quot;17&quot;</span>,
+    <span class="hljs-string">&quot;city&quot;</span>: <span class="hljs-string">&quot;&#x5F02;&#x4E16;&#x754C;&quot;</span>,
+    <span class="hljs-string">&quot;height&quot;</span>: <span class="hljs-string">&quot;172&quot;</span>
+}
+user_4 = User._make(user_dict_2)
+print(<span class="hljs-string">&quot;user_4&quot;</span>, user_4.name, user_4.age, user_4.city, user_4.height)
+user_5 = User._make(user_tuple_2)
+print(<span class="hljs-string">&quot;user_5&quot;</span>, user_5.name, user_5.age, user_5.city, user_5.height)
+user_6 = User._make(user_list_2)
+print(<span class="hljs-string">&quot;user_6&quot;</span>, user_6.name, user_6.age, user_6.city, user_6.height)
+
+print(user_2._asdict())
+
+
+user_1 &#x96F7;&#x9E23; <span class="hljs-number">21</span> &#x5317;&#x4EAC; <span class="hljs-number">175</span>
+user_2 &#x96F7;&#x59C6; <span class="hljs-number">17</span> &#x5F02;&#x4E16;&#x754C; <span class="hljs-number">172</span>
+user_3 &#x96F7;&#x7396; <span class="hljs-number">17</span> &#x5F02;&#x4E16;&#x754C; <span class="hljs-number">172</span>
+user_4 name age city height
+user_5 &#x96F7;&#x59C6; <span class="hljs-number">17</span> &#x5F02;&#x4E16;&#x754C; <span class="hljs-number">172</span>
+user_6 &#x96F7;&#x59C6; <span class="hljs-number">17</span> &#x5F02;&#x4E16;&#x754C; <span class="hljs-number">172</span>
+OrderedDict([(<span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;&#x96F7;&#x59C6;&apos;</span>), (<span class="hljs-string">&apos;age&apos;</span>, <span class="hljs-number">17</span>), (<span class="hljs-string">&apos;city&apos;</span>, <span class="hljs-string">&apos;&#x5F02;&#x4E16;&#x754C;&apos;</span>), (<span class="hljs-string">&apos;height&apos;</span>, <span class="hljs-string">&apos;172&apos;</span>)])
+
+item = (<span class="hljs-string">&apos;a&apos;</span>,<span class="hljs-string">&apos;b&apos;</span>,<span class="hljs-string">&apos;a&apos;</span>,<span class="hljs-string">&apos;a&apos;</span>,<span class="hljs-number">5</span>)
+
+<span class="hljs-keyword">for</span> it <span class="hljs-keyword">in</span> set(item):
+    print(f<span class="hljs-string">&apos;{it} &#x51FA;&#x73B0;&#x4E86;{item.count(it)}&#x6B21;&apos;</span>)
+b &#x51FA;&#x73B0;&#x4E86;<span class="hljs-number">1</span>&#x6B21;
+<span class="hljs-number">5</span> &#x51FA;&#x73B0;&#x4E86;<span class="hljs-number">1</span>&#x6B21;
+a &#x51FA;&#x73B0;&#x4E86;<span class="hljs-number">3</span>&#x6B21;
+</code></pre>
+<h1 id="defaultdict&#x5E26;&#x9ED8;&#x8BA4;&#x503C;"><a name="defaultdict&#x5E26;&#x9ED8;&#x8BA4;&#x503C;" class="anchor-navigation-ex-anchor" href="#defaultdict&#x5E26;&#x9ED8;&#x8BA4;&#x503C;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="defaultdict&#x5E26;&#x9ED8;&#x8BA4;&#x503C;" class="plugin-anchor" href="#defaultdict&#x5E26;&#x9ED8;&#x8BA4;&#x503C;"><i class="fa fa-link" aria-hidden="true"></i></a>defaultdict&#x5E26;&#x9ED8;&#x8BA4;&#x503C;</h1>
+<pre><code class="lang-python"><span class="hljs-comment"># defaultdict: &#x5E26;&#x6709;&#x9ED8;&#x8BA4;&#x503C;&#x7684;&#x5B57;&#x5178;</span>
+<span class="hljs-comment"># &#x9519;&#x8BEF;&#x65B9;&#x5F0F;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>student_grades = {}
+<span class="hljs-meta">&gt;&gt;&gt; </span>grades = [
+<span class="hljs-meta">... </span>    (<span class="hljs-string">&apos;elliot&apos;</span>, <span class="hljs-number">91</span>),
+<span class="hljs-meta">... </span>    (<span class="hljs-string">&apos;neelam&apos;</span>, <span class="hljs-number">98</span>),
+<span class="hljs-meta">... </span>    (<span class="hljs-string">&apos;bianca&apos;</span>, <span class="hljs-number">81</span>),
+<span class="hljs-meta">... </span>    (<span class="hljs-string">&apos;elliot&apos;</span>, <span class="hljs-number">88</span>),
+<span class="hljs-meta">... </span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> name, grade <span class="hljs-keyword">in</span> grades:
+<span class="hljs-meta">... </span>    <span class="hljs-keyword">if</span> name <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> student_grades:
+<span class="hljs-meta">... </span>        student_grades[name] = []
+<span class="hljs-meta">... </span>    student_grades[name].append(grade)
+...
+<span class="hljs-meta">&gt;&gt;&gt; </span>student_grades
+{<span class="hljs-string">&apos;elliot&apos;</span>: [<span class="hljs-number">91</span>, <span class="hljs-number">88</span>], <span class="hljs-string">&apos;neelam&apos;</span>: [<span class="hljs-number">98</span>], <span class="hljs-string">&apos;bianca&apos;</span>: [<span class="hljs-number">81</span>]}
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> name, grade <span class="hljs-keyword">in</span> grades:
+<span class="hljs-meta">... </span>    student_grades.setdefault(name,[])
+<span class="hljs-meta">... </span>    student_grades[name].append(grade)
+...
+<span class="hljs-meta">&gt;&gt;&gt; </span>student_grades
+{<span class="hljs-string">&apos;elliot&apos;</span>: [<span class="hljs-number">91</span>, <span class="hljs-number">88</span>], <span class="hljs-string">&apos;neelam&apos;</span>: [<span class="hljs-number">98</span>], <span class="hljs-string">&apos;bianca&apos;</span>: [<span class="hljs-number">81</span>]}
+
+<span class="hljs-comment"># &#x6B63;&#x786E;&#x65B9;&#x5F0F;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> defaultdict
+<span class="hljs-meta">&gt;&gt;&gt; </span>student_grades = defaultdict(list)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> name, grade <span class="hljs-keyword">in</span> grades:
+<span class="hljs-meta">... </span>    student_grades[name].append(grade)
+
+<span class="hljs-comment"># &#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F60;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;defaultdict&#xFF0C;&#x5B83;&#x4F7F;&#x7528;&#x4E0D;&#x5E26;&#x53C2;&#x6570;&#x7684;list&#x6784;&#x9020;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;&#x3002;&#x6CA1;&#x6709;&#x53C2;&#x6570;&#x7684;list&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7A7A;&#x5217;&#x8868;&#xFF0C;&#x56E0;&#x6B64;&#x5982;&#x679C;&#x540D;&#x79F0;&#x4E0D;&#x5B58;&#x5728;&#x5219;defaultdict&#x8C03;&#x7528;list()&#xFF0C;&#x7136;&#x540E;&#x518D;&#x628A;&#x5B66;&#x751F;&#x6210;&#x7EE9;&#x6DFB;&#x52A0;&#x4E0A;&#x3002;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x66F4;&#x70AB;&#x4E00;&#x70B9;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;lambda&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x503C;&#x6765;&#x8FD4;&#x56DE;&#x4EFB;&#x610F;&#x5E38;&#x91CF;&#x3002;</span>
+</code></pre>
+<h1 id="deque&#x9AD8;&#x6548;&#x961F;&#x5217;"><a name="deque&#x9AD8;&#x6548;&#x961F;&#x5217;" class="anchor-navigation-ex-anchor" href="#deque&#x9AD8;&#x6548;&#x961F;&#x5217;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="deque&#x9AD8;&#x6548;&#x961F;&#x5217;" class="plugin-anchor" href="#deque&#x9AD8;&#x6548;&#x961F;&#x5217;"><i class="fa fa-link" aria-hidden="true"></i></a>deque&#x9AD8;&#x6548;&#x961F;&#x5217;</h1>
+<pre><code class="lang-python"><span class="hljs-comment"># deque&#x662F;&#x4E3A;&#x4E86;&#x9AD8;&#x6548;&#x5B9E;&#x73B0;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x64CD;&#x4F5C;&#x7684;&#x53CC;&#x5411;&#x5217;&#x8868;&#xFF0C;&#x9002;&#x5408;&#x7528;&#x4E8E;&#x961F;&#x5217;&#x548C;&#x6808;&#xFF1A;</span>
+<span class="hljs-comment"># &#x4F7F;&#x7528;list&#x5B58;&#x50A8;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x6309;&#x7D22;&#x5F15;&#x8BBF;&#x95EE;&#x5143;&#x7D20;&#x5F88;&#x5FEB;&#xFF0C;&#x4F46;&#x662F;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x5143;&#x7D20;&#x5C31;&#x5F88;&#x6162;&#x4E86;&#xFF0C;&#x56E0;&#x4E3A;list&#x662F;&#x7EBF;&#x6027;&#x5B58;&#x50A8;&#xFF0C;&#x6570;&#x636E;&#x91CF;&#x5927;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x6548;&#x7387;&#x5F88;&#x4F4E;&#x3002;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> deque
+<span class="hljs-meta">&gt;&gt;&gt; </span>q = deque([<span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-string">&apos;b&apos;</span>, <span class="hljs-string">&apos;c&apos;</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>q.append(<span class="hljs-string">&apos;x&apos;</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>q.appendleft(<span class="hljs-string">&apos;y&apos;</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>q
+deque([<span class="hljs-string">&apos;y&apos;</span>, <span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-string">&apos;b&apos;</span>, <span class="hljs-string">&apos;c&apos;</span>, <span class="hljs-string">&apos;x&apos;</span>])
+
+<span class="hljs-comment"># deque&#x9664;&#x4E86;&#x5B9E;&#x73B0;list&#x7684;append()&#x548C;pop()&#x5916;&#xFF0C;&#x8FD8;&#x652F;&#x6301;appendleft()&#x548C;popleft()&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x975E;&#x5E38;&#x9AD8;&#x6548;&#x5730;&#x5F80;&#x5934;&#x90E8;&#x6DFB;&#x52A0;&#x6216;&#x5220;&#x9664;&#x5143;&#x7D20;</span>
+<span class="hljs-comment"># deque&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x6709;GIL&#x4FDD;&#x62A4;</span>
+
+<span class="hljs-comment"># &#x5176;&#x4ED6;&#x7279;&#x6027;</span>
+    clear(&#x6E05;&#x7A7A;&#x961F;&#x5217;)
+    copy(&#x6D45;&#x62F7;&#x8D1D;)
+    count(&#x8FD4;&#x56DE;&#x6307;&#x5B9A;&#x5143;&#x7D20;&#x7684;&#x51FA;&#x73B0;&#x6B21;&#x6570;)
+    extendleft(&#x4ECE;&#x961F;&#x5217;&#x5DE6;&#x8FB9;&#x6269;&#x5C55;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x7684;&#x5143;&#x7D20;)
+    index&#xFF08;&#x67E5;&#x627E;&#x67D0;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x7D22;&#x5F15;&#x4F4D;&#x7F6E;&#xFF09;
+    extend(&#x4ECE;&#x961F;&#x5217;&#x53F3;&#x8FB9;&#x6269;&#x5C55;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x7684;&#x5143;&#x7D20;)
+    insert&#xFF08;&#x5728;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x63D2;&#x5165;&#x5143;&#x7D20;&#xFF09;
+    pop&#xFF08;&#x83B7;&#x53D6;&#x6700;&#x53F3;&#x8FB9;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x5728;&#x961F;&#x5217;&#x4E2D;&#x5220;&#x9664;&#xFF09;
+    popleft&#xFF08;&#x83B7;&#x53D6;&#x6700;&#x5DE6;&#x8FB9;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x5728;&#x961F;&#x5217;&#x4E2D;&#x5220;&#x9664;&#xFF09;
+    remove&#xFF08;&#x5220;&#x9664;&#x6307;&#x5B9A;&#x5143;&#x7D20;&#xFF09;
+    reverse&#xFF08;&#x961F;&#x5217;&#x53CD;&#x8F6C;&#xFF09;
+    rotate&#xFF08;&#x628A;&#x53F3;&#x8FB9;&#x5143;&#x7D20;&#x653E;&#x5230;&#x5DE6;&#x8FB9;&#xFF09;
+</code></pre>
+<h1 id="counter&#x7EDF;&#x8BA1;"><a name="counter&#x7EDF;&#x8BA1;" class="anchor-navigation-ex-anchor" href="#counter&#x7EDF;&#x8BA1;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="counter&#x7EDF;&#x8BA1;" class="plugin-anchor" href="#counter&#x7EDF;&#x8BA1;"><i class="fa fa-link" aria-hidden="true"></i></a>Counter&#x7EDF;&#x8BA1;</h1>
+<pre><code class="lang-python"><span class="hljs-comment"># Counter&#x7EDF;&#x8BA1;</span>
+<span class="hljs-comment"># -*- coding: utf-8 -*</span>
+<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> Counter
+
+users = [<span class="hljs-string">&quot;yellow&quot;</span>, <span class="hljs-string">&quot;red&quot;</span>, <span class="hljs-string">&quot;red&quot;</span>, <span class="hljs-string">&quot;yellow&quot;</span>, <span class="hljs-string">&quot;yellow&quot;</span>]
+user_counter = Counter(users)
+print(user_counter)
+print(user_counter.most_common(<span class="hljs-number">2</span>))
+
+word_counter = Counter(<span class="hljs-string">&quot;abcdabd&quot;</span>)
+<span class="hljs-comment"># &#x53E0;&#x52A0;&#x7EDF;&#x8BA1;</span>
+word_counter.update(Counter(<span class="hljs-string">&quot;efeg&quot;</span>))
+word_counter.update(<span class="hljs-string">&quot;141&quot;</span>)
+print(word_counter)
+
+
+Counter({<span class="hljs-string">&apos;yellow&apos;</span>: <span class="hljs-number">3</span>, <span class="hljs-string">&apos;red&apos;</span>: <span class="hljs-number">2</span>})
+[(<span class="hljs-string">&apos;yellow&apos;</span>, <span class="hljs-number">3</span>), (<span class="hljs-string">&apos;red&apos;</span>, <span class="hljs-number">2</span>)]
+Counter({<span class="hljs-string">&apos;a&apos;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&apos;b&apos;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&apos;d&apos;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&apos;e&apos;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&apos;1&apos;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&apos;c&apos;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&apos;f&apos;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&apos;g&apos;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&apos;4&apos;</span>: <span class="hljs-number">1</span>})
+</code></pre>
+<h1 id="ordereddict"><a name="ordereddict" class="anchor-navigation-ex-anchor" href="#ordereddict"><i class="fa fa-link" aria-hidden="true"></i></a><a name="ordereddict" class="plugin-anchor" href="#ordereddict"><i class="fa fa-link" aria-hidden="true"></i></a>OrderedDict</h1>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x4F7F;&#x7528;dict&#x65F6;&#xFF0C;Key&#x662F;&#x65E0;&#x5E8F;&#x7684;&#x3002;&#x5728;&#x5BF9;dict&#x505A;&#x8FED;&#x4EE3;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x65E0;&#x6CD5;&#x786E;&#x5B9A;Key&#x7684;&#x987A;&#x5E8F;&#x3002;</span>
+
+<span class="hljs-comment"># &#x5982;&#x679C;&#x8981;&#x4FDD;&#x6301;Key&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;OrderedDict</span>
+<span class="hljs-comment"># OrderedDict&#x7684;Key&#x4F1A;&#x6309;&#x7167;&#x63D2;&#x5165;&#x7684;&#x987A;&#x5E8F;&#x6392;&#x5217;&#xFF0C;&#x4E0D;&#x662F;Key&#x672C;&#x8EAB;&#x6392;&#x5E8F;</span>
+<span class="hljs-comment"># &#x4F8B;&#x5B50;1</span>
+<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> OrderedDict
+d = {<span class="hljs-string">&apos;banana&apos;</span>: <span class="hljs-number">3</span>, <span class="hljs-string">&apos;apple&apos;</span>: <span class="hljs-number">4</span>}
+od1 = OrderedDict({<span class="hljs-string">&apos;banana&apos;</span>: <span class="hljs-number">3</span>, <span class="hljs-string">&apos;apple&apos;</span>: <span class="hljs-number">4</span>})
+od2 = OrderedDict({<span class="hljs-string">&apos;apple&apos;</span>: <span class="hljs-number">4</span>, <span class="hljs-string">&apos;banana&apos;</span>: <span class="hljs-number">3</span>})
+print(od1 == od2)
+print(od1 == d)
+
+<span class="hljs-keyword">False</span>
+<span class="hljs-keyword">True</span>
+
+<span class="hljs-comment"># &#x4F8B;&#x5B50;2</span>
+<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> OrderedDict
+od1 = OrderedDict({<span class="hljs-string">&apos;banana&apos;</span>: <span class="hljs-number">3</span>, <span class="hljs-string">&apos;apple&apos;</span>: <span class="hljs-number">4</span>})
+od1.popitem(<span class="hljs-keyword">False</span>)
+print(od1)
+od1.pop(<span class="hljs-string">&apos;banana&apos;</span>) <span class="hljs-comment"># &#x8FD9;&#x91CC;&#x5FC5;&#x987B;&#x63D0;&#x4F9B;key</span>
+
+OrderedDict([(<span class="hljs-string">&apos;apple&apos;</span>, <span class="hljs-number">4</span>)])
+
+
+<span class="hljs-comment"># &#x4F8B;&#x5B50;3</span>
+<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> OrderedDict
+od1 = OrderedDict({<span class="hljs-string">&apos;banana&apos;</span>: <span class="hljs-number">3</span>, <span class="hljs-string">&apos;apple&apos;</span>: <span class="hljs-number">4</span>})
+od1.move_to_end(<span class="hljs-string">&apos;banana&apos;</span>)
+print(od1)
+
+OrderedDict([(<span class="hljs-string">&apos;apple&apos;</span>, <span class="hljs-number">4</span>), (<span class="hljs-string">&apos;banana&apos;</span>, <span class="hljs-number">3</span>)])
+
+
+<span class="hljs-comment"># &#x4F8B;&#x5B50;4</span>
+<span class="hljs-comment"># OrderedDict&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;FIFO&#xFF08;&#x5148;&#x8FDB;&#x5148;&#x51FA;&#xFF09;&#x7684;dict&#xFF0C;&#x5F53;&#x5BB9;&#x91CF;&#x8D85;&#x51FA;&#x9650;&#x5236;&#x65F6;&#xFF0C;&#x5148;&#x5220;&#x9664;&#x6700;&#x65E9;&#x6DFB;&#x52A0;&#x7684;Key</span>
+<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> OrderedDict
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LastUpdatedOrderedDict</span><span class="hljs-params">(OrderedDict)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, capacity)</span>:</span>
+        super(LastUpdatedOrderedDict, self).__init__()
+        self._capacity = capacity
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__setitem__</span><span class="hljs-params">(self, key, value)</span>:</span>
+        containsKey = <span class="hljs-number">1</span> <span class="hljs-keyword">if</span> key <span class="hljs-keyword">in</span> self <span class="hljs-keyword">else</span> <span class="hljs-number">0</span>
+        <span class="hljs-keyword">if</span> len(self) - containsKey &gt;= self._capacity:
+            last = self.popitem(last=<span class="hljs-keyword">False</span>)
+            print(<span class="hljs-string">&apos;remove:&apos;</span>, last)
+        <span class="hljs-keyword">if</span> containsKey:
+            <span class="hljs-keyword">del</span> self[key]
+            print(<span class="hljs-string">&apos;set:&apos;</span>, (key, value))
+        <span class="hljs-keyword">else</span>:
+            print(<span class="hljs-string">&apos;add:&apos;</span>, (key, value))
+        OrderedDict.__setitem__(self, key, value)
+</code></pre>
+<h1 id="chainmap"><a name="chainmap" class="anchor-navigation-ex-anchor" href="#chainmap"><i class="fa fa-link" aria-hidden="true"></i></a><a name="chainmap" class="plugin-anchor" href="#chainmap"><i class="fa fa-link" aria-hidden="true"></i></a>ChainMap</h1>
+<pre><code class="lang-python"><span class="hljs-comment"># ChainMap &#x7C7B;&#x662F;&#x4E3A;&#x4E86;&#x5C06;&#x591A;&#x4E2A;&#x6620;&#x5C04;&#x5FEB;&#x901F;&#x7684;&#x94FE;&#x63A5;&#x5230;&#x4E00;&#x8D77;&#xFF0C;&#x8FD9;&#x6837;&#x5B83;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x5904;&#x7406;&#x3002;&#x5B83;&#x901A;&#x5E38;&#x6BD4;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x5B57;&#x5178;&#x548C;&#x591A;&#x6B21;&#x8C03;&#x7528; update() &#x8981;&#x5FEB;&#x5F88;&#x591A;</span>
+
+<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> ChainMap
+a = {<span class="hljs-string">&apos;a&apos;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&apos;b&apos;</span>: <span class="hljs-number">2</span>}
+b = {<span class="hljs-string">&apos;c&apos;</span>: <span class="hljs-number">3</span>}
+c = ChainMap(a, b) <span class="hljs-comment"># &#x5982;&#x679C;&#x6709;&#x91CD;&#x590D;&#x7684;key&#xFF0C;&#x4EE5;&#x7B2C;&#x4E00;&#x6B21;&#x4E3A;&#x51C6;</span>
+print(c)
+<span class="hljs-comment"># &#x5C06;&#x6570;&#x636E;&#x4EE5;&#x5217;&#x8868;&#x5F62;&#x5F0F;&#x5C55;&#x73B0;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x5C06;&#x94FE;&#x63A5;&#x6307;&#x5411;&#x539F;&#x6765;&#x7684;&#x5B9E;&#x73B0;</span>
+print(c.maps)
+print(c.maps[<span class="hljs-number">0</span>][<span class="hljs-string">&apos;b&apos;</span>])
+
+ChainMap({<span class="hljs-string">&apos;a&apos;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&apos;b&apos;</span>: <span class="hljs-number">2</span>}, {<span class="hljs-string">&apos;c&apos;</span>: <span class="hljs-number">3</span>})
+[{<span class="hljs-string">&apos;a&apos;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&apos;b&apos;</span>: <span class="hljs-number">2</span>}, {<span class="hljs-string">&apos;c&apos;</span>: <span class="hljs-number">3</span>}]
+<span class="hljs-number">2</span>
+
+<span class="hljs-comment"># &#x7B80;&#x5355;&#x5E94;&#x7528;</span>
+&#x4E00;&#x4E2A;Python&#x547D;&#x4EE4;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x8F93;&#x5165;&#x53C2;&#x6570;&#x5219;&#x4F7F;&#x7528;&#x8BE5;&#x53C2;&#x6570;&#xFF0C;&#x6CA1;&#x6709;&#x5219;&#x4ECE;OS&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;&#x83B7;&#x53D6;&#xFF0C;&#x5982;&#x679C;&#x8FD8;&#x6CA1;&#x6709;&#x518D;&#x53D6;&#x81EA;&#x5B9A;&#x4E49;&#x9ED8;&#x8BA4;&#x503C;
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> argparse
+<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> ChainMap
+defaults = {<span class="hljs-string">&apos;color&apos;</span>: <span class="hljs-string">&apos;red&apos;</span>, <span class="hljs-string">&apos;user&apos;</span>: <span class="hljs-string">&apos;guest&apos;</span>}
+parser = argparse.ArgumentParser()
+parser.add_argument(<span class="hljs-string">&apos;-u&apos;</span>, <span class="hljs-string">&apos;--user&apos;</span>)
+parser.add_argument(<span class="hljs-string">&apos;-c&apos;</span>, <span class="hljs-string">&apos;--color&apos;</span>)
+namespace = parser.parse_args()
+command_line_args = {k: v <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> vars(namespace).items() <span class="hljs-keyword">if</span> v}
+combined = ChainMap(command_line_args, os.environ, defaults)
+print(combined[<span class="hljs-string">&apos;color&apos;</span>])
+print(combined[<span class="hljs-string">&apos;user&apos;</span>])
+
+red
+guest
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; narutohyc.com 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-02-01 04:46:53
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="6. Pythonic的几个办法.html" class="navigation navigation-prev " aria-label="Previous page: Pythonic的几个办法">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="8. os库的使用.html" class="navigation navigation-next " aria-label="Next page: os库的使用">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Python的collections模块","level":"1.8","depth":1,"next":{"title":"os库的使用","level":"1.9","depth":1,"path":"chapters/8. os库的使用.md","ref":"chapters/8. os库的使用.md","articles":[]},"previous":{"title":"Pythonic的几个办法","level":"1.7","depth":1,"path":"chapters/6. Pythonic的几个办法.md","ref":"chapters/6. Pythonic的几个办法.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon","mathjax","mermaid-gb3","tbfed-pagefooter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2020","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","bookmark":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","appleTouch":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","appleTouchMore":{"120x120":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","180x180":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"}},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Python 的学习和一些技巧的使用"},"file":{"path":"chapters/7. Python的collections模块.md","mtime":"2020-02-01T04:46:53.747Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-01T04:47:39.767Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

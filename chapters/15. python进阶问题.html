@@ -1,0 +1,698 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>python进阶问题 · Python相关学习记录</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="narutohyc">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="16. Regular Expression OP.html" />
+    
+    
+    <link rel="prev" href="14. Python 增强提案PEP.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/narutohyc" target="_blank" class="custom-link">我的狗窝</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1. python多进程.html">
+            
+                <a href="1. python多进程.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    python多进程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2. python多线程.html">
+            
+                <a href="2. python多线程.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    python多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="3. python协程.html">
+            
+                <a href="3. python协程.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    python协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="4. 装饰器Dercrator.html">
+            
+                <a href="4. 装饰器Dercrator.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    装饰器Dercrator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="5. python基础知识.html">
+            
+                <a href="5. python基础知识.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    python基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="6. Pythonic的几个办法.html">
+            
+                <a href="6. Pythonic的几个办法.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    Pythonic的几个办法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="7. Python的collections模块.html">
+            
+                <a href="7. Python的collections模块.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    Python的collections模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="8. os库的使用.html">
+            
+                <a href="8. os库的使用.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    os库的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="9. 文件的使用.html">
+            
+                <a href="9. 文件的使用.html">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    文件的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="10. 枚举类Enum.html">
+            
+                <a href="10. 枚举类Enum.html">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    枚举类Enum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="11. numpy小记.html">
+            
+                <a href="11. numpy小记.html">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    numpy小记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="12. python 魔法函数.html">
+            
+                <a href="12. python 魔法函数.html">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    python 魔法函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="13. python pipe包管道包学习.html">
+            
+                <a href="13. python pipe包管道包学习.html">
+            
+                    
+                        <b>1.14.</b>
+                    
+                    python pipe包管道包学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="14. Python 增强提案PEP.html">
+            
+                <a href="14. Python 增强提案PEP.html">
+            
+                    
+                        <b>1.15.</b>
+                    
+                    Python 增强提案PEP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.16" data-path="15. python进阶问题.html">
+            
+                <a href="15. python进阶问题.html">
+            
+                    
+                        <b>1.16.</b>
+                    
+                    python进阶问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="16. Regular Expression OP.html">
+            
+                <a href="16. Regular Expression OP.html">
+            
+                    
+                        <b>1.17.</b>
+                    
+                    Regular Expression OP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="Anaconda开发环境.html">
+            
+                <a href="Anaconda开发环境.html">
+            
+                    
+                        <b>1.18.</b>
+                    
+                    Anaconda开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="Jupyter Notebook介绍、安装及使用教程.html">
+            
+                <a href="Jupyter Notebook介绍、安装及使用教程.html">
+            
+                    
+                        <b>1.19.</b>
+                    
+                    Jupyter Notebook介绍、安装及使用教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="最详尽使用指南Jupyter Notebook.html">
+            
+                <a href="最详尽使用指南Jupyter Notebook.html">
+            
+                    
+                        <b>1.20.</b>
+                    
+                    最详尽使用指南Jupyter Notebook
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >python进阶问题</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#python&#x8FDB;&#x9636;&#x95EE;&#x9898;"><b></b>python&#x8FDB;&#x9636;&#x95EE;&#x9898;</a></li><li><span class="title-icon "></span><a href="#&#x673A;&#x5668;&#x5B66;&#x4E60;8&#x5927;&#x7B97;&#x6CD5;&#x6BD4;&#x8F83;"><b></b>&#x673A;&#x5668;&#x5B66;&#x4E60;8&#x5927;&#x7B97;&#x6CD5;&#x6BD4;&#x8F83;</a></li><li><span class="title-icon "></span><a href="#&#x4ECA;&#x5E74;github&#x6392;&#x540D;&#x524D;20&#x7684;python&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5F00;&#x6E90;&#x9879;&#x76EE;"><b></b>&#x4ECA;&#x5E74;GitHub&#x6392;&#x540D;&#x524D;20&#x7684;Python&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5F00;&#x6E90;&#x9879;&#x76EE;</a></li><li><span class="title-icon "></span><a href="#python&#x57FA;&#x7840;&#x7F51;&#x7AD9;&#x5217;&#x8868;&#x6709;&#x7A7A;&#x518D;&#x6458;&#x5F55;"><b></b>Python&#x57FA;&#x7840;&#x7F51;&#x7AD9;&#x5217;&#x8868;(&#x6709;&#x7A7A;&#x518D;&#x6458;&#x5F55;)</a></li><li><span class="title-icon "></span><a href="#&#x5176;&#x4ED6;"><b></b>&#x5176;&#x4ED6;</a></li></ul></div><a href="#python&#x8FDB;&#x9636;&#x95EE;&#x9898;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><img src="http://upload-images.jianshu.io/upload_images/15675864-952291e89189c8a8.jpg"></p>
+<p>&#x8BB0;&#x5F55;python&#x5B66;&#x4E60;&#x4E2D;&#x9047;&#x5230;&#x7684;&#x4E00;&#x4E9B;&#x5FC3;&#x5F97;&#xFF1A;</p>
+<p>[TOC]</p>
+<hr>
+<h1 id="python&#x8FDB;&#x9636;&#x95EE;&#x9898;"><a name="python&#x8FDB;&#x9636;&#x95EE;&#x9898;" class="anchor-navigation-ex-anchor" href="#python&#x8FDB;&#x9636;&#x95EE;&#x9898;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="python&#x8FDB;&#x9636;&#x95EE;&#x9898;" class="plugin-anchor" href="#python&#x8FDB;&#x9636;&#x95EE;&#x9898;"><i class="fa fa-link" aria-hidden="true"></i></a>python&#x8FDB;&#x9636;&#x95EE;&#x9898;</h1>
+<h1 id="&#x673A;&#x5668;&#x5B66;&#x4E60;8&#x5927;&#x7B97;&#x6CD5;&#x6BD4;&#x8F83;"><a name="&#x673A;&#x5668;&#x5B66;&#x4E60;8&#x5927;&#x7B97;&#x6CD5;&#x6BD4;&#x8F83;" class="anchor-navigation-ex-anchor" href="#&#x673A;&#x5668;&#x5B66;&#x4E60;8&#x5927;&#x7B97;&#x6CD5;&#x6BD4;&#x8F83;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x673A;&#x5668;&#x5B66;&#x4E60;8&#x5927;&#x7B97;&#x6CD5;&#x6BD4;&#x8F83;" class="plugin-anchor" href="#&#x673A;&#x5668;&#x5B66;&#x4E60;8&#x5927;&#x7B97;&#x6CD5;&#x6BD4;&#x8F83;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x673A;&#x5668;&#x5B66;&#x4E60;8&#x5927;&#x7B97;&#x6CD5;&#x6BD4;&#x8F83;</h1>
+<pre><code class="lang-shell">https://mp.weixin.qq.com/s/0dT4BN01g0anVwyfjS-RVA
+</code></pre>
+<h1 id="&#x4ECA;&#x5E74;github&#x6392;&#x540D;&#x524D;20&#x7684;python&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5F00;&#x6E90;&#x9879;&#x76EE;"><a name="&#x4ECA;&#x5E74;github&#x6392;&#x540D;&#x524D;20&#x7684;python&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5F00;&#x6E90;&#x9879;&#x76EE;" class="anchor-navigation-ex-anchor" href="#&#x4ECA;&#x5E74;github&#x6392;&#x540D;&#x524D;20&#x7684;python&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5F00;&#x6E90;&#x9879;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4ECA;&#x5E74;github&#x6392;&#x540D;&#x524D;20&#x7684;python&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5F00;&#x6E90;&#x9879;&#x76EE;" class="plugin-anchor" href="#&#x4ECA;&#x5E74;github&#x6392;&#x540D;&#x524D;20&#x7684;python&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5F00;&#x6E90;&#x9879;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4ECA;&#x5E74;GitHub&#x6392;&#x540D;&#x524D;20&#x7684;Python&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5F00;&#x6E90;&#x9879;&#x76EE;</h1>
+<pre><code>https://mp.weixin.qq.com/s/-WJ_S6CV7Cc14f4YzthPAQ
+</code></pre><h1 id="python&#x57FA;&#x7840;&#x7F51;&#x7AD9;&#x5217;&#x8868;&#x6709;&#x7A7A;&#x518D;&#x6458;&#x5F55;"><a name="python&#x57FA;&#x7840;&#x7F51;&#x7AD9;&#x5217;&#x8868;&#x6709;&#x7A7A;&#x518D;&#x6458;&#x5F55;" class="anchor-navigation-ex-anchor" href="#python&#x57FA;&#x7840;&#x7F51;&#x7AD9;&#x5217;&#x8868;&#x6709;&#x7A7A;&#x518D;&#x6458;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="python&#x57FA;&#x7840;&#x7F51;&#x7AD9;&#x5217;&#x8868;&#x6709;&#x7A7A;&#x518D;&#x6458;&#x5F55;" class="plugin-anchor" href="#python&#x57FA;&#x7840;&#x7F51;&#x7AD9;&#x5217;&#x8868;&#x6709;&#x7A7A;&#x518D;&#x6458;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>Python&#x57FA;&#x7840;&#x7F51;&#x7AD9;&#x5217;&#x8868;(&#x6709;&#x7A7A;&#x518D;&#x6458;&#x5F55;)</h1>
+<pre><code>1. &#x5143;&#x7EC4;
+    https://www.jianshu.com/p/b728648501a8
+2. &#x5B57;&#x5178;
+    https://www.jianshu.com/p/8b51c9bf6d12
+3. &#x96C6;&#x5408;
+    https://www.jianshu.com/p/75eb228b638e
+4. &#x5217;&#x8868;
+    https://www.jianshu.com/p/636314cf0126
+
+6.&#x4F5C;&#x7528;&#x57DF;
+    https://www.jianshu.com/p/d8271c03a0f3
+
+8. &#x5BF9;&#x8C61;(&#x5C5E;&#x6027;&#x9650;&#x5236;-&#x516C;&#x6709;&#x79C1;&#x6709;)
+    https://www.jianshu.com/p/c7f6ecf07fbc
+9. &#x5BF9;&#x8C61;(&#x5C5E;&#x6027;&#x9650;&#x5236;-&#x53EA;&#x8BFB;)
+    https://www.jianshu.com/p/dd0e1487a4d6
+10. &#x5BF9;&#x8C61;(&#x5C5E;&#x6027;&#x9650;&#x5236;-&#x53EA;&#x8BFB;&#x4F18;&#x5316;)
+    https://www.jianshu.com/p/f54e0a5af635
+11. &#x5BF9;&#x8C61;(&#x7CFB;&#x7EDF;&#x5185;&#x7F6E;&#x65B9;&#x6CD5;-&#x904D;&#x5386;&#x64CD;&#x4F5C;)
+    https://www.jianshu.com/p/bd87cca40d8b
+12. &#x5185;&#x5B58;&#x7BA1;&#x7406;&#x673A;&#x5236;-&#x5F15;&#x7528;&#x8BA1;&#x6570;/&#x5783;&#x573E;&#x56DE;&#x6536;/&#x5FAA;&#x73AF;&#x5F15;&#x7528;/&#x5F31;&#x5F15;&#x7528;
+    https://www.jianshu.com/p/ef8a218c6b89
+13. &#x5BF9;&#x8C61;&#x601D;&#x60F3;
+    https://www.jianshu.com/p/0347ba667667
+14. &#x7EFC;&#x5408;&#x6848;&#x4F8B;&#xFF1A;&#x5C01;&#x88C5;/&#x7EE7;&#x627F;/&#x591A;&#x6001;
+    https://www.jianshu.com/p/b35043c76f50
+15. &#x5F02;&#x5E38;&#x5904;&#x7406;(&#x9519;&#x8BEF;&#x548C;&#x5F02;&#x5E38;)
+    https://www.jianshu.com/p/507d677e74a4
+16. &#x5305;/&#x6A21;&#x5757;(&#x6982;&#x5FF5;&#x53CA;&#x5BFC;&#x5165;&#x8BED;&#x6CD5;)
+    https://www.jianshu.com/p/1d9100f8292a
+17. &#x5305;/&#x6A21;&#x5757;(&#x5BFC;&#x5165;&#x53CA;&#x5176;&#x5E95;&#x5C42;&#x903B;&#x8F91;)
+    https://www.jianshu.com/p/6a99e5e4c1b5
+18. &#x5305;/&#x6A21;&#x5757;(&#x4E09;&#x65B9;&#x5305;&#x5B89;&#x88C5;)
+    https://www.jianshu.com/p/68477d5625fc
+19. &#x5305;/&#x6A21;&#x5757;(&#x521B;&#x5EFA;&#x548C;&#x53D1;&#x5E03;)
+    https://www.jianshu.com/p/ee48fde9afd6
+20.
+</code></pre><h1 id="&#x5176;&#x4ED6;"><a name="&#x5176;&#x4ED6;" class="anchor-navigation-ex-anchor" href="#&#x5176;&#x4ED6;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5176;&#x4ED6;" class="plugin-anchor" href="#&#x5176;&#x4ED6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5176;&#x4ED6;</h1>
+<p>&#x200B;    &#x6BD4;&#x5982;&#xFF1A;</p>
+<ul>
+<li>&#x4F60;&#x8981;&#x53BB;&#x505A;&#x4E00;&#x4E2A;&#x7535;&#x5546;&#x540E;&#x53F0;&#xFF0C;&#x5B58;&#x50A8;&#x7740;&#x6BCF;&#x4EF6;&#x4EA7;&#x54C1;&#x7684; ID&#x3001;&#x540D;&#x79F0;&#x548C;&#x4EF7;&#x683C;&#x3002;&#x73B0;&#x5728;&#x9700;&#x8981;&#x6839;&#x636E;&#x5546;&#x54C1; ID &#x627E;&#x51FA;&#x4EF7;&#x683C;&#xFF0C;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x6700;&#x5408;&#x9002;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5462;&#xFF1F;</li>
+<li>&#x5728; Python &#x4E2D;&#x5B57;&#x5178;&#x3001;&#x96C6;&#x5408;&#x90FD;&#x662F;&#x7ECF;&#x8FC7;&#x9AD8;&#x5EA6;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x5982;&#x679C;&#x91C7;&#x7528;&#x5217;&#x8868;&#x6765;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x5E76;&#x8FDB;&#x884C;&#x67E5;&#x627E;&#xFF0C;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x662F;&#x591A;&#x5C11;&#xFF1F;</li>
+<li>&#x6362;&#x6210;&#x5B57;&#x5178;&#x5462;&#xFF1F;&#x54EA;&#x4E2A;&#x66F4;&#x9AD8;&#x6548;&#xFF1F;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x91C7;&#x7528;&#x4E0D;&#x540C;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5B58;&#x50A8;&#x5341;&#x4E07;&#x6570;&#x636E;&#xFF0C;&#x67E5;&#x627E;&#x901F;&#x5EA6;&#x5DEE;&#x5F02;&#x5C31;&#x6709;&#x53EF;&#x80FD;&#x5DEE;&#x51FA;&#x51E0;&#x5343;&#x500D;&#x3002;</li>
+</ul>
+<p>&#x518D;&#x6BD4;&#x5982;&#xFF1A;</p>
+<ul>
+<li>Python &#x4E2D;&#x7684;&#x534F;&#x7A0B;&#x548C;&#x7EBF;&#x7A0B;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#xFF1F;</li>
+<li>&#x751F;&#x6210;&#x5668;&#x5982;&#x4F55;&#x8FDB;&#x5316;&#x6210;&#x534F;&#x7A0B;&#xFF1F;</li>
+<li>&#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#x4E2D;&#x7684; future &#x548C; asyncio &#x6709;&#x4EC0;&#x4E48;&#x5173;&#x7CFB;&#xFF1F;</li>
+<li>&#x5982;&#x4F55;&#x5199;&#x51FA;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x9AD8;&#x6027;&#x80FD;&#x4EE3;&#x7801;&#x5462;&#xFF1F;</li>
+</ul>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/xabgupsPLbRQ4UJxdKZCOmSsBCJXAYN0O37ZEzpYccKLqKUBSQJ85t4jHicu66VVxDJD1F06czC8oc9kiaWoldog/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
+<p><strong>Python &#x57FA;&#x7840;&#x5165;&#x95E8;</strong></p>
+<p>&#x5FC5;&#x5B66;&#x77E5;&#x8BC6;&#xFF1A;&#x3010;Python &#x57FA;&#x7840;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3011;&#x3010;Python &#x57FA;&#x7840;&#x8BED;&#x6CD5;&#x3011;&#x3010;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;&#x3011;&#x3010;&#x9519;&#x8BEF;&#x4E0E;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x3011;&#x3010;Python &#x9762;&#x5411;&#x5BF9;&#x8C61;&#x3011;&#x3010;&#x6A21;&#x5757;&#x5316;&#x3011;</p>
+<p>&#x7B2C;&#x4E00;&#x6B65;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x638C;&#x63E1; Python &#x7684;&#x6838;&#x5FC3;&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x4E0D;&#x540C;&#x4E8E;&#x5176;&#x4ED6;&#x57FA;&#x7840;&#x6559;&#x6750;&#xFF0C;&#x6211;&#x4E0D;&#x4EC5;&#x4EC5;&#x53EA;&#x8BB2;&#x57FA;&#x7840;&#x6982;&#x5FF5;&#x3001;&#x64CD;&#x4F5C;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x4E3A;&#x4F60;&#x6574;&#x7406;&#x4E86;&#x5F88;&#x591A;&#x8FDB;&#x9636;&#x96BE;&#x5EA6;&#x7684;&#x77E5;&#x8BC6;&#xFF0C;&#x6216;&#x662F;&#x4E00;&#x4E9B;&#x91CD;&#x96BE;&#x70B9;&#x3001;&#x6613;&#x9519;&#x70B9;&#x7B49;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x5730;&#x65B9;&#x3002;&#x4E0D;&#x4EC5;&#x53EF;&#x4EE5;&#x8BA9;&#x5165;&#x95E8;&#x7EA7;&#x7684;&#x7A0B;&#x5E8F;&#x5458;&#x67E5;&#x6F0F;&#x8865;&#x7F3A;&#xFF0C;&#x6253;&#x635E;&#x57FA;&#x7840;&#xFF0C;&#x4E5F;&#x80FD;&#x8BA9;&#x6709;&#x7ECF;&#x9A8C;&#x7684;&#x7A0B;&#x5E8F;&#x5458;&#xFF0C;&#x91CD;&#x65B0;&#x4ECE;&#x5DE5;&#x7A0B;&#x89D2;&#x5EA6;&#x8BA4;&#x8BC6;&#x57FA;&#x7840;&#xFF0C;&#x5347;&#x534E;&#x7406;&#x89E3;&#x3002;</p>
+<p><strong>Python &#x8FDB;&#x9636;&#x6838;&#x5FC3;&#x77E5;&#x8BC6;</strong></p>
+<p>&#x5FC5;&#x5B66;&#x77E5;&#x8BC6;&#xFF1A;&#x3010;Python &#x534F;&#x8BAE;&#x3011;&#x3010;Python &#x9AD8;&#x7EA7;&#x8BED;&#x6CD5;&#x3011;&#x3010;Python &#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x3011;&#x3010;Python &#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#x3011;&#x3010;&#x5783;&#x573E;&#x56DE;&#x6536;&#x673A;&#x5236;&#x3011;&#x3010;&#x9879;&#x76EE;&#x5B9E;&#x6218;&#x3011;</p>
+<p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF0C;&#x8FDB;&#x9636; Python &#x6838;&#x5FC3;&#x77E5;&#x8BC6;&#x70B9;&#xFF0C;&#x6BD4;&#x5982;&#x88C5;&#x9970;&#x5668;&#x3001;&#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#x7B49;&#x7B49;&#x3002;&#x5982;&#x679C;&#x4F60;&#x7684;&#x5DE5;&#x4F5C;&#x53EA;&#x662F;&#x5199; 100 &#x884C;&#x4EE5;&#x4E0B;&#x7684;&#x811A;&#x672C;&#x7A0B;&#x5E8F;&#xFF0C;&#x53EF;&#x80FD;&#x4E0D;&#x600E;&#x4E48;&#x4F1A;&#x7528;&#x5F97;&#x5230;&#x3002;&#x4F46;&#x5982;&#x679C;&#x4F60;&#x505A;&#x7684;&#x662F;&#x5927;&#x578B;&#x7A0B;&#x5E8F;&#x7684;&#x5F00;&#x53D1;&#xFF0C;&#x5219;&#x975E;&#x5E38;&#x6709;&#x5FC5;&#x8981;&#x3002;</p>
+<p><strong>&#x89C4;&#x8303;&#xFF1A;&#x7F16;&#x5199;&#x9AD8;&#x8D28;&#x91CF;&#x7684; Python &#x7A0B;&#x5E8F;</strong></p>
+<p>&#x8FD9;&#x90E8;&#x5206;&#x7740;&#x91CD;&#x4E8E;&#x6559;&#x4F60;&#x628A;&#x7A0B;&#x5E8F;&#x5199;&#x5F97;&#x66F4;&#x52A0;&#x89C4;&#x8303;&#x3001;&#x66F4;&#x52A0;&#x7A33;&#x5B9A;&#x3002;&#x6211;&#x5728;&#x5B9E;&#x9645;&#x5DE5;&#x4F5C;&#x4E2D;&#x89C1;&#x8FC7;&#x4E0D;&#x5C11;&#x7A0B;&#x5E8F;&#x5458;&#xFF0C;&#x4F1A;&#x5199;&#x7A0B;&#x5E8F;&#xFF0C;&#x4F46;&#x5199;&#x5F97;&#x5B9E;&#x5728;&#x6709;&#x70B9;&#x201C;&#x60E8;&#x4E0D;&#x5FCD;&#x7779;&#x201D;&#xFF0C;&#x5BFC;&#x81F4;&#x6700;&#x540E;&#x8C03;&#x8BD5;&#x8D77;&#x6765;&#x9519;&#x8BEF;&#x4E0D;&#x65AD;&#xFF0C;&#x4FEE;&#x6539;&#x975E;&#x5E38;&#x8D39;&#x52B2;&#x513F;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x89C9;&#x5F97;&#x7528;&#x5355;&#x72EC;&#x4E00;&#x4E2A;&#x7248;&#x5757;&#x8BB2;&#x89E3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x975E;&#x5E38;&#x6709;&#x5FC5;&#x8981;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x6211;&#x4E0D;&#x4F1A;&#x7528;&#x4E00;&#x4E9B;&#x4F3C;&#x662F;&#x800C;&#x975E;&#x7684;&#x89C4;&#x8303;&#x6765;&#x8BF4;&#x6559;&#xFF0C;&#x800C;&#x662F;&#x4F1A;&#x7528;&#x5177;&#x4F53;&#x7684;&#x7F16;&#x7A0B;&#x64CD;&#x4F5C;&#x548C;&#x6280;&#x5DE7;&#xFF0C;&#x6559;&#x4F60;&#x63D0;&#x9AD8;&#x4EE3;&#x7801;&#x8D28;&#x91CF;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x5982;&#x4F55;&#x5408;&#x7406;&#x5730;&#x5206;&#x89E3;&#x4EE3;&#x7801;&#x3001;&#x8FD0;&#x7528; assert&#xFF0C;&#x5982;&#x4F55;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7B49;&#x7B49;&#x3002;</p>
+<p><strong>Python &#x5B9E;&#x6218;&#xFF0C;&#x4E32;&#x8054;&#x6574;&#x4E2A;&#x77E5;&#x8BC6;&#x4F53;&#x7CFB;&#xFF1A;&#x5E26;&#x4F60;&#x642D;&#x5EFA;&#x91CF;&#x5316;&#x4EA4;&#x6613;&#x7CFB;&#x7EDF;</strong></p>
+<p>&#x5FC5;&#x5B66;&#x77E5;&#x8BC6;&#x70B9;&#xFF1A;&#x3010;RESTful&#x3011;&#x3010;Socket&#x3011;&#x3010;Pandas&#x3011;&#x3010;Numpy&#x3011;&#x3010;Kafka&#x3011;&#x3010;RabbitMQ&#x3011;&#x3010;MySQL&#x3011;&#x3010;Django&#x3011;</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; narutohyc.com 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-02-01 04:46:53
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="14. Python 增强提案PEP.html" class="navigation navigation-prev " aria-label="Previous page: Python 增强提案PEP">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="16. Regular Expression OP.html" class="navigation navigation-next " aria-label="Next page: Regular Expression OP">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"python进阶问题","level":"1.16","depth":1,"next":{"title":"Regular Expression OP","level":"1.17","depth":1,"path":"chapters/16. Regular Expression OP.md","ref":"chapters/16. Regular Expression OP.md","articles":[]},"previous":{"title":"Python 增强提案PEP","level":"1.15","depth":1,"path":"chapters/14. Python 增强提案PEP.md","ref":"chapters/14. Python 增强提案PEP.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon","mathjax","mermaid-gb3","tbfed-pagefooter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2020","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","bookmark":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","appleTouch":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","appleTouchMore":{"120x120":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","180x180":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"}},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Python 的学习和一些技巧的使用"},"file":{"path":"chapters/15. python进阶问题.md","mtime":"2020-02-01T04:46:53.747Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-01T04:47:39.767Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

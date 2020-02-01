@@ -1,0 +1,1001 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>python多进程 · Python相关学习记录</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="narutohyc">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2. python多线程.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    
+        <link rel="shortcut icon" href='../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../https:/upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/narutohyc" target="_blank" class="custom-link">我的狗窝</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="1. python多进程.html">
+            
+                <a href="1. python多进程.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    python多进程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2. python多线程.html">
+            
+                <a href="2. python多线程.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    python多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="3. python协程.html">
+            
+                <a href="3. python协程.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    python协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="4. 装饰器Dercrator.html">
+            
+                <a href="4. 装饰器Dercrator.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    装饰器Dercrator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="5. python基础知识.html">
+            
+                <a href="5. python基础知识.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    python基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="6. Pythonic的几个办法.html">
+            
+                <a href="6. Pythonic的几个办法.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    Pythonic的几个办法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="7. Python的collections模块.html">
+            
+                <a href="7. Python的collections模块.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    Python的collections模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="8. os库的使用.html">
+            
+                <a href="8. os库的使用.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    os库的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="9. 文件的使用.html">
+            
+                <a href="9. 文件的使用.html">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    文件的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="10. 枚举类Enum.html">
+            
+                <a href="10. 枚举类Enum.html">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    枚举类Enum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="11. numpy小记.html">
+            
+                <a href="11. numpy小记.html">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    numpy小记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="12. python 魔法函数.html">
+            
+                <a href="12. python 魔法函数.html">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    python 魔法函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="13. python pipe包管道包学习.html">
+            
+                <a href="13. python pipe包管道包学习.html">
+            
+                    
+                        <b>1.14.</b>
+                    
+                    python pipe包管道包学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="14. Python 增强提案PEP.html">
+            
+                <a href="14. Python 增强提案PEP.html">
+            
+                    
+                        <b>1.15.</b>
+                    
+                    Python 增强提案PEP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="15. python进阶问题.html">
+            
+                <a href="15. python进阶问题.html">
+            
+                    
+                        <b>1.16.</b>
+                    
+                    python进阶问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="16. Regular Expression OP.html">
+            
+                <a href="16. Regular Expression OP.html">
+            
+                    
+                        <b>1.17.</b>
+                    
+                    Regular Expression OP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="Anaconda开发环境.html">
+            
+                <a href="Anaconda开发环境.html">
+            
+                    
+                        <b>1.18.</b>
+                    
+                    Anaconda开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="Jupyter Notebook介绍、安装及使用教程.html">
+            
+                <a href="Jupyter Notebook介绍、安装及使用教程.html">
+            
+                    
+                        <b>1.19.</b>
+                    
+                    Jupyter Notebook介绍、安装及使用教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="最详尽使用指南Jupyter Notebook.html">
+            
+                <a href="最详尽使用指南Jupyter Notebook.html">
+            
+                    
+                        <b>1.20.</b>
+                    
+                    最详尽使用指南Jupyter Notebook
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >python多进程</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#python&#x591A;&#x8FDB;&#x7A0B;"><b></b>python&#x591A;&#x8FDB;&#x7A0B;</a></li><li><span class="title-icon "></span><a href="#python&#x591A;&#x7EBF;&#x7A0B;&#x4F4E;&#x6548;&#x539F;&#x56E0;"><b></b>python&#x591A;&#x7EBF;&#x7A0B;&#x4F4E;&#x6548;&#x539F;&#x56E0;</a></li><li><span class="title-icon "></span><a href="#python&#x591A;&#x8FDB;&#x7A0B;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;"><b></b>python&#x591A;&#x8FDB;&#x7A0B;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;</a></li><ul><li><span class="title-icon "></span><a href="#&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;process"><b></b>&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;Process</a></li><li><span class="title-icon "></span><a href="#&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x7EE7;&#x627F;process"><b></b>&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x7EE7;&#x627F;Process</a></li><li><span class="title-icon "></span><a href="#process&#x7C7B;&#x7684;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;"><b></b>Process&#x7C7B;&#x7684;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x8FDB;&#x7A0B;&#x6C60;"><b></b>&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x8FDB;&#x7A0B;&#x6C60;</a></li><li><span class="title-icon "></span><a href="#&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x8FDB;&#x7A0B;&#x6C60;&#x7684;&#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;"><b></b>&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x8FDB;&#x7A0B;&#x6C60;&#x7684;&#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;</a></li></ul><li><span class="title-icon "></span><a href="#python&#x591A;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;"><b></b>python&#x591A;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;</a></li><ul><li><span class="title-icon "></span><a href="#&#x8FDB;&#x7A0B;&#x5BF9;&#x5217;queue"><b></b>&#x8FDB;&#x7A0B;&#x5BF9;&#x5217;Queue</a></li><li><span class="title-icon "></span><a href="#&#x7BA1;&#x9053;pipe"><b></b>&#x7BA1;&#x9053;Pipe</a></li><li><span class="title-icon "></span><a href="#managers"><b></b>Managers</a></li></ul></ul></div><a href="#python&#x591A;&#x8FDB;&#x7A0B;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><img src="http://upload-images.jianshu.io/upload_images/15675864-952291e89189c8a8.jpg"></p>
+<p>&#x8BB0;&#x5F55;python&#x5B66;&#x4E60;&#x4E2D;&#x9047;&#x5230;&#x7684;&#x4E00;&#x4E9B;&#x5FC3;&#x5F97;&#xFF1A;</p>
+<p>[TOC]</p>
+<hr>
+<h1 id="python&#x591A;&#x8FDB;&#x7A0B;"><a name="python&#x591A;&#x8FDB;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#python&#x591A;&#x8FDB;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="python&#x591A;&#x8FDB;&#x7A0B;" class="plugin-anchor" href="#python&#x591A;&#x8FDB;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>python&#x591A;&#x8FDB;&#x7A0B;</h1>
+<p>Python&#x4E2D;&#x7684;&#x591A;&#x8FDB;&#x7A0B;&#x662F;&#x901A;&#x8FC7;multiprocessing&#x5305;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x548C;&#x591A;&#x7EBF;&#x7A0B;&#x7684;threading.Thread&#x5DEE;&#x4E0D;&#x591A;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x5229;&#x7528;multiprocessing.Process&#x5BF9;&#x8C61;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x5BF9;&#x8C61;&#x3002;&#x8FD9;&#x4E2A;&#x8FDB;&#x7A0B;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x7EBF;&#x7A0B;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x5DEE;&#x4E0D;&#x591A;&#x4E5F;&#x6709;start(), run(), join()&#x7B49;&#x65B9;&#x6CD5;&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x4E0D;&#x540C;Thread&#x7EBF;&#x7A0B;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;&#x65B9;&#x6CD5;&#x662F;setDeamon&#xFF0C;&#x800C;Process&#x8FDB;&#x7A0B;&#x5BF9;&#x8C61;&#x7684;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#x662F;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;daemon&#x5C5E;&#x6027;&#x6765;&#x5B8C;&#x6210;&#x7684;&#x3002;</p>
+<p>&#x4E0E;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x5171;&#x4EAB;&#x5F0F;&#x5185;&#x5B58;&#x4E0D;&#x540C;&#xFF0C;&#x7531;&#x4E8E;&#x5404;&#x4E2A;&#x8FDB;&#x7A0B;&#x90FD;&#x662F;&#x76F8;&#x4E92;&#x72EC;&#x7ACB;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;&#x518D;&#x591A;&#x8FDB;&#x7A0B;&#x4E2D;&#x626E;&#x6F14;&#x8FD9;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x89D2;&#x8272;&#xFF0C;Python&#x4E2D;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;multiprocessing&#x6A21;&#x5757;&#x4E2D;&#x7684;<code>pipe</code>&#x3001;<code>queue</code>&#x3001;<code>Array</code>&#x3001;<code>Value</code>&#x7B49;&#x7B49;&#x5DE5;&#x5177;&#x6765;&#x5B9E;&#x73B0;&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x8BAF;&#x548C;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x7F16;&#x5199;&#x8D77;&#x6765;&#x4ECD;&#x7136;&#x5177;&#x6709;&#x5F88;&#x5927;&#x7684;&#x4E0D;&#x7075;&#x6D3B;&#x6027;&#x3002;</p>
+<p><img src="res/Python%20Base/13088413-c5ced16c6b0c2d29.webp" alt="img"></p>
+<ul>
+<li><p><strong>&#x540C;&#x6B65;</strong>&#x5C31;&#x662F;&#x6307;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x5728;&#x6267;&#x884C;&#x67D0;&#x4E2A;&#x8BF7;&#x6C42;&#x7684;&#x65F6;&#x5019;,&#x82E5;&#x8BE5;&#x8BF7;&#x6C42;&#x9700;&#x8981;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x624D;&#x80FD;&#x8FD4;&#x56DE;&#x4FE1;&#x606F;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x8FDB;&#x7A0B;&#x5C06;&#x4F1A;&#x4E00;&#x76F4;&#x7B49;&#x5F85;&#x4E0B;&#x53BB;&#xFF0C;&#x76F4;&#x5230;&#x6536;&#x5230;&#x8FD4;&#x56DE;&#x4FE1;&#x606F;&#x624D;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x4E0B;&#x53BB;&#xFF1B;</p>
+</li>
+<li><p><strong>&#x5F02;&#x6B65;</strong>&#x662F;&#x6307;&#x8FDB;&#x7A0B;&#x4E0D;&#x9700;&#x8981;&#x4E00;&#x76F4;&#x7B49;&#x4E0B;&#x53BB;&#xFF0C;&#x800C;&#x662F;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x4E0B;&#x9762;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x4E0D;&#x7BA1;&#x5176;&#x4ED6;&#x8FDB;&#x7A0B;&#x7684;&#x72B6;&#x6001;&#x3002;&#x5F53;&#x6709;&#x6D88;&#x606F;&#x8FD4;&#x56DE;&#x65F6;&#x7CFB;&#x7EDF;&#x4F1A;&#x901A;&#x77E5;&#x8FDB;&#x7A0B;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x6267;&#x884C;&#x7684;&#x6548;&#x7387;&#x3002;</p>
+<ul>
+<li><p><strong>&#x5BF9;&#x4E8E;IO&#x5BC6;&#x96C6;&#x578B;&#x4EFB;&#x52A1;,</strong>python&#x7684;&#x591A;&#x7EBF;&#x7A0B;&#x80FD;&#x591F;&#x8282;&#x7701;&#x65F6;&#x95F4;.
+<strong>&#x5BF9;&#x4E8E;&#x8BA1;&#x7B97;&#x5BC6;&#x96C6;&#x578B;&#x4EFB;&#x52A1;,</strong>Python&#x7684;&#x591A;&#x7EBF;&#x7A0B;&#x5E76;&#x6CA1;&#x6709;&#x7528;&#x5904;.</p>
+</li>
+<li><p>&#x5982;&#x679C;&#x7A0B;&#x5E8F;&#x662F;&#x5C5E;&#x4E8E; CPU &#x5BC6;&#x96C6;&#x578B;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x591A;&#x8FDB;&#x7A0B;&#x3002;&#x800C;&#x591A;&#x7EBF;&#x7A0B;&#x5C31;&#x66F4;&#x9002;&#x5408;&#x5E94;&#x7528;&#x4E8E; I/O &#x5BC6;&#x96C6;&#x578B;&#x7A0B;&#x5E8F;&#x3002;</p>
+</li>
+<li><h5 id="python&#x4F7F;&#x7528;&#x591A;&#x6838;&#xFF0C;&#x5373;&#x5F00;&#x591A;&#x4E2A;&#x8FDB;&#x7A0B;&#x3002;"><a name="python&#x4F7F;&#x7528;&#x591A;&#x6838;&#xFF0C;&#x5373;&#x5F00;&#x591A;&#x4E2A;&#x8FDB;&#x7A0B;&#x3002;" class="anchor-navigation-ex-anchor" href="#python&#x4F7F;&#x7528;&#x591A;&#x6838;&#xFF0C;&#x5373;&#x5F00;&#x591A;&#x4E2A;&#x8FDB;&#x7A0B;&#x3002;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="python&#x4F7F;&#x7528;&#x591A;&#x6838;&#xFF0C;&#x5373;&#x5F00;&#x591A;&#x4E2A;&#x8FDB;&#x7A0B;&#x3002;" class="plugin-anchor" href="#python&#x4F7F;&#x7528;&#x591A;&#x6838;&#xFF0C;&#x5373;&#x5F00;&#x591A;&#x4E2A;&#x8FDB;&#x7A0B;&#x3002;"><i class="fa fa-link" aria-hidden="true"></i></a>python&#x4F7F;&#x7528;&#x591A;&#x6838;&#xFF0C;&#x5373;&#x5F00;&#x591A;&#x4E2A;&#x8FDB;&#x7A0B;&#x3002;</h5>
+<ul>
+<li>&#x65B9;&#x6CD5;&#x4E00;: &#x534F;&#x7A0B;+&#x591A;&#x8FDB;&#x7A0B;&#x3002;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x7B80;&#x5355;&#xFF0C;&#x6548;&#x7387;&#x8FD8;&#x53EF;&#x4EE5;&#xFF0C;&#x4E00;&#x822C;&#x4F7F;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#x3002;
+&#x534F;&#x7A0B;yield&#x662F;&#x4F60;&#x81EA;&#x5DF1;&#x5199;&#x7684;&#xFF0C;&#x662F;&#x81EA;&#x5DF1;&#x5B9A;&#x4E49;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x5207;&#x6362;&#x8FDB;&#x7A0B;&#x3002;</li>
+<li>&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;IO&#x591A;&#x8DEF;&#x590D;&#x7528;&#x3002;&#x4F7F;&#x7528;&#x590D;&#x6742;&#xFF0C;&#x4F46;&#x6548;&#x7387;&#x5F88;&#x9AD8;&#x3002;&#x4E0D;&#x5E38;&#x7528;&#x3002;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-powershell">&#x521B;&#x5EFA;&#x7BA1;&#x7406;&#x8FDB;&#x7A0B;&#x6A21;&#x5757;&#xFF1A;
+
+<span class="hljs-keyword">Process</span>(&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x8FDB;&#x7A0B;):&#x901A;&#x8FC7;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;<span class="hljs-keyword">Process</span>&#x5BF9;&#x8C61;&#x7136;&#x540E;&#x8C03;&#x7528;&#x5B83;&#x7684;start()&#x65B9;&#x6CD5;&#x6765;&#x751F;&#x6210;&#x8FDB;&#x7A0B;&#x3002;<span class="hljs-keyword">Process</span>&#x9075;&#x5FAA;threading.Thread&#x7684;API&#x3002;
+Pool(&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;&#x6C60;)&#xFF1A;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x6C60;&#xFF0C;&#x8BE5;&#x8FDB;&#x7A0B;&#x5C06;&#x6267;&#x884C;&#x4E0E;Pool&#x8BE5;&#x7C7B;&#x4E00;&#x8D77;&#x63D0;&#x4EA4;&#x7ED9;&#x5B83;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x5F53;&#x5B50;&#x8FDB;&#x7A0B;&#x8F83;&#x591A;&#x9700;&#x8981;&#x7BA1;&#x7406;&#x65F6;&#x4F7F;&#x7528;&#x3002;
+Queue&#xFF08;&#x7528;&#x4E8E;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;&#xFF0C;&#x8D44;&#x6E90;&#x5171;&#x4EAB;&#xFF09;&#xFF1A;&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;&#xFF0C;&#x4FDD;&#x8BC1;&#x8FDB;&#x7A0B;&#x5B89;&#x5168;&#x3002;
+Value&#xFF0C;Array&#xFF08;&#x7528;&#x4E8E;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;&#xFF0C;&#x8D44;&#x6E90;&#x5171;&#x4EAB;&#xFF09;&#xFF1A;
+Pipe&#xFF08;&#x7528;&#x4E8E;&#x7BA1;&#x9053;&#x901A;&#x4FE1;&#xFF09;&#xFF1A;&#x7BA1;&#x9053;&#x64CD;&#x4F5C;&#x3002;
+Manager&#xFF08;&#x7528;&#x4E8E;&#x8D44;&#x6E90;&#x5171;&#x4EAB;&#xFF09;&#xFF1A;&#x521B;&#x5EFA;&#x8FDB;&#x7A0B;&#x95F4;&#x5171;&#x4EAB;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5305;&#x62EC;&#x5728;&#x4E0D;&#x540C;&#x673A;&#x5668;&#x4E0A;&#x8FD0;&#x884C;&#x7684;&#x8FDB;&#x7A0B;&#x4E4B;&#x95F4;&#x7684;&#x7F51;&#x7EDC;&#x5171;&#x4EAB;&#x3002;
+
+&#x540C;&#x6B65;&#x5B50;&#x8FDB;&#x7A0B;&#x6A21;&#x5757;&#xFF1A;
+
+Condition
+Event&#xFF1A;&#x7528;&#x6765;&#x5B9E;&#x73B0;&#x8FDB;&#x7A0B;&#x95F4;&#x540C;&#x6B65;&#x901A;&#x4FE1;&#x3002;
+Lock&#xFF1A;&#x5F53;&#x591A;&#x4E2A;&#x8FDB;&#x7A0B;&#x9700;&#x8981;&#x8BBF;&#x95EE;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#x7684;&#x65F6;&#x5019;&#xFF0C;Lock&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x907F;&#x514D;&#x8BBF;&#x95EE;&#x7684;&#x51B2;&#x7A81;&#x3002;
+RLock
+Semaphore&#xFF1A;&#x7528;&#x6765;&#x63A7;&#x5236;&#x5BF9;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#x7684;&#x8BBF;&#x95EE;&#x6570;&#x91CF;&#xFF0C;&#x4F8B;&#x5982;&#x6C60;&#x7684;&#x6700;&#x5927;&#x8FDE;&#x63A5;&#x6570;&#x3002;
+</code></pre>
+<h1 id="python&#x591A;&#x7EBF;&#x7A0B;&#x4F4E;&#x6548;&#x539F;&#x56E0;"><a name="python&#x591A;&#x7EBF;&#x7A0B;&#x4F4E;&#x6548;&#x539F;&#x56E0;" class="anchor-navigation-ex-anchor" href="#python&#x591A;&#x7EBF;&#x7A0B;&#x4F4E;&#x6548;&#x539F;&#x56E0;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="python&#x591A;&#x7EBF;&#x7A0B;&#x4F4E;&#x6548;&#x539F;&#x56E0;" class="plugin-anchor" href="#python&#x591A;&#x7EBF;&#x7A0B;&#x4F4E;&#x6548;&#x539F;&#x56E0;"><i class="fa fa-link" aria-hidden="true"></i></a>python&#x591A;&#x7EBF;&#x7A0B;&#x4F4E;&#x6548;&#x539F;&#x56E0;</h1>
+<p><strong>GIL</strong>&#x7684;&#x5168;&#x79F0;&#x662F; Global Interpreter Lock(&#x5168;&#x5C40;&#x89E3;&#x91CA;&#x5668;&#x9501;)&#xFF0C;&#x6765;&#x6E90;&#x662F; Python &#x8BBE;&#x8BA1;&#x4E4B;&#x521D;&#x7684;&#x8003;&#x8651;&#xFF0C;&#x4E3A;&#x4E86;&#x6570;&#x636E;&#x5B89;&#x5168;&#x6240;&#x505A;&#x7684;&#x51B3;&#x5B9A;&#x3002;&#x67D0;&#x4E2A;&#x7EBF;&#x7A0B;&#x60F3;&#x8981;&#x6267;&#x884C;&#xFF0C;&#x5FC5;&#x987B;&#x5148;&#x62FF;&#x5230; GIL&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A; GIL &#x770B;&#x4F5C;&#x662F;&#x201C;&#x901A;&#x884C;&#x8BC1;&#x201D;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x4E00;&#x4E2A; Python &#x8FDB;&#x7A0B;&#x4E2D;&#xFF0C;GIL &#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x3002;&#x62FF;&#x4E0D;&#x5230;&#x901A;&#x884C;&#x8BC1;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x5C31;&#x4E0D;&#x5141;&#x8BB8;&#x8FDB;&#x5165; CPU &#x6267;&#x884C;&#x3002;</p>
+<p>&#x800C;&#x76EE;&#x524D; Python &#x7684;&#x89E3;&#x91CA;&#x5668;&#x6709;&#x591A;&#x79CD;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<ul>
+<li><strong>CPython</strong>&#xFF1A;CPython &#x662F;&#x7528;C&#x8BED;&#x8A00;&#x5B9E;&#x73B0;&#x7684; Python &#x89E3;&#x91CA;&#x5668;&#x3002; &#x4F5C;&#x4E3A;&#x5B98;&#x65B9;&#x5B9E;&#x73B0;&#xFF0C;&#x5B83;&#x662F;&#x6700;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#x7684; Python &#x89E3;&#x91CA;&#x5668;&#x3002;</li>
+<li><strong>PyPy</strong>&#xFF1A;PyPy &#x662F;&#x7528;RPython&#x5B9E;&#x73B0;&#x7684;&#x89E3;&#x91CA;&#x5668;&#x3002;RPython &#x662F; Python &#x7684;&#x5B50;&#x96C6;&#xFF0C; &#x5177;&#x6709;&#x9759;&#x6001;&#x7C7B;&#x578B;&#x3002;&#x8FD9;&#x4E2A;&#x89E3;&#x91CA;&#x5668;&#x7684;&#x7279;&#x70B9;&#x662F;&#x5373;&#x65F6;&#x7F16;&#x8BD1;&#xFF0C;&#x652F;&#x6301;&#x591A;&#x91CD;&#x540E;&#x7AEF;&#xFF08;C, CLI, JVM&#xFF09;&#x3002;PyPy &#x65E8;&#x5728;&#x63D0;&#x9AD8;&#x6027;&#x80FD;&#xFF0C;&#x540C;&#x65F6;&#x4FDD;&#x6301;&#x6700;&#x5927;&#x517C;&#x5BB9;&#x6027;&#xFF08;&#x53C2;&#x8003; CPython &#x7684;&#x5B9E;&#x73B0;&#xFF09;&#x3002;</li>
+<li><strong>Jython</strong>&#xFF1A;Jython &#x662F;&#x4E00;&#x4E2A;&#x5C06; Python &#x4EE3;&#x7801;&#x7F16;&#x8BD1;&#x6210; Java &#x5B57;&#x8282;&#x7801;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x8FD0;&#x884C;&#x5728;JVM (Java Virtual Machine) &#x4E0A;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x50CF;&#x662F;&#x7528; Python &#x6A21;&#x5757;&#x4E00;&#x6837;&#xFF0C;&#x5BFC;&#x5165; &#x5E76;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;Java&#x7C7B;&#x3002;</li>
+<li><strong>IronPython</strong>&#xFF1A;IronPython &#x662F;&#x4E00;&#x4E2A;&#x9488;&#x5BF9; .NET &#x6846;&#x67B6;&#x7684; Python &#x5B9E;&#x73B0;&#x3002;&#x5B83; &#x53EF;&#x4EE5;&#x7528; Python &#x548C; .NET framewor k&#x7684;&#x5E93;&#xFF0C;&#x4E5F;&#x80FD;&#x5C06; Python &#x4EE3;&#x7801;&#x66B4;&#x9732;&#x7ED9; .NET &#x6846;&#x67B6;&#x4E2D;&#x7684;&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x3002;</li>
+</ul>
+<p>GIL &#x53EA;&#x5728; CPython &#x4E2D;&#x624D;&#x6709;&#xFF0C;&#x800C;&#x5728; PyPy &#x548C; Jython &#x4E2D;&#x662F;&#x6CA1;&#x6709; GIL &#x7684;&#x3002;</p>
+<p>&#x6BCF;&#x6B21;&#x91CA;&#x653E; GIL&#x9501;&#xFF0C;&#x7EBF;&#x7A0B;&#x8FDB;&#x884C;&#x9501;&#x7ADE;&#x4E89;&#x3001;&#x5207;&#x6362;&#x7EBF;&#x7A0B;&#xFF0C;&#x4F1A;&#x6D88;&#x8017;&#x8D44;&#x6E90;&#x3002;&#x8FD9;&#x5C31;&#x5BFC;&#x81F4;&#x6253;&#x5370;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x65F6;&#x957F;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;&#x8017;&#x65F6;&#x66F4;&#x957F;&#x7684;&#x539F;&#x56E0;&#x3002;</p>
+<p>&#x5E76;&#x4E14;&#x7531;&#x4E8E; GIL &#x9501;&#x5B58;&#x5728;&#xFF0C;Python &#x91CC;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x6C38;&#x8FDC;&#x53EA;&#x80FD;&#x540C;&#x65F6;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;(&#x62FF;&#x5230; GIL &#x7684;&#x7EBF;&#x7A0B;&#x624D;&#x80FD;&#x6267;&#x884C;)&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x5728;&#x591A;&#x6838;CPU&#x4E0A;&#xFF0C;Python &#x7684;&#x591A;&#x7EBF;&#x7A0B;&#x6548;&#x7387;&#x5E76;&#x4E0D;&#x9AD8;&#x7684;&#x6839;&#x672C;&#x539F;&#x56E0;&#x3002;</p>
+<h1 id="python&#x591A;&#x8FDB;&#x7A0B;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;"><a name="python&#x591A;&#x8FDB;&#x7A0B;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#python&#x591A;&#x8FDB;&#x7A0B;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="python&#x591A;&#x8FDB;&#x7A0B;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;" class="plugin-anchor" href="#python&#x591A;&#x8FDB;&#x7A0B;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>python&#x591A;&#x8FDB;&#x7A0B;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;</h1>
+<h2 id="&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;process"><a name="&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;process" class="anchor-navigation-ex-anchor" href="#&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;process"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;process" class="plugin-anchor" href="#&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;process"><i class="fa fa-link" aria-hidden="true"></i></a>&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;Process</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> multiprocessing <span class="hljs-keyword">import</span>  Process
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fun1</span><span class="hljs-params">(name)</span>:</span>
+    print(<span class="hljs-string">&apos;&#x6D4B;&#x8BD5;%s&#x591A;&#x8FDB;&#x7A0B;&apos;</span> %name)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    process_list = []
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">5</span>):  <span class="hljs-comment">#&#x5F00;&#x542F;5&#x4E2A;&#x5B50;&#x8FDB;&#x7A0B;&#x6267;&#x884C;fun1&#x51FD;&#x6570;</span>
+        p = Process(target=fun1,args=(<span class="hljs-string">&apos;Python&apos;</span>,)) <span class="hljs-comment">#&#x5B9E;&#x4F8B;&#x5316;&#x8FDB;&#x7A0B;&#x5BF9;&#x8C61;</span>
+        p.start()
+        process_list.append(p)
+
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> process_list:
+        p.join()
+
+    print(<span class="hljs-string">&apos;&#x7ED3;&#x675F;&#x6D4B;&#x8BD5;&apos;</span>)
+</code></pre>
+<pre><code class="lang-powershell">&#x6D4B;&#x8BD5;Python&#x591A;&#x8FDB;&#x7A0B;
+&#x6D4B;&#x8BD5;Python&#x591A;&#x8FDB;&#x7A0B;
+&#x6D4B;&#x8BD5;Python&#x591A;&#x8FDB;&#x7A0B;
+&#x6D4B;&#x8BD5;Python&#x591A;&#x8FDB;&#x7A0B;
+&#x6D4B;&#x8BD5;Python&#x591A;&#x8FDB;&#x7A0B;
+&#x7ED3;&#x675F;&#x6D4B;&#x8BD5;
+
+<span class="hljs-keyword">Process</span> finished with <span class="hljs-keyword">exit</span> code <span class="hljs-number">0</span>
+</code></pre>
+<pre><code class="lang-shell">&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5F00;&#x542F;&#x4E86;5&#x4E2A;&#x5B50;&#x8FDB;&#x7A0B;&#x53BB;&#x6267;&#x884C;&#x51FD;&#x6570;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x89C2;&#x5BDF;&#x7ED3;&#x679C;&#xFF0C;&#x662F;&#x540C;&#x65F6;&#x6253;&#x5370;&#x7684;&#xFF0C;&#x8FD9;&#x91CC;&#x5B9E;&#x73B0;&#x4E86;&#x771F;&#x6B63;&#x7684;&#x5E76;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x5C31;&#x662F;&#x591A;&#x4E2A;CPU&#x540C;&#x65F6;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#x3002;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x8FDB;&#x7A0B;&#x662F;python&#x4E2D;&#x6700;&#x5C0F;&#x7684;&#x8D44;&#x6E90;&#x5206;&#x914D;&#x5355;&#x5143;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8FDB;&#x7A0B;&#x4E2D;&#x95F4;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5185;&#x5B58;&#x662F;&#x4E0D;&#x5171;&#x4EAB;&#x7684;&#xFF0C;&#x6BCF;&#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#xFF0C;&#x90FD;&#x8981;&#x72EC;&#x7ACB;&#x5206;&#x914D;&#x8D44;&#x6E90;&#x548C;&#x62F7;&#x8D1D;&#x8BBF;&#x95EE;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x6240;&#x4EE5;&#x8FDB;&#x7A0B;&#x7684;&#x542F;&#x52A8;&#x548C;&#x9500;&#x6BC1;&#x7684;&#x4EE3;&#x4EF7;&#x662F;&#x6BD4;&#x8F83;&#x5927;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x5B9E;&#x9645;&#x4E2D;&#x4F7F;&#x7528;&#x591A;&#x8FDB;&#x7A0B;&#xFF0C;&#x8981;&#x6839;&#x636E;&#x670D;&#x52A1;&#x5668;&#x7684;&#x914D;&#x7F6E;&#x6765;&#x8BBE;&#x5B9A;&#x3002;
+</code></pre>
+<h2 id="&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x7EE7;&#x627F;process"><a name="&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x7EE7;&#x627F;process" class="anchor-navigation-ex-anchor" href="#&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x7EE7;&#x627F;process"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x7EE7;&#x627F;process" class="plugin-anchor" href="#&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x7EE7;&#x627F;process"><i class="fa fa-link" aria-hidden="true"></i></a>&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x7EE7;&#x627F;Process</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> multiprocessing <span class="hljs-keyword">import</span>  Process
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyProcess</span><span class="hljs-params">(Process)</span>:</span> <span class="hljs-comment">#&#x7EE7;&#x627F;Process&#x7C7B;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,name)</span>:</span>
+        super(MyProcess,self).__init__()
+        self.name = name
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">&apos;&#x6D4B;&#x8BD5;%s&#x591A;&#x8FDB;&#x7A0B;&apos;</span> % self.name)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    process_list = []
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">5</span>):  <span class="hljs-comment">#&#x5F00;&#x542F;5&#x4E2A;&#x5B50;&#x8FDB;&#x7A0B;&#x6267;&#x884C;fun1&#x51FD;&#x6570;</span>
+        p = MyProcess(<span class="hljs-string">&apos;Python&apos;</span>) <span class="hljs-comment">#&#x5B9E;&#x4F8B;&#x5316;&#x8FDB;&#x7A0B;&#x5BF9;&#x8C61;</span>
+        p.start()
+        process_list.append(p)
+
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> process_list:
+        p.join()
+
+    print(<span class="hljs-string">&apos;&#x7ED3;&#x675F;&#x6D4B;&#x8BD5;&apos;</span>)
+</code></pre>
+<pre><code class="lang-powershell">&#x6D4B;&#x8BD5;Python&#x591A;&#x8FDB;&#x7A0B;
+&#x6D4B;&#x8BD5;Python&#x591A;&#x8FDB;&#x7A0B;
+&#x6D4B;&#x8BD5;Python&#x591A;&#x8FDB;&#x7A0B;
+&#x6D4B;&#x8BD5;Python&#x591A;&#x8FDB;&#x7A0B;
+&#x6D4B;&#x8BD5;Python&#x591A;&#x8FDB;&#x7A0B;
+&#x7ED3;&#x675F;&#x6D4B;&#x8BD5;
+
+<span class="hljs-keyword">Process</span> finished with <span class="hljs-keyword">exit</span> code <span class="hljs-number">0</span>
+</code></pre>
+<pre><code>&#x901A;&#x8FC7;&#x7C7B;&#x7EE7;&#x627F;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;python&#x591A;&#x8FDB;&#x7A0B;&#x7684;&#x7B2C;&#x4E8C;&#x79CD;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x4E5F;&#x662F;&#x4E00;&#x6837;&#x7684;,&#x6548;&#x679C;&#x548C;&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#x4E00;&#x6837;&#x3002;
+</code></pre><h2 id="process&#x7C7B;&#x7684;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;"><a name="process&#x7C7B;&#x7684;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#process&#x7C7B;&#x7684;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="process&#x7C7B;&#x7684;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;" class="plugin-anchor" href="#process&#x7C7B;&#x7684;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>Process&#x7C7B;&#x7684;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;</h2>
+<pre><code class="lang-powershell">&#x6784;&#x9020;&#x65B9;&#x6CD5;&#xFF1A;
+
+<span class="hljs-keyword">Process</span>([group [, target [, name [, args [, kwargs]]]]])
+&#x3000;&#x3000;group: &#x7EBF;&#x7A0B;&#x7EC4; 
+&#x3000;&#x3000;target: &#x8981;&#x6267;&#x884C;&#x7684;&#x65B9;&#x6CD5;
+&#x3000;&#x3000;name: &#x8FDB;&#x7A0B;&#x540D;
+&#x3000;&#x3000;args/kwargs: &#x8981;&#x4F20;&#x5165;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;
+
+&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#xFF1A;
+&#x3000;&#x3000;is_alive()&#xFF1A;&#x8FD4;&#x56DE;&#x8FDB;&#x7A0B;&#x662F;&#x5426;&#x5728;&#x8FD0;&#x884C;,bool&#x7C7B;&#x578B;&#x3002;
+&#x3000;&#x3000;join([timeout])&#xFF1A;&#x963B;&#x585E;&#x5F53;&#x524D;&#x4E0A;&#x4E0B;&#x6587;&#x73AF;&#x5883;&#x7684;&#x8FDB;&#x7A0B;&#x7A0B;&#xFF0C;&#x76F4;&#x5230;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;&#x7684;&#x8FDB;&#x7A0B;&#x7EC8;&#x6B62;&#x6216;&#x5230;&#x8FBE;&#x6307;&#x5B9A;&#x7684;timeout&#xFF08;&#x53EF;&#x9009;&#x53C2;&#x6570;&#xFF09;&#x3002;
+&#x3000;&#x3000;start()&#xFF1A;&#x8FDB;&#x7A0B;&#x51C6;&#x5907;&#x5C31;&#x7EEA;&#xFF0C;&#x7B49;&#x5F85;CPU&#x8C03;&#x5EA6;
+&#x3000;&#x3000;run()&#xFF1A;strat()&#x8C03;&#x7528;run&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x679C;&#x5B9E;&#x4F8B;&#x8FDB;&#x7A0B;&#x65F6;&#x672A;&#x5236;&#x5B9A;&#x4F20;&#x5165;target&#xFF0C;&#x8FD9;star&#x6267;&#x884C;t&#x9ED8;&#x8BA4;run()&#x65B9;&#x6CD5;&#x3002;
+&#x3000;&#x3000;terminate()&#xFF1A;&#x4E0D;&#x7BA1;&#x4EFB;&#x52A1;&#x662F;&#x5426;&#x5B8C;&#x6210;&#xFF0C;&#x7ACB;&#x5373;&#x505C;&#x6B62;&#x5DE5;&#x4F5C;&#x8FDB;&#x7A0B;
+
+&#x5C5E;&#x6027;&#xFF1A;
+&#x3000;&#x3000;daemon&#xFF1A;&#x548C;&#x7EBF;&#x7A0B;&#x7684;setDeamon&#x529F;&#x80FD;&#x4E00;&#x6837;
+&#x3000;&#x3000;name&#xFF1A;&#x8FDB;&#x7A0B;&#x540D;&#x5B57;
+&#x3000;&#x3000;pid&#xFF1A;&#x8FDB;&#x7A0B;&#x53F7;
+</code></pre>
+<h2 id="&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x8FDB;&#x7A0B;&#x6C60;"><a name="&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x8FDB;&#x7A0B;&#x6C60;" class="anchor-navigation-ex-anchor" href="#&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x8FDB;&#x7A0B;&#x6C60;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x8FDB;&#x7A0B;&#x6C60;" class="plugin-anchor" href="#&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x8FDB;&#x7A0B;&#x6C60;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x8FDB;&#x7A0B;&#x6C60;</h2>
+<pre><code class="lang-python"><span class="hljs-comment"># apply_async&#xFF1A;&#x5F02;&#x6B65;</span>
+<span class="hljs-keyword">from</span>  multiprocessing <span class="hljs-keyword">import</span> Pool,cpu_count
+<span class="hljs-keyword">import</span> os, time, random
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fun1</span><span class="hljs-params">(name)</span>:</span>
+    print(<span class="hljs-string">&apos;Run task %s (%s)...&apos;</span> % (name, os.getpid()))
+    start = time.time()
+    time.sleep(random.random() * <span class="hljs-number">3</span>)
+    end = time.time()
+    print(<span class="hljs-string">&apos;Task %s runs %0.2f seconds.&apos;</span> % (name, (end - start)))
+    <span class="hljs-keyword">return</span> f<span class="hljs-string">&apos;{name}: {os.getpid()}&apos;</span>
+
+<span class="hljs-keyword">if</span> __name__==<span class="hljs-string">&apos;__main__&apos;</span>:
+    results = []
+    pool = Pool(cpu_count()<span class="hljs-number">-1</span>)
+
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">4</span>):
+        results.append(pool.apply_async(func=fun1, args=(i,)))
+
+    pool.close()
+    pool.join()
+    print()
+    <span class="hljs-keyword">for</span> result <span class="hljs-keyword">in</span> results:
+        print(result.get())
+    print(<span class="hljs-string">&apos;All Done!!!&apos;</span>)
+
+    print(<span class="hljs-string">&apos;&#x7ED3;&#x675F;&#x6D4B;&#x8BD5;&apos;</span>)
+</code></pre>
+<pre><code class="lang-powershell">Run task <span class="hljs-number">0</span> (<span class="hljs-number">30716</span>)...
+Run task <span class="hljs-number">1</span> (<span class="hljs-number">15020</span>)...
+Run task <span class="hljs-number">2</span> (<span class="hljs-number">23200</span>)...
+Run task <span class="hljs-number">3</span> (<span class="hljs-number">5884</span>)...
+Task <span class="hljs-number">0</span> runs <span class="hljs-number">1.34</span> seconds.
+Task <span class="hljs-number">2</span> runs <span class="hljs-number">1.53</span> seconds.
+Task <span class="hljs-number">1</span> runs <span class="hljs-number">1.88</span> seconds.
+Task <span class="hljs-number">3</span> runs <span class="hljs-number">2.48</span> seconds.
+
+<span class="hljs-number">0</span>: <span class="hljs-number">30716</span>
+<span class="hljs-number">1</span>: <span class="hljs-number">15020</span>
+<span class="hljs-number">2</span>: <span class="hljs-number">23200</span>
+<span class="hljs-number">3</span>: <span class="hljs-number">5884</span>
+All Done!!!
+&#x7ED3;&#x675F;&#x6D4B;&#x8BD5;
+
+<span class="hljs-keyword">Process</span> finished with <span class="hljs-keyword">exit</span> code <span class="hljs-number">0</span>
+</code></pre>
+<pre><code>&#x5BF9;Pool&#x5BF9;&#x8C61;&#x8C03;&#x7528;join()&#x65B9;&#x6CD5;&#x4F1A;&#x7B49;&#x5F85;&#x6240;&#x6709;&#x5B50;&#x8FDB;&#x7A0B;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;&#x8C03;&#x7528;join()&#x4E4B;&#x524D;&#x5FC5;&#x987B;&#x5148;&#x8C03;&#x7528;close()&#xFF0C;&#x8C03;&#x7528;close()&#x4E4B;&#x540E;&#x5C31;&#x4E0D;&#x80FD;&#x7EE7;&#x7EED;&#x6DFB;&#x52A0;&#x65B0;&#x7684;Process&#x4E86;&#x3002;
+</code></pre><pre><code class="lang-python"><span class="hljs-comment"># map_async&#xFF1A;&#x5F02;&#x6B65;</span>
+<span class="hljs-keyword">from</span> multiprocessing <span class="hljs-keyword">import</span> Pool, cpu_count, Manager
+<span class="hljs-keyword">from</span> functools <span class="hljs-keyword">import</span> partial
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">job</span><span class="hljs-params">(data, mgrDicTask, lock)</span>:</span>
+    res = f<span class="hljs-string">&apos;a+b = {data[0] + data[1]}&apos;</span>
+    lock.acquire()
+    <span class="hljs-comment"># Manager&#x5BF9;&#x8C61;&#x65E0;&#x6CD5;&#x76D1;&#x6D4B;&#x5230;&#x5B83;&#x5F15;&#x7528;&#x7684;&#x53EF;&#x53D8;&#x5BF9;&#x8C61;&#x503C;&#x7684;&#x4FEE;&#x6539;&#xFF0C;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x89E6;&#x53D1;__setitem__&#x65B9;&#x6CD5;&#x6765;&#x8BA9;&#x5B83;&#x83B7;&#x5F97;&#x901A;&#x77E5;</span>
+    tempDic = list(mgrDicTask[<span class="hljs-string">&apos;result&apos;</span>])
+    tempDic.append(res)
+    mgrDicTask[<span class="hljs-string">&apos;result&apos;</span>] = tempDic
+    lock.release()
+    <span class="hljs-keyword">return</span> res
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:
+    data = [[<span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">2</span>, <span class="hljs-number">5</span>]]
+    pool = Pool(processes=cpu_count() - <span class="hljs-number">1</span>)
+
+    mgr = Manager()
+    lock = mgr.Lock()
+    mgrDicTask = mgr.dict()
+    mgrDicTask[<span class="hljs-string">&apos;result&apos;</span>] = []
+
+    fun = partial(job, mgrDicTask=mgrDicTask, lock=lock)
+    pool.map_async(fun, data)
+    pool.close()
+    pool.join()
+
+    print(mgrDicTask[<span class="hljs-string">&apos;result&apos;</span>])
+    print(<span class="hljs-string">&apos;All Done!!!&apos;</span>)
+</code></pre>
+<pre><code class="lang-powershell">[<span class="hljs-string">&apos;a+b = 7&apos;</span>, <span class="hljs-string">&apos;a+b = 7&apos;</span>, <span class="hljs-string">&apos;a+b = 5&apos;</span>]
+All Done!!!
+
+<span class="hljs-keyword">Process</span> finished with <span class="hljs-keyword">exit</span> code <span class="hljs-number">0</span>
+</code></pre>
+<h2 id="&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x8FDB;&#x7A0B;&#x6C60;&#x7684;&#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;"><a name="&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x8FDB;&#x7A0B;&#x6C60;&#x7684;&#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x8FDB;&#x7A0B;&#x6C60;&#x7684;&#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x8FDB;&#x7A0B;&#x6C60;&#x7684;&#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;" class="plugin-anchor" href="#&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x8FDB;&#x7A0B;&#x6C60;&#x7684;&#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x591A;&#x8FDB;&#x7A0B;&#x4E4B;&#x8FDB;&#x7A0B;&#x6C60;&#x7684;&#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;</h2>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x8FDB;&#x7A0B;&#x6C60;&#x7684;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x521B;&#x5EFA;&#x65B9;&#x5F0F;&#xFF0C;&#x8DDF;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x521B;&#x5EFA;&#x65B9;&#x5F0F;&#x4E00;&#x6837;&#x3002;&#x5176;&#x65B9;&#x6CD5;&#x7B49;&#x4E5F;&#x76F8;&#x540C;&#x3002;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">process_pool_test</span><span class="hljs-params">(url_list)</span>:</span>
+    book_list = []
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x8FDB;&#x7A0B;&#x6C60;</span>
+    pool = ProcessPoolExecutor(max_workers=<span class="hljs-number">20</span>)
+    start = time.time()
+    <span class="hljs-keyword">for</span> url <span class="hljs-keyword">in</span> url_list:
+        time.sleep(<span class="hljs-number">0.5</span>)
+        result = pool.submit(get_book_info, url)
+        book_list.append(result)
+
+    pool.shutdown()
+    print(<span class="hljs-string">&apos;time: &apos;</span>, time.time() - start)
+
+    book_name_list = []
+    author_list = []
+    author_info_list = []
+    print(<span class="hljs-string">&apos;book_list: &apos;</span>, len(book_list))
+    <span class="hljs-keyword">for</span> future <span class="hljs-keyword">in</span> book_list:
+        book_name_list.extend(future.result()[<span class="hljs-string">&apos;name&apos;</span>])
+        author_list.extend(future.result()[<span class="hljs-string">&apos;author&apos;</span>])
+        author_info_list.extend(future.result()[<span class="hljs-string">&apos;info&apos;</span>])
+
+    ExcelUtils.write_data_to_excel(<span class="hljs-string">&apos;bookInfo&apos;</span>, book_name_list, author_list, author_info_list)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    sys.setrecursionlimit(<span class="hljs-number">10000</span>)
+    url_list = [<span class="hljs-string">&apos;https://www.edge.org/library&apos;</span>]
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, <span class="hljs-number">52</span>):
+        url_list.append(<span class="hljs-string">&apos;https://www.edge.org/library?page=%s&apos;</span> % i)
+
+    thread_pool_test(url_list)
+</code></pre>
+<h1 id="python&#x591A;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;"><a name="python&#x591A;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;" class="anchor-navigation-ex-anchor" href="#python&#x591A;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="python&#x591A;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;" class="plugin-anchor" href="#python&#x591A;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;"><i class="fa fa-link" aria-hidden="true"></i></a>python&#x591A;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;</h1>
+<pre><code>&#x8FDB;&#x7A0B;&#x662F;&#x7CFB;&#x7EDF;&#x72EC;&#x7ACB;&#x8C03;&#x5EA6;&#x6838;&#x5206;&#x914D;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90;&#xFF08;CPU&#x3001;&#x5185;&#x5B58;&#xFF09;&#x7684;&#x57FA;&#x672C;&#x5355;&#x4F4D;&#xFF0C;&#x8FDB;&#x7A0B;&#x4E4B;&#x95F4;&#x662F;&#x76F8;&#x4E92;&#x72EC;&#x7ACB;&#x7684;&#xFF0C;&#x6BCF;&#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x8FDB;&#x7A0B;&#x76F8;&#x5F53;&#x4E8E;&#x628A;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x4E86;&#x4E00;&#x6B21;&#x514B;&#x9686;&#xFF0C;&#x5B50;&#x8FDB;&#x7A0B;&#x91CC;&#x7684;&#x6570;&#x636E;&#x4FEE;&#x6539;&#x65E0;&#x6CD5;&#x5F71;&#x54CD;&#x5230;&#x4E3B;&#x8FDB;&#x7A0B;&#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4E0D;&#x540C;&#x5B50;&#x8FDB;&#x7A0B;&#x4E4B;&#x95F4;&#x7684;&#x6570;&#x636E;&#x4E5F;&#x4E0D;&#x80FD;&#x5171;&#x4EAB;&#xFF0C;&#x8FD9;&#x662F;&#x591A;&#x8FDB;&#x7A0B;&#x5728;&#x4F7F;&#x7528;&#x4E2D;&#x4E0E;&#x591A;&#x7EBF;&#x7A0B;&#x6700;&#x660E;&#x663E;&#x7684;&#x533A;&#x522B;&#x3002;&#x4F46;&#x662F;&#x96BE;&#x9053;Python&#x591A;&#x8FDB;&#x7A0B;&#x4E2D;&#x95F4;&#x96BE;&#x9053;&#x5C31;&#x662F;&#x5B64;&#x7ACB;&#x7684;&#x5417;&#xFF1F;&#x5F53;&#x7136;&#x4E0D;&#x662F;&#xFF0C;python&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x591A;&#x79CD;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x4E86;&#x591A;&#x8FDB;&#x7A0B;&#x4E2D;&#x95F4;&#x7684;&#x901A;&#x4FE1;&#x548C;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF08;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x4E00;&#x4EFD;&#x6570;&#x636E;&#xFF09;
+</code></pre><h2 id="&#x8FDB;&#x7A0B;&#x5BF9;&#x5217;queue"><a name="&#x8FDB;&#x7A0B;&#x5BF9;&#x5217;queue" class="anchor-navigation-ex-anchor" href="#&#x8FDB;&#x7A0B;&#x5BF9;&#x5217;queue"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8FDB;&#x7A0B;&#x5BF9;&#x5217;queue" class="plugin-anchor" href="#&#x8FDB;&#x7A0B;&#x5BF9;&#x5217;queue"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FDB;&#x7A0B;&#x5BF9;&#x5217;Queue</h2>
+<pre><code class="lang-python"><span class="hljs-comment"># Queue&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x4E2D;&#x4E5F;&#x8BF4;&#x5230;&#x8FC7;&#xFF0C;&#x5728;&#x751F;&#x6210;&#x8005;&#x6D88;&#x8D39;&#x8005;&#x6A21;&#x5F0F;&#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x662F;&#x751F;&#x4EA7;&#x8005;&#x548C;&#x6D88;&#x8D39;&#x8005;&#x4E2D;&#x95F4;&#x7684;&#x6570;&#x636E;&#x7BA1;&#x9053;&#xFF0C;&#x90A3;&#x5728;python&#x591A;&#x8FDB;&#x7A0B;&#x4E2D;&#xFF0C;&#x5B83;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x8FDB;&#x7A0B;&#x4E4B;&#x95F4;&#x7684;&#x6570;&#x636E;&#x7BA1;&#x9053;&#xFF0C;&#x5B9E;&#x73B0;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;&#x3002;</span>
+<span class="hljs-keyword">from</span> multiprocessing <span class="hljs-keyword">import</span> Process,Queue
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fun1</span><span class="hljs-params">(q,i)</span>:</span>
+    print(<span class="hljs-string">&apos;&#x5B50;&#x8FDB;&#x7A0B;%s &#x5F00;&#x59CB;put&#x6570;&#x636E;&apos;</span> %i)
+    q.put(<span class="hljs-string">&apos;&#x6211;&#x662F;%s &#x901A;&#x8FC7;Queue&#x901A;&#x4FE1;&apos;</span> %i)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    q = Queue()
+
+    process_list = []
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">3</span>):
+        p = Process(target=fun1,args=(q,i,))  <span class="hljs-comment">#&#x6CE8;&#x610F;args&#x91CC;&#x9762;&#x8981;&#x628A;q&#x5BF9;&#x8C61;&#x4F20;&#x7ED9;&#x6211;&#x4EEC;&#x8981;&#x6267;&#x884C;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x6837;&#x5B50;&#x8FDB;&#x7A0B;&#x624D;&#x80FD;&#x548C;&#x4E3B;&#x8FDB;&#x7A0B;&#x7528;Queue&#x6765;&#x901A;&#x4FE1;</span>
+        p.start()
+        process_list.append(p)
+
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> process_list:
+        p.join()
+
+    print(<span class="hljs-string">&apos;&#x4E3B;&#x8FDB;&#x7A0B;&#x83B7;&#x53D6;Queue&#x6570;&#x636E;&apos;</span>)
+    print(q.get())
+    print(q.get())
+    print(q.get())
+    print(<span class="hljs-string">&apos;&#x7ED3;&#x675F;&#x6D4B;&#x8BD5;&apos;</span>)
+</code></pre>
+<pre><code class="lang-powershell">&#x5B50;&#x8FDB;&#x7A0B;<span class="hljs-number">0</span> &#x5F00;&#x59CB;put&#x6570;&#x636E;
+&#x5B50;&#x8FDB;&#x7A0B;<span class="hljs-number">1</span> &#x5F00;&#x59CB;put&#x6570;&#x636E;
+&#x5B50;&#x8FDB;&#x7A0B;<span class="hljs-number">2</span> &#x5F00;&#x59CB;put&#x6570;&#x636E;
+&#x4E3B;&#x8FDB;&#x7A0B;&#x83B7;&#x53D6;Queue&#x6570;&#x636E;
+&#x6211;&#x662F;<span class="hljs-number">0</span> &#x901A;&#x8FC7;Queue&#x901A;&#x4FE1;
+&#x6211;&#x662F;<span class="hljs-number">1</span> &#x901A;&#x8FC7;Queue&#x901A;&#x4FE1;
+&#x6211;&#x662F;<span class="hljs-number">2</span> &#x901A;&#x8FC7;Queue&#x901A;&#x4FE1;
+&#x7ED3;&#x675F;&#x6D4B;&#x8BD5;
+
+<span class="hljs-keyword">Process</span> finished with <span class="hljs-keyword">exit</span> code <span class="hljs-number">0</span>
+</code></pre>
+<pre><code class="lang-powershell">&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7ED3;&#x679C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6211;&#x4EEC;&#x4E3B;&#x8FDB;&#x7A0B;&#x4E2D;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;Queue&#x83B7;&#x53D6;&#x5B50;&#x8FDB;&#x7A0B;&#x4E2D;put&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5B9E;&#x73B0;&#x8FDB;&#x7A0B;&#x95F4;&#x7684;&#x901A;&#x4FE1;&#x3002;
+</code></pre>
+<h2 id="&#x7BA1;&#x9053;pipe"><a name="&#x7BA1;&#x9053;pipe" class="anchor-navigation-ex-anchor" href="#&#x7BA1;&#x9053;pipe"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7BA1;&#x9053;pipe" class="plugin-anchor" href="#&#x7BA1;&#x9053;pipe"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7BA1;&#x9053;Pipe</h2>
+<pre><code class="lang-python"><span class="hljs-comment"># Pipe&#x7684;&#x672C;&#x8D28;&#x662F;&#x8FDB;&#x7A0B;&#x4E4B;&#x95F4;&#x7684;&#x7528;&#x7BA1;&#x9053;&#x6570;&#x636E;&#x4F20;&#x9012;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF0C;&#x8FD9;&#x548C;socket&#x6709;&#x70B9;&#x50CF;&#x3002;pipe() &#x8FD4;&#x56DE;&#x4E24;&#x4E2A;&#x8FDE;&#x63A5;&#x5BF9;&#x8C61;&#x5206;&#x522B;&#x8868;&#x793A;&#x7BA1;&#x9053;&#x7684;&#x4E24;&#x7AEF;&#xFF0C;&#x6BCF;&#x7AEF;&#x90FD;&#x6709;send() &#x548C;recv()&#x51FD;&#x6570;&#x3002;</span>
+
+<span class="hljs-comment"># &#x5982;&#x679C;&#x4E24;&#x4E2A;&#x8FDB;&#x7A0B;&#x8BD5;&#x56FE;&#x5728;&#x540C;&#x4E00;&#x65F6;&#x95F4;&#x7684;&#x540C;&#x4E00;&#x7AEF;&#x8FDB;&#x884C;&#x8BFB;&#x53D6;&#x548C;&#x5199;&#x5165;&#x90A3;&#x4E48;&#xFF0C;&#x8FD9;&#x53EF;&#x80FD;&#x4F1A;&#x635F;&#x574F;&#x7BA1;&#x9053;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x3002;</span>
+<span class="hljs-comment"># &#x7BA1;&#x9053;&#x662F;&#x6570;&#x636E;&#x4E0D;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x591A;&#x4E2A;&#x8FDB;&#x7A0B;&#x540C;&#x65F6;&#x6536;&#x53D1;&#x6570;&#x636E;&#x53EF;&#x9053;&#x5F15;&#x8D77;&#x6570;&#x636E;&#x5F02;&#x5E38;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x5C31;&#x5E94;&#x8BE5;&#x914D;&#x5408;&#x9501;&#x4F7F;&#x7528;&#x3002;</span>
+<span class="hljs-keyword">from</span> multiprocessing <span class="hljs-keyword">import</span> Process, Pipe
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fun1</span><span class="hljs-params">(conn)</span>:</span>
+    print(<span class="hljs-string">&apos;&#x5B50;&#x8FDB;&#x7A0B;&#x53D1;&#x9001;&#x6D88;&#x606F;&#xFF1A;&apos;</span>)
+    conn.send(<span class="hljs-string">&apos;&#x4F60;&#x597D;&#x4E3B;&#x8FDB;&#x7A0B;&apos;</span>)
+    print(<span class="hljs-string">&apos;&#x5B50;&#x8FDB;&#x7A0B;&#x63A5;&#x53D7;&#x6D88;&#x606F;&#xFF1A;&apos;</span>)
+    print(conn.recv())
+    conn.close()
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    conn1, conn2 = Pipe() <span class="hljs-comment">#&#x5173;&#x952E;&#x70B9;&#xFF0C;pipe&#x5B9E;&#x4F8B;&#x5316;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x53CC;&#x5411;&#x7BA1;</span>
+    p = Process(target=fun1, args=(conn2,)) <span class="hljs-comment">#conn2&#x4F20;&#x7ED9;&#x5B50;&#x8FDB;&#x7A0B;</span>
+    p.start()
+    print(<span class="hljs-string">&apos;&#x4E3B;&#x8FDB;&#x7A0B;&#x63A5;&#x53D7;&#x6D88;&#x606F;&#xFF1A;&apos;</span>)
+    print(conn1.recv())
+    print(<span class="hljs-string">&apos;&#x4E3B;&#x8FDB;&#x7A0B;&#x53D1;&#x9001;&#x6D88;&#x606F;&#xFF1A;&apos;</span>)
+    conn1.send(<span class="hljs-string">&quot;&#x4F60;&#x597D;&#x5B50;&#x8FDB;&#x7A0B;&quot;</span>)
+    p.join()
+    print(<span class="hljs-string">&apos;&#x7ED3;&#x675F;&#x6D4B;&#x8BD5;&apos;</span>)
+</code></pre>
+<pre><code class="lang-powershell">&#x4E3B;&#x8FDB;&#x7A0B;&#x63A5;&#x53D7;&#x6D88;&#x606F;&#xFF1A;
+&#x5B50;&#x8FDB;&#x7A0B;&#x53D1;&#x9001;&#x6D88;&#x606F;&#xFF1A;
+&#x5B50;&#x8FDB;&#x7A0B;&#x63A5;&#x53D7;&#x6D88;&#x606F;&#xFF1A;
+&#x4F60;&#x597D;&#x4E3B;&#x8FDB;&#x7A0B;
+&#x4E3B;&#x8FDB;&#x7A0B;&#x53D1;&#x9001;&#x6D88;&#x606F;&#xFF1A;
+&#x4F60;&#x597D;&#x5B50;&#x8FDB;&#x7A0B;
+&#x7ED3;&#x675F;&#x6D4B;&#x8BD5;
+
+<span class="hljs-keyword">Process</span> finished with <span class="hljs-keyword">exit</span> code <span class="hljs-number">0</span>
+</code></pre>
+<pre><code class="lang-powershell">&#x4E0A;&#x9762;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E3B;&#x8FDB;&#x7A0B;&#x548C;&#x5B50;&#x8FDB;&#x7A0B;&#x53EF;&#x4EE5;&#x76F8;&#x4E92;&#x53D1;&#x9001;&#x6D88;&#x606F;
+</code></pre>
+<h2 id="managers"><a name="managers" class="anchor-navigation-ex-anchor" href="#managers"><i class="fa fa-link" aria-hidden="true"></i></a><a name="managers" class="plugin-anchor" href="#managers"><i class="fa fa-link" aria-hidden="true"></i></a>Managers</h2>
+<pre><code>Queue&#x548C;Pipe&#x53EA;&#x662F;&#x5B9E;&#x73B0;&#x4E86;&#x6570;&#x636E;&#x4EA4;&#x4E92;&#xFF0C;&#x5E76;&#x6CA1;&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF0C;&#x5373;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x53BB;&#x66F4;&#x6539;&#x53E6;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x7684;&#x6570;&#x636E;&#x3002;&#x90A3;&#x4E48;&#x5C31;&#x8981;&#x7528;&#x5230;Managers
+</code></pre><pre><code class="lang-python"><span class="hljs-keyword">from</span> multiprocessing <span class="hljs-keyword">import</span> Process, Manager
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fun1</span><span class="hljs-params">(dic,lis,index)</span>:</span>
+    dic[index] = <span class="hljs-string">&apos;a&apos;</span>
+    dic[<span class="hljs-string">&apos;2&apos;</span>] = <span class="hljs-string">&apos;b&apos;</span>    
+    lis.append(index)    <span class="hljs-comment">#[0,1,2,3,4,0,1,2,3,4,5,6,7,8,9]</span>
+    <span class="hljs-comment">#print(l)</span>
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    <span class="hljs-keyword">with</span> Manager() <span class="hljs-keyword">as</span> manager:
+        dic = manager.dict()<span class="hljs-comment">#&#x6CE8;&#x610F;&#x5B57;&#x5178;&#x7684;&#x58F0;&#x660E;&#x65B9;&#x5F0F;&#xFF0C;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x901A;&#x8FC7;{}&#x6765;&#x5B9A;&#x4E49;</span>
+        l = manager.list(range(<span class="hljs-number">5</span>))<span class="hljs-comment">#[0,1,2,3,4]</span>
+
+        process_list = []
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>):
+            p = Process(target=fun1, args=(dic,l,i))
+            p.start()
+            process_list.append(p)
+
+        <span class="hljs-keyword">for</span> res <span class="hljs-keyword">in</span> process_list:
+            res.join()
+        print(dic)
+        print(l)
+</code></pre>
+<pre><code class="lang-powershell">{<span class="hljs-number">0</span>: <span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-string">&apos;2&apos;</span>: <span class="hljs-string">&apos;b&apos;</span>, <span class="hljs-number">3</span>: <span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-number">1</span>: <span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-number">2</span>: <span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-number">4</span>: <span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-number">5</span>: <span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-number">7</span>: <span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-number">6</span>: <span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-number">8</span>: <span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-number">9</span>: <span class="hljs-string">&apos;a&apos;</span>}
+[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">6</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>]
+</code></pre>
+<pre><code class="lang-powershell">&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E3B;&#x8FDB;&#x7A0B;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x5B57;&#x5178;&#x548C;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#xFF0C;&#x5728;&#x5B50;&#x8FDB;&#x7A0B;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x548C;&#x4FEE;&#x6539;&#x5B57;&#x5178;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5728;&#x5217;&#x8868;&#x4E2D;&#x63D2;&#x5165;&#x65B0;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5B9E;&#x73B0;&#x8FDB;&#x7A0B;&#x95F4;&#x7684;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF0C;&#x5373;&#x53EF;&#x4EE5;&#x5171;&#x540C;&#x4FEE;&#x6539;&#x540C;&#x4E00;&#x4EFD;&#x6570;&#x636E;&#x3002;
+</code></pre>
+<ol>
+<li><a href="https://www.jianshu.com/p/865d73b70ec7" target="_blank">&#x5185;&#x5BB9;&#x63D0;&#x53D6;&#x795E;&#x5668; beautiful Soup &#x7684;&#x7528;&#x6CD5;</a></li>
+</ol>
+<ol>
+<li></li>
+</ol>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; narutohyc.com 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-02-01 04:46:53
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2. python多线程.html" class="navigation navigation-next " aria-label="Next page: python多线程">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"python多进程","level":"1.2","depth":1,"next":{"title":"python多线程","level":"1.3","depth":1,"path":"chapters/2. python多线程.md","ref":"chapters/2. python多线程.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon","mathjax","mermaid-gb3","tbfed-pagefooter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2020","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","bookmark":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","appleTouch":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","appleTouchMore":{"120x120":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240","180x180":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"}},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_python","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Python 的学习和一些技巧的使用"},"file":{"path":"chapters/1. python多进程.md","mtime":"2020-02-01T04:46:53.747Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-01T04:47:39.767Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
