@@ -19,5 +19,3 @@
 * [Regular Expression OP](chapters/16. Regular Expression OP.md)
 * [Anaconda开发环境](chapters/Anaconda开发环境.md)
 * [Jupyter Notebook介绍、安装及使用教程](chapters/Jupyter Notebook介绍、安装及使用教程.md)
-* [最详尽使用指南Jupyter Notebook](chapters/最详尽使用指南Jupyter Notebook.md)
-
