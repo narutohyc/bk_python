@@ -49,8 +49,8 @@
             ]
         },
         "donate": {
-            "wechat": "https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
-            "alipay": "https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+            "wechat": "https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png",
+            "alipay": "https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png",
             "title": "",
             "button": "赏",
             "alipayText": "支付宝打赏",
@@ -83,12 +83,12 @@
             "showLevel": false
         },
         "favicon":{
-            "shortcut": "https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
-            "bookmark": "https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
-            "appleTouch": "https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+            "shortcut": "https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png",
+            "bookmark": "https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png",
+            "appleTouch": "https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png",
             "appleTouchMore": {
-                "120x120": "https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
-                "180x180": "https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+                "120x120": "https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png",
+                "180x180": "https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png"
             }
         }
     }
