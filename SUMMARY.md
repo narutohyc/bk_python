@@ -17,6 +17,8 @@
 * [Python 增强提案PEP](chapters/14. Python 增强提案PEP.md)
 * [python进阶问题](chapters/15. python进阶问题.md)
 * [Regular Expression OP](chapters/16. Regular Expression OP.md)
+* [数据库相关操作.md](chapters/17. 数据库相关操作.md)
 * [Anaconda开发环境](chapters/Anaconda开发环境.md)
 * [Jupyter Notebook介绍、安装及使用教程](chapters/Jupyter Notebook介绍、安装及使用教程.md)
+
 
