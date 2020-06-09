@@ -20,6 +20,8 @@
 
 <font size=4 color=04D2D3>python其他参考资料</font>: 
 
+> [Python 标准库](https://docs.python.org/zh-cn/3.7/library/index.html#the-python-standard-library)
+>
 > [Python 语言参考](https://docs.python.org/zh-cn/3/reference/index.html)
 >
 > [Python文档内容](https://docs.python.org/zh-cn/3/contents.html)
@@ -29,3 +31,5 @@
 > [python索引](https://docs.python.org/zh-cn/3/genindex-all.html)
 >
 > [PEP索引](https://www.python.org/dev/peps/)
+>
+> [python青南-炫技](https://cloud.tencent.com/developer/user/3043884)
