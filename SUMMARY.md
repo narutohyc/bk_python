@@ -19,6 +19,7 @@
 * [Regular Expression OP](chapters/16. Regular Expression OP.md)
 * [数据库相关操作.md](chapters/17. 数据库相关操作.md)
 * [logging模块](chapters/18. logging模块.md)
+* [元编程](chapters/19. 元编程.md)
 * [Anaconda开发环境](chapters/Anaconda开发环境.md)
 * [Jupyter Notebook介绍、安装及使用教程](chapters/Jupyter Notebook介绍、安装及使用教程.md)
 
