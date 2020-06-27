@@ -18,6 +18,20 @@
 >
 > [EMOJI CHEAT SHEET](https://www.webfx.com/tools/emoji-cheat-sheet/)
 
+<font size=4 color=04D2D3>python官方参考资料</font>:
+
+> [Python 3.8.3 文档](https://docs.python.org/zh-cn/3/)
+>
+> [NumPy 参考手册](https://www.numpy.org.cn/reference/)
+>
+> [Pandas: 强大的 Python 数据分析支持库](https://www.pypandas.cn/docs/)
+>
+> [scikit-learn (sklearn) 官方文档中文版](https://www.cntofu.com/book/170/index.html)
+>
+> [Matplotlib 教程](https://www.matplotlib.org.cn/tutorials/)
+>
+> https://pyecharts.org/#/
+
 <font size=4 color=04D2D3>python其他参考资料</font>: 
 
 > [Python 标准库](https://docs.python.org/zh-cn/3.7/library/index.html#the-python-standard-library)
