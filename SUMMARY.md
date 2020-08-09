@@ -21,5 +21,6 @@
 * [logging模块](chapters/18. logging模块.md)
 * [元编程](chapters/19. 元编程.md)
 * [Anaconda开发环境](chapters/Anaconda开发环境.md)
+* [elementary os 记录](chapters/elementary os 记录.md)
 * [Jupyter Notebook介绍、安装及使用教程](chapters/Jupyter Notebook介绍、安装及使用教程.md)
 
