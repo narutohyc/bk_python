@@ -49,8 +49,8 @@
             ]
         },
         "donate": {
-            "wechat": "chapters/res/other/hyc_wechat_收款码.png",
-            "alipay": "chapters/res/other/hyc_alipay_收款码.png",
+            "wechat": "res/other/hyc_wechat_收款码.png",
+            "alipay": "res/other/hyc_alipay_收款码.png",
             "title": "",
             "button": "欢迎为知识付费",
             "alipayText": "alipay打赏",
