@@ -49,8 +49,8 @@
             ]
         },
         "donate": {
-            "wechat": "/home/hyc/github/bk_python/chapters/res/other/hyc_wechat_收款码.png",
-            "alipay": "./res/other/hyc_alipay_收款码.png",
+            "wechat": "https://upload-images.jianshu.io/upload_images/15675864-57b914ff849e0f8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+            "alipay": "https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png",
             "title": "",
             "button": "欢迎打赏",
             "alipayText": "alipay打赏",
