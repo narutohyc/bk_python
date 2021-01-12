@@ -34,7 +34,7 @@
             "url": "https://github.com/narutohyc"
         },
 		"tbfed-pagefooter": {
-            "copyright": "Copyright © narutohyc.com 2020",
+            "copyright": "Copyright © narutohyc.com 2021",
             "modify_label": "该文件修订时间：",
             "modify_format": "YYYY-MM-DD HH:mm:ss"
         },
@@ -49,12 +49,12 @@
             ]
         },
         "donate": {
-            "wechat": "https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png",
-            "alipay": "https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png",
+            "wechat": "chapters/res/other/hyc_wechat_收款码.png",
+            "alipay": "chapters/res/other/hyc_alipay_收款码.png",
             "title": "",
-            "button": "赏",
-            "alipayText": "支付宝打赏",
-            "wechatText": "微信打赏"
+            "button": "欢迎为知识付费",
+            "alipayText": "alipay打赏",
+            "wechatText": "wechat打赏"
         },
         "sharing": {
             "douban": false,
