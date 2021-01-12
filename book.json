@@ -49,10 +49,10 @@
             ]
         },
         "donate": {
-            "wechat": "res/other/hyc_wechat_收款码.png",
-            "alipay": "res/other/hyc_alipay_收款码.png",
+            "wechat": "/home/hyc/github/bk_python/chapters/res/other/hyc_wechat_收款码.png",
+            "alipay": "./res/other/hyc_alipay_收款码.png",
             "title": "",
-            "button": "欢迎为知识付费",
+            "button": "欢迎打赏",
             "alipayText": "alipay打赏",
             "wechatText": "wechat打赏"
         },
