@@ -21,6 +21,7 @@
 * [python pipe包管道包学习](chapters/18. python pipe包管道包学习.md)
 * [Python 增强提案PEP](chapters/19. Python 增强提案PEP.md)
 * [python进阶问题](chapters/20. python进阶问题.md)
+* [python性能优化模块](chapters/21. python性能优化模块.md)
 * [Anaconda开发环境](chapters/30. Anaconda开发环境.md)
 * [elementary os 记录](chapters/31. elementary os 记录.md)
 * [Jupyter Notebook介绍、安装及使用教程](chapters/32. Jupyter Notebook介绍、安装及使用教程.md)
